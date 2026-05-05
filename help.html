@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Nature Help - Search, Download, and View AR 3D Models</title>
+  <meta name="description" content="Learn how to use Little Nature on iPhone, iPad, and Mac, including model search, category filters, on-demand downloads, AR viewing, offline access, and local content management.">
+  <meta name="keywords" content="Little Nature help, AR model guide, 3D biological model help, download model, AR viewing, model catalog, Download Manager">
+  <meta name="author" content="Peike Luo">
+  <meta name="application-name" content="Little Nature">
+  <meta name="apple-mobile-web-app-title" content="Little Nature">
+  <meta name="apple-itunes-app" content="app-id=6766551832">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://luopeike.com/ar-asia/help.html">
+  <link rel="alternate" hreflang="en" href="https://luopeike.com/ar-asia/help.html">
+  <link rel="alternate" hreflang="x-default" href="https://luopeike.com/ar-asia/help.html">
+  <meta property="og:title" content="Little Nature Help - Search, Download, and View AR 3D Models">
+  <meta property="og:description" content="Help for using Little Nature, including model search, category filters, downloads, AR viewing, and offline access.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://luopeike.com/ar-asia/help.html">
+  <meta property="og:site_name" content="Little Nature">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Little Nature Help - Search, Download, and View AR 3D Models">
+  <meta name="twitter:description" content="Learn how to browse the catalog, download model files, and view supported models in AR.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7fbf8;
+      --panel: #ffffff;
+      --text: #13251f;
+      --muted: #5f7069;
+      --line: rgba(19, 37, 31, 0.12);
+      --brand: #0f766e;
+      --soft: #e5f5ef;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10201c;
+        --panel: #172b26;
+        --text: #effaf6;
+        --muted: #b5c8c0;
+        --line: rgba(239, 250, 246, 0.14);
+        --brand: #6ee7d8;
+        --soft: #1d3932;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 48px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0 42px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0f766e, #22c55e);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .content-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      padding: clamp(24px, 5vw, 48px);
+      box-shadow: 0 24px 60px rgba(15, 118, 110, 0.12);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--brand);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.12rem;
+      margin: 18px 0 0;
+      max-width: 720px;
+    }
+
+    .section {
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .step-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--soft);
+      padding: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      color: var(--muted);
+      margin-top: 28px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 680px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: 28px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://luopeike.com/ar-asia/help.html#webpage",
+      "name": "Little Nature Help",
+      "url": "https://luopeike.com/ar-asia/help.html",
+      "description": "Learn how to browse, download, and view 3D biological model records in Little Nature.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://luopeike.com/ar-asia/help.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find models in Little Nature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use category filters or search by Japanese name, English name, Chinese name, or scientific name where available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do model files download automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Model files are downloaded on demand so you can choose which files to keep on your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which devices support AR viewing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AR viewing is available on compatible iPhone and iPad devices. Mac is intended for catalog browsing and local content management."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://luopeike.com/ar-asia/help.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Little Nature",
+          "item": "https://luopeike.com/ar-asia/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help",
+          "item": "https://luopeike.com/ar-asia/help.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Little Nature home">
+        <span class="brand-mark">LN</span>
+        <span>Little Nature</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+      </nav>
+    </header>
+
+    <article class="content-card">
+      <p class="eyebrow">Help and support</p>
+      <h1>How to use Little Nature</h1>
+      <p class="lead">Little Nature is designed for browsing biological model records, downloading selected model files, and viewing supported models in AR on compatible iPhone and iPad devices.</p>
+
+      <section class="section">
+        <h2>Browse the catalog</h2>
+        <div class="step-list">
+          <article class="step">
+            <h3>Use categories</h3>
+            <p>Use All, Plants, Animals, and Special filters to narrow the model catalog.</p>
+          </article>
+          <article class="step">
+            <h3>Search by name</h3>
+            <p>Search supports Japanese names, English names, Chinese names, and scientific names where available.</p>
+          </article>
+          <article class="step">
+            <h3>Open details</h3>
+            <p>Tap or click a model card to view category, file size, face count, vertex count, animation status, taxonomy, and source links.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Download and manage models</h2>
+        <div class="step-list">
+          <article class="step">
+            <h3>Download on demand</h3>
+            <p>Model files are not all installed up front. Download only the models you want to inspect or view in AR.</p>
+          </article>
+          <article class="step">
+            <h3>Use Download Manager</h3>
+            <p>Open Download Manager to see saved models, storage usage, and controls for removing local content.</p>
+          </article>
+          <article class="step">
+            <h3>Offline access</h3>
+            <p>Saved models remain available on your device until you delete them in the app or remove the app.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>View models in AR</h2>
+        <div class="step-list">
+          <article class="step">
+            <h3>Camera permission</h3>
+            <p>AR viewing requires camera access so the app can place models in your surroundings.</p>
+          </article>
+          <article class="step">
+            <h3>Device support</h3>
+            <p>AR viewing is available on compatible iPhone and iPad devices. Mac is intended for catalog browsing and local content management.</p>
+          </article>
+          <article class="step">
+            <h3>Placement and gestures</h3>
+            <p>When AR is ready, follow the in-app guidance to place the model, then use gestures to move, scale, or rotate it.</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">Need help? Contact cameoshell09@gmail.com.</p>
+    </article>
+  </main>
+</body>
+
+</html>
