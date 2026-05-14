@@ -19,6 +19,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://ar-asia.luopeike.com/privacy-policy.html">
   <link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/privacy-policy.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/privacy-policy.html?lang=zh-Hans">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/privacy-policy.html?lang=zh-Hant">
+  <link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/privacy-policy.html?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/privacy-policy.html?lang=ko">
+  <link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/privacy-policy.html?lang=de">
   <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/privacy-policy.html">
   <meta property="og:title" content="Little Nature Privacy Policy">
   <meta property="og:description" content="Little Nature does not require an account and does not upload your photos, camera feed, or downloaded model files.">
@@ -26,9 +31,20 @@
   <meta property="og:url" content="https://ar-asia.luopeike.com/privacy-policy.html">
   <meta property="og:site_name" content="Little Nature">
   <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://ar-asia.luopeike.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Little Nature AR 3D biological model field guide">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Little Nature Privacy Policy">
   <meta name="twitter:description" content="No account required, camera only for AR, downloaded model files stay local, and no advertising SDKs.">
+  <meta name="twitter:image" content="https://ar-asia.luopeike.com/og-image.png">
+  <meta name="twitter:image:alt" content="Little Nature AR 3D biological model field guide">
   <style>
     :root {
       color-scheme: light dark;
@@ -234,16 +250,44 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ar-asia.luopeike.com/#organization",
+      "name": "Little Nature",
+      "url": "https://ar-asia.luopeike.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ar-asia.luopeike.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6766551832",
+        "https://sketchfab.com/ffishAsia-and-floraZia"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ar-asia.luopeike.com/#website",
+      "name": "Little Nature",
+      "url": "https://ar-asia.luopeike.com/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://ar-asia.luopeike.com/#organization"
+      }
+    },
+    {
       "@type": "PrivacyPolicy",
       "@id": "https://ar-asia.luopeike.com/privacy-policy.html#privacy-policy",
       "name": "Privacy Policy - Little Nature",
       "description": "Little Nature privacy policy for camera access, local model storage, and data handling.",
       "url": "https://ar-asia.luopeike.com/privacy-policy.html",
-      "dateModified": "2026-05-06",
+      "inLanguage": "en",
+      "dateModified": "2026-05-14",
+      "isPartOf": {
+        "@id": "https://ar-asia.luopeike.com/#website"
+      },
       "publisher": {
-        "@type": "Organization",
-        "name": "Little Nature",
-        "url": "https://ar-asia.luopeike.com/"
+        "@id": "https://ar-asia.luopeike.com/#organization"
       }
     },
     {
@@ -269,7 +313,7 @@
   </script>
 </head>
 
-<body>
+<body data-page="privacy">
   <main class="site-shell">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Little Nature home">
@@ -285,7 +329,10 @@
         <select class="language-select" aria-label="Language" data-language-select>
           <option value="en">English</option>
           <option value="zh-Hans">简体中文</option>
+          <option value="zh-Hant">繁體中文</option>
           <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
         </select>
       </div>
     </header>
@@ -357,21 +404,7 @@
       <p class="footer">For privacy questions, contact cameoshell09@gmail.com.</p>
     </article>
   </main>
-  <script>
-    (() => {
-      const select = document.querySelector("[data-language-select]");
-      if (!select) return;
-      const supportedLanguages = ["en", "zh-Hans", "ja"];
-      const savedLanguage = localStorage.getItem("littleNatureSiteLanguage");
-      const currentLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : "en";
-      select.value = currentLanguage;
-      document.documentElement.lang = currentLanguage;
-      select.addEventListener("change", () => {
-        localStorage.setItem("littleNatureSiteLanguage", select.value);
-        document.documentElement.lang = select.value;
-      });
-    })();
-  </script>
+  <script src="site-i18n.js"></script>
 </body>
 
 </html>

@@ -19,6 +19,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://ar-asia.luopeike.com/help.html">
   <link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/help.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/help.html?lang=zh-Hans">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/help.html?lang=zh-Hant">
+  <link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/help.html?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/help.html?lang=ko">
+  <link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/help.html?lang=de">
   <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/help.html">
   <meta property="og:title" content="Little Nature Help - Search, Download, and View AR 3D Models">
   <meta property="og:description" content="Help for using Little Nature, including model search, category filters, downloads, AR viewing, and offline access.">
@@ -26,9 +31,20 @@
   <meta property="og:url" content="https://ar-asia.luopeike.com/help.html">
   <meta property="og:site_name" content="Little Nature">
   <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://ar-asia.luopeike.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Little Nature AR 3D biological model field guide">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Little Nature Help - Search, Download, and View AR 3D Models">
   <meta name="twitter:description" content="Learn how to browse the catalog, download model files, and view supported models in AR.">
+  <meta name="twitter:image" content="https://ar-asia.luopeike.com/og-image.png">
+  <meta name="twitter:image:alt" content="Little Nature AR 3D biological model field guide">
   <style>
     :root {
       color-scheme: light dark;
@@ -230,16 +246,52 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ar-asia.luopeike.com/#organization",
+      "name": "Little Nature",
+      "url": "https://ar-asia.luopeike.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ar-asia.luopeike.com/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6766551832",
+        "https://sketchfab.com/ffishAsia-and-floraZia"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ar-asia.luopeike.com/#website",
+      "name": "Little Nature",
+      "url": "https://ar-asia.luopeike.com/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://ar-asia.luopeike.com/#organization"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://ar-asia.luopeike.com/help.html#webpage",
       "name": "Little Nature Help",
       "url": "https://ar-asia.luopeike.com/help.html",
       "description": "Learn how to browse, download, and view 3D biological model records in Little Nature.",
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://ar-asia.luopeike.com/#website"
+      },
+      "publisher": {
+        "@id": "https://ar-asia.luopeike.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
       "@id": "https://ar-asia.luopeike.com/help.html#faq",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://ar-asia.luopeike.com/help.html#webpage"
+      },
       "mainEntity": [
         {
           "@type": "Question",
@@ -290,7 +342,7 @@
   </script>
 </head>
 
-<body>
+<body data-page="help">
   <main class="site-shell">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Little Nature home">
@@ -306,7 +358,10 @@
         <select class="language-select" aria-label="Language" data-language-select>
           <option value="en">English</option>
           <option value="zh-Hans">简体中文</option>
+          <option value="zh-Hant">繁體中文</option>
           <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
         </select>
       </div>
     </header>
@@ -373,21 +428,7 @@
       <p class="footer">Need help? Contact cameoshell09@gmail.com.</p>
     </article>
   </main>
-  <script>
-    (() => {
-      const select = document.querySelector("[data-language-select]");
-      if (!select) return;
-      const supportedLanguages = ["en", "zh-Hans", "ja"];
-      const savedLanguage = localStorage.getItem("littleNatureSiteLanguage");
-      const currentLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : "en";
-      select.value = currentLanguage;
-      document.documentElement.lang = currentLanguage;
-      select.addEventListener("change", () => {
-        localStorage.setItem("littleNatureSiteLanguage", select.value);
-        document.documentElement.lang = select.value;
-      });
-    })();
-  </script>
+  <script src="site-i18n.js"></script>
 </body>
 
 </html>
