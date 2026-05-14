@@ -1,0 +1,23 @@
+# Cloudflare Pages redirects
+/ /en-US/ 301
+/index.html /en-US/ 301
+/help.html /en-US/help 301
+/privacy-policy.html /en-US/privacy-policy 301
+/en-US/index.html /en-US/ 301
+/en-US/help.html /en-US/help 301
+/en-US/privacy-policy.html /en-US/privacy-policy 301
+/zh-Hans/index.html /zh-Hans/ 301
+/zh-Hans/help.html /zh-Hans/help 301
+/zh-Hans/privacy-policy.html /zh-Hans/privacy-policy 301
+/zh-Hant/index.html /zh-Hant/ 301
+/zh-Hant/help.html /zh-Hant/help 301
+/zh-Hant/privacy-policy.html /zh-Hant/privacy-policy 301
+/ja/index.html /ja/ 301
+/ja/help.html /ja/help 301
+/ja/privacy-policy.html /ja/privacy-policy 301
+/ko/index.html /ko/ 301
+/ko/help.html /ko/help 301
+/ko/privacy-policy.html /ko/privacy-policy 301
+/de-DE/index.html /de-DE/ 301
+/de-DE/help.html /de-DE/help 301
+/de-DE/privacy-policy.html /de-DE/privacy-policy 301
