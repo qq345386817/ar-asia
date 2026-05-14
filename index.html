@@ -15,14 +15,17 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://luopeike.com/ar-asia/">
-  <link rel="alternate" hreflang="en" href="https://luopeike.com/ar-asia/">
-  <link rel="alternate" hreflang="x-default" href="https://luopeike.com/ar-asia/">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="canonical" href="https://ar-asia.luopeike.com/">
+  <link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/">
+  <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/">
   <meta property="og:title" content="Little Nature - AR 3D Biological Model Field Guide">
   <meta property="og:description"
     content="Browse curated CC0-based 3D biological model records, download models on demand, and view supported models in AR.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://luopeike.com/ar-asia/">
+  <meta property="og:url" content="https://ar-asia.luopeike.com/">
   <meta property="og:site_name" content="Little Nature">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
@@ -119,6 +122,28 @@
 
     .nav-links a {
       text-decoration: none;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .language-select {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--panel), transparent 10%);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.92rem;
+      padding: 0 12px;
+    }
+
+    .language-select:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--brand), transparent 70%);
+      outline-offset: 2px;
     }
 
     .hero {
@@ -295,6 +320,16 @@
         flex-direction: column;
       }
 
+      .header-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
       .hero {
         padding-top: 34px;
       }
@@ -314,18 +349,18 @@
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://luopeike.com/ar-asia/#website",
+      "@id": "https://ar-asia.luopeike.com/#website",
       "name": "Little Nature",
-      "url": "https://luopeike.com/ar-asia/",
+      "url": "https://ar-asia.luopeike.com/",
       "inLanguage": "en"
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://luopeike.com/ar-asia/#app",
+      "@id": "https://ar-asia.luopeike.com/#app",
       "name": "Little Nature",
       "alternateName": "小小自然",
       "description": "An AR 3D biological model field guide for browsing CC0-based animal and plant model records on Apple devices.",
-      "url": "https://luopeike.com/ar-asia/",
+      "url": "https://ar-asia.luopeike.com/",
       "downloadUrl": "https://apps.apple.com/app/id6766551832",
       "sameAs": [
         "https://apps.apple.com/app/id6766551832",
@@ -341,13 +376,13 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://luopeike.com/ar-asia/#breadcrumb",
+      "@id": "https://ar-asia.luopeike.com/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Little Nature",
-          "item": "https://luopeike.com/ar-asia/"
+          "item": "https://ar-asia.luopeike.com/"
         }
       ]
     }
@@ -363,11 +398,18 @@
         <span class="brand-mark">LN</span>
         <span>Little Nature</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="help.html">Help</a>
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="https://apps.apple.com/app/id6766551832">App Store</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="help.html">Help</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+        </nav>
+        <select class="language-select" aria-label="Language" data-language-select>
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
     </header>
 
     <section class="hero">
@@ -438,6 +480,21 @@
 
     <p class="footer">Questions or feedback? Contact support at cameoshell09@gmail.com.</p>
   </main>
+  <script>
+    (() => {
+      const select = document.querySelector("[data-language-select]");
+      if (!select) return;
+      const supportedLanguages = ["en", "zh-Hans", "ja"];
+      const savedLanguage = localStorage.getItem("littleNatureSiteLanguage");
+      const currentLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : "en";
+      select.value = currentLanguage;
+      document.documentElement.lang = currentLanguage;
+      select.addEventListener("change", () => {
+        localStorage.setItem("littleNatureSiteLanguage", select.value);
+        document.documentElement.lang = select.value;
+      });
+    })();
+  </script>
 </body>
 
 </html>

@@ -14,13 +14,16 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://luopeike.com/ar-asia/privacy-policy.html">
-  <link rel="alternate" hreflang="en" href="https://luopeike.com/ar-asia/privacy-policy.html">
-  <link rel="alternate" hreflang="x-default" href="https://luopeike.com/ar-asia/privacy-policy.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="canonical" href="https://ar-asia.luopeike.com/privacy-policy.html">
+  <link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/privacy-policy.html">
+  <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/privacy-policy.html">
   <meta property="og:title" content="Little Nature Privacy Policy">
   <meta property="og:description" content="Little Nature does not require an account and does not upload your photos, camera feed, or downloaded model files.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://luopeike.com/ar-asia/privacy-policy.html">
+  <meta property="og:url" content="https://ar-asia.luopeike.com/privacy-policy.html">
   <meta property="og:site_name" content="Little Nature">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
@@ -101,6 +104,7 @@
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 16px;
       color: var(--muted);
       font-size: 0.96rem;
@@ -108,6 +112,28 @@
 
     .nav-links a {
       text-decoration: none;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .language-select {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--panel), transparent 10%);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.92rem;
+      padding: 0 12px;
+    }
+
+    .language-select:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--brand), transparent 70%);
+      outline-offset: 2px;
     }
 
     .content-card {
@@ -191,6 +217,16 @@
         flex-direction: column;
         padding-bottom: 28px;
       }
+
+      .header-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -199,32 +235,32 @@
   "@graph": [
     {
       "@type": "PrivacyPolicy",
-      "@id": "https://luopeike.com/ar-asia/privacy-policy.html#privacy-policy",
+      "@id": "https://ar-asia.luopeike.com/privacy-policy.html#privacy-policy",
       "name": "Privacy Policy - Little Nature",
       "description": "Little Nature privacy policy for camera access, local model storage, and data handling.",
-      "url": "https://luopeike.com/ar-asia/privacy-policy.html",
+      "url": "https://ar-asia.luopeike.com/privacy-policy.html",
       "dateModified": "2026-05-06",
       "publisher": {
         "@type": "Organization",
         "name": "Little Nature",
-        "url": "https://luopeike.com/ar-asia/"
+        "url": "https://ar-asia.luopeike.com/"
       }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://luopeike.com/ar-asia/privacy-policy.html#breadcrumb",
+      "@id": "https://ar-asia.luopeike.com/privacy-policy.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Little Nature",
-          "item": "https://luopeike.com/ar-asia/"
+          "item": "https://ar-asia.luopeike.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Privacy Policy",
-          "item": "https://luopeike.com/ar-asia/privacy-policy.html"
+          "item": "https://ar-asia.luopeike.com/privacy-policy.html"
         }
       ]
     }
@@ -240,11 +276,18 @@
         <span class="brand-mark">LN</span>
         <span>Little Nature</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="help.html">Help</a>
-        <a href="https://apps.apple.com/app/id6766551832">App Store</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="help.html">Help</a>
+          <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+        </nav>
+        <select class="language-select" aria-label="Language" data-language-select>
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
     </header>
 
     <article class="content-card">
@@ -314,6 +357,21 @@
       <p class="footer">For privacy questions, contact cameoshell09@gmail.com.</p>
     </article>
   </main>
+  <script>
+    (() => {
+      const select = document.querySelector("[data-language-select]");
+      if (!select) return;
+      const supportedLanguages = ["en", "zh-Hans", "ja"];
+      const savedLanguage = localStorage.getItem("littleNatureSiteLanguage");
+      const currentLanguage = supportedLanguages.includes(savedLanguage) ? savedLanguage : "en";
+      select.value = currentLanguage;
+      document.documentElement.lang = currentLanguage;
+      select.addEventListener("change", () => {
+        localStorage.setItem("littleNatureSiteLanguage", select.value);
+        document.documentElement.lang = select.value;
+      });
+    })();
+  </script>
 </body>
 
 </html>
