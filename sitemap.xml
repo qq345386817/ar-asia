@@ -1,21 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ar-asia.luopeike.com/</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://ar-asia.luopeike.com/en-US/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/index.html" />
   </url>
   <url>
-    <loc>https://ar-asia.luopeike.com/help.html</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://ar-asia.luopeike.com/zh-Hans/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/index.html" />
   </url>
   <url>
-    <loc>https://ar-asia.luopeike.com/privacy-policy.html</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://ar-asia.luopeike.com/zh-Hant/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/index.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/ja/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/index.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/ko/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/index.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/de-DE/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/index.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/en-US/help.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/help.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/zh-Hans/help.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/help.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/zh-Hant/help.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/help.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/ja/help.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/help.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/ko/help.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/help.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/de-DE/help.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/help.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/en-US/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/ja/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/ko/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+  </url>
+  <url>
+    <loc>https://ar-asia.luopeike.com/de-DE/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://ar-asia.luopeike.com/de-DE/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/privacy-policy.html" />
   </url>
 </urlset>
