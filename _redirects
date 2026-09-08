@@ -1,7 +1,9 @@
 # Cloudflare Pages redirects
 / /en-US/ 301
 /index.html /en-US/ 301
+/help /en-US/help 301
 /help.html /en-US/help 301
+/privacy-policy /en-US/privacy-policy 301
 /privacy-policy.html /en-US/privacy-policy 301
 /en-US/index.html /en-US/ 301
 /en-US/help.html /en-US/help 301

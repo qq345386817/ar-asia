@@ -196,6 +196,99 @@ CATEGORY_SLUGS = {
     "special": "special",
 }
 
+# Curated species context for the first SEO indexing trial. Facts and accepted
+# names are linked to the Kew Plants of the World Online records shown below.
+CURATED_SPECIES = {
+    "japanese-wisteria": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:525791-1",
+        "en-US": [
+            "Japanese wisteria is a woody climbing plant native to south-central and southern Japan. Kew records it as a liana of the temperate biome.",
+            "The 3D model is useful for examining the plant's climbing habit and the relationship between its foliage and hanging flower clusters from different angles.",
+        ],
+        "de-DE": [
+            "Die Japanische Glyzinie ist eine verholzende Kletterpflanze aus dem südzentralen und südlichen Japan. Kew führt sie als Liane der gemäßigten Klimazone.",
+            "Am 3D-Modell lassen sich der kletternde Wuchs sowie das Verhältnis von Laub und herabhängenden Blütentrauben aus verschiedenen Blickwinkeln betrachten.",
+        ],
+    },
+    "satsuki-azalea": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:1137397-2",
+        "en-US": [
+            "Satsuki azalea is a shrub native to western and central Honshu and Kyushu in Japan. It belongs to the heath family, Ericaceae, and grows mainly in the temperate biome.",
+            "The model provides a close view of the compact shrub form, leaves, and flowers that define this Rhododendron record.",
+        ],
+        "de-DE": [
+            "Die Satsuki-Azalee ist ein Strauch aus dem westlichen und zentralen Honshu sowie aus Kyushu in Japan. Sie gehört zu den Heidekrautgewächsen und wächst überwiegend in der gemäßigten Klimazone.",
+            "Das Modell zeigt die kompakte Strauchform, die Blätter und die Blüten dieses Rhododendron-Eintrags aus nächster Nähe.",
+        ],
+    },
+    "japanese-apricot": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:730000-1",
+        "en-US": [
+            "Japanese apricot, or ume, is a temperate tree native from south-central China to northern Indochina. It has a long history of cultivation in East Asia for its early flowers and fruit.",
+            "The 3D record highlights the branching form and blossom arrangement, details that are easy to compare by rotating the model.",
+        ],
+        "de-DE": [
+            "Die Japanische Aprikose, auch Ume genannt, ist ein Baum der gemäßigten Klimazone. Ihr natürliches Verbreitungsgebiet reicht vom südzentralen China bis in das nördliche Indochina; in Ostasien wird sie seit langer Zeit wegen ihrer frühen Blüte und ihrer Früchte kultiviert.",
+            "Der 3D-Eintrag hebt Wuchs, Verzweigung und Blütenanordnung hervor, die sich durch Drehen des Modells gut vergleichen lassen.",
+        ],
+    },
+    "white-spider-lily": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:65788-1",
+        "en-US": [
+            "White spider lily is an accepted hybrid native to Kyushu, Japan. Kew identifies it as a bulbous geophyte derived from Lycoris radiata and Lycoris traubii.",
+            "Its model makes the narrow, recurving flower segments and long projecting stamens easier to inspect than in a single flat photograph.",
+        ],
+        "de-DE": [
+            "Die Weiße Spinnenlilie ist eine anerkannte Hybride aus Kyushu in Japan. Kew beschreibt sie als Zwiebel-Geophyten aus Lycoris radiata und Lycoris traubii.",
+            "Im Modell lassen sich die schmalen, zurückgebogenen Blütenblätter und die weit herausragenden Staubblätter besser untersuchen als auf einem einzelnen Foto.",
+        ],
+    },
+    "siberian-lily": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:537717-1",
+        "en-US": [
+            "Siberian lily is a bulbous geophyte native from Siberia through northern China to northern and north-central Japan. Kew places it primarily in the temperate biome.",
+            "The model lets viewers compare the upright stem, leaf placement, and flower orientation without being limited to one camera angle.",
+        ],
+        "de-DE": [
+            "Die Sibirische Lilie ist ein Zwiebel-Geophyt, dessen natürliches Gebiet von Sibirien über Nordchina bis in den Norden und die nördliche Mitte Japans reicht. Kew ordnet sie vor allem der gemäßigten Klimazone zu.",
+            "Am Modell lassen sich der aufrechte Stängel, die Blattstellung und die Ausrichtung der Blüten aus frei wählbaren Perspektiven vergleichen.",
+        ],
+    },
+    "japanese-honeysuckle": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:148850-1",
+        "en-US": [
+            "Japanese honeysuckle is a climbing plant native from China through temperate East Asia, including Japan, Korea, and Taiwan. It belongs to the honeysuckle family, Caprifoliaceae.",
+            "The model emphasizes the twining growth form and the placement of paired leaves and tubular flowers along the shoots.",
+        ],
+        "de-DE": [
+            "Das Japanische Geißblatt ist eine Kletterpflanze, die von China bis in das gemäßigte Ostasien einschließlich Japan, Korea und Taiwan heimisch ist. Es gehört zu den Geißblattgewächsen.",
+            "Das Modell verdeutlicht den windenden Wuchs sowie die Anordnung der gegenständigen Blätter und röhrenförmigen Blüten an den Trieben.",
+        ],
+    },
+    "oshima-cherry": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:730291-1",
+        "en-US": [
+            "Oshima cherry is a temperate tree native to Japan's Izu Islands. It is a member of the rose family and one of the East Asian flowering cherries represented in Little Nature.",
+            "The 3D model supports close comparison of the tree's branching silhouette, foliage, and blossom distribution.",
+        ],
+        "de-DE": [
+            "Die Oshima-Kirsche ist ein Baum der gemäßigten Klimazone und auf den japanischen Izu-Inseln heimisch. Sie gehört zu den Rosengewächsen und ist eine der ostasiatischen Blütenkirschen in Little Nature.",
+            "Das 3D-Modell ermöglicht einen genauen Vergleich von Verzweigung, Laub und Verteilung der Blüten.",
+        ],
+    },
+    "taiwan-lily": {
+        "source_url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60467143-2",
+        "en-US": [
+            "Taiwan lily is a bulbous geophyte native to Taiwan. It grows as an upright, single-stemmed herb with narrow leaves and typically bears white, fragrant, horizontally oriented flowers.",
+            "The model makes the long floral tube, recurved tips, narrow leaves, and overall stem proportions available for inspection from every side.",
+        ],
+        "de-DE": [
+            "Die Taiwan-Lilie ist ein in Taiwan heimischer Zwiebel-Geophyt. Sie wächst als aufrechte, einstämmige Staude mit schmalen Blättern und trägt meist weiße, duftende, waagerecht ausgerichtete Blüten.",
+            "Am Modell können die lange Blütenröhre, die zurückgebogenen Spitzen, die schmalen Blätter und die Proportionen des Stängels von allen Seiten betrachtet werden.",
+        ],
+    },
+}
+
 
 def esc(value):
     return html.escape(str(value or ""), quote=True)
@@ -375,6 +468,19 @@ def category_description(locale, category, count):
     return f"Browse {count} Little Nature {label.lower()} model records with previews, taxonomy, file sizes, geometry, and source links."
 
 
+def category_context(locale, category):
+    if category != "special":
+        return ""
+    return {
+        "en-US": "Special is a small, handpicked collection kept separate from the main animal and plant browsing groups. It brings together distinctive moss and floral records that are especially useful for comparing form, texture, and scale in 3D.",
+        "de-DE": "Spezial ist eine kleine, handverlesene Sammlung außerhalb der zentralen Tier- und Pflanzenbereiche. Sie vereint besondere Moos- und Blütenmodelle, an denen sich Form, Textur und Maßstab in 3D gut vergleichen lassen.",
+        "ja": "「特別」は、動物・植物の主要カテゴリーとは分けて選んだ小規模なコレクションです。形、質感、スケールを3Dで比較しやすい、特徴的なコケや花のモデルをまとめています。",
+        "ko": "특별은 주요 동물 및 식물 탐색 그룹과 별도로 선별한 작은 컬렉션입니다. 형태, 질감, 크기를 3D로 비교하기 좋은 독특한 이끼와 꽃 모델을 모았습니다.",
+        "zh-Hans": "“特别”是从动物和植物主分类中单独整理的一组精选模型，收录适合在 3D 中观察形态、质感和尺度差异的苔藓与花卉资料。",
+        "zh-Hant": "「特別」是從動物和植物主分類中單獨整理的一組精選模型，收錄適合在 3D 中觀察形態、質感和尺度差異的苔蘚與花卉資料。",
+    }[locale]
+
+
 def model_notes(locale, name, category, scientific, taxonomy, model):
     highlights = taxonomy_highlights(taxonomy)
     classification = ", ".join(f"{key}: {value}" for key, value in highlights)
@@ -382,7 +488,12 @@ def model_notes(locale, name, category, scientific, taxonomy, model):
         classification = LOCALES[locale]["none"]
     faces = format_number(model.get("face_count"))
     vertices = format_number(model.get("vertex_count"))
+    curated = CURATED_SPECIES.get(slug_for(model), {}).get(locale)
     if locale == "de-DE":
+        if curated:
+            return curated + [
+                f"Der USDZ-Datensatz umfasst {faces} Flächen und {vertices} Eckpunkte und ist für die On-Demand-Nutzung in der App optimiert.",
+            ]
         return [
             f"{name} ist in Little Nature als {category}-Modell katalogisiert. Der Eintrag verbindet lokale Namen, verfügbare wissenschaftliche Benennung und Taxonomie mit einer CC0-basierten 3D-Quelle.",
             f"Wichtige Klassifikationsdaten: {classification}.",
@@ -411,6 +522,10 @@ def model_notes(locale, name, category, scientific, taxonomy, model):
             f"{name} 在小小自然中歸入{category}模型。頁面把本地化名稱、可用學名、分類階元和 CC0 3D 來源放在一起，方便檢索和核對。",
             f"主要分類資訊：{classification}。",
             f"這個 USDZ 模型包含 {faces} 個面和 {vertices} 個頂點，可在 App 內按需下載並查看。",
+        ]
+    if curated:
+        return curated + [
+            f"The USDZ asset contains {faces} faces and {vertices} vertices and is designed for on-demand viewing in the app.",
         ]
     return [
         f"{name} is cataloged in Little Nature as a {category.lower()} model. The record connects localized names, available scientific naming, taxonomy, and a CC0-based 3D source.",
@@ -445,8 +560,46 @@ def section_label(locale, key):
             "zh-Hans": "全部模型",
             "zh-Hant": "全部模型",
         },
+        "related_models": {
+            "en-US": "Related Models",
+            "de-DE": "Ähnliche Modelle",
+            "ja": "関連モデル",
+            "ko": "관련 모델",
+            "zh-Hans": "相关模型",
+            "zh-Hant": "相關模型",
+        },
+        "species_reference": {
+            "en-US": "Species reference",
+            "de-DE": "Artenreferenz",
+            "ja": "種の参考資料",
+            "ko": "종 참고 자료",
+            "zh-Hans": "物种参考资料",
+            "zh-Hant": "物種參考資料",
+        },
     }
     return labels[key][locale]
+
+
+def taxonomy_value(model, rank):
+    return dict(parse_taxonomy(model.get("taxonomic_info_en") or "")).get(rank, "")
+
+
+def related_models_for(model, all_models, limit=3):
+    family = taxonomy_value(model, "Family")
+    genus = taxonomy_value(model, "Genus")
+    candidates = []
+    for candidate in all_models:
+        if candidate is model:
+            continue
+        score = 0
+        if genus and taxonomy_value(candidate, "Genus") == genus:
+            score += 4
+        if family and taxonomy_value(candidate, "Family") == family:
+            score += 2
+        if candidate.get("category") == model.get("category"):
+            score += 1
+        candidates.append((-score, name_for(candidate, "en-US"), candidate))
+    return [candidate for _, _, candidate in sorted(candidates)[:limit]]
 
 
 def breadcrumb_schema(locale, items):
@@ -481,7 +634,7 @@ def item_list_schema(models, locale, base_url):
     }
 
 
-def render_page(model, locale):
+def render_page(model, locale, all_models):
     spec = LOCALES[locale]
     slug = slug_for(model)
     name = name_for(model, locale)
@@ -497,6 +650,17 @@ def render_page(model, locale):
     animation = spec["available"] if model.get("has_animation") else spec["none"]
     notes = model_notes(locale, name, category, scientific, taxonomy, model)
     notes_html = "\n".join(f"        <p>{esc(note)}</p>" for note in notes)
+    profile = CURATED_SPECIES.get(slug)
+    reference_url = profile.get("source_url") if profile else ""
+    reference_html = ""
+    if reference_url:
+        reference_html = (
+            f'        <p><a href="{esc(reference_url)}">'
+            f'{esc(section_label(locale, "species_reference"))}: '
+            "Plants of the World Online, Kew Science</a></p>"
+        )
+    related = related_models_for(model, all_models)
+    related_html = render_model_cards(related, locale, image_prefix="../../../model-images/")
     breadcrumb_items = [
         (spec["home"], f"{SITE}/{locale}/"),
         (spec["models"], model_index_url(locale)),
@@ -523,7 +687,7 @@ def render_page(model, locale):
                 "fileFormat": "USDZ",
                 "license": "https://creativecommons.org/publicdomain/zero/1.0/",
                 "isPartOf": {"@id": f"{SITE}/#app"},
-                "sameAs": [model.get("sketchfab_url") or SKETCHFAB_SOURCE_URL],
+                "sameAs": [value for value in [model.get("sketchfab_url") or SKETCHFAB_SOURCE_URL, reference_url] if value],
                 "keywords": [category, "3D model", "CC0", "Little Nature", english_name],
             },
             breadcrumb_schema(locale, breadcrumb_items),
@@ -589,6 +753,13 @@ def render_page(model, locale):
       <section class="section">
         <h2>{esc(section_label(locale, "species_notes"))}</h2>
 {notes_html}
+{reference_html}
+      </section>
+      <section class="section related-models">
+        <h2>{esc(section_label(locale, "related_models"))}</h2>
+        <div class="model-list">
+{related_html}
+        </div>
       </section>
       <section class="section">
         <h2>{esc(spec["source"])}</h2>
@@ -775,6 +946,8 @@ def render_category_page(all_models, locale, category):
     category_label = spec["category_labels"][category]
     title = category_title(locale, category)
     description = category_description(locale, category, len(models))
+    context = category_context(locale, category)
+    context_html = f"      <p>{esc(context)}</p>" if context else ""
     slug = CATEGORY_SLUGS[category]
     schema = {
         "@context": "https://schema.org",
@@ -854,6 +1027,7 @@ def render_category_page(all_models, locale, category):
       <p class="eyebrow">Little Nature / {esc(spec["models"])}</p>
       <h1>{esc(category_label)}</h1>
       <p class="lead">{esc(description)}</p>
+{context_html}
       {category_links(locale, prefix="../../../")}
       <div class="model-list">
 {render_model_cards(models, locale, image_prefix="../../../model-images/")}
@@ -938,7 +1112,7 @@ def main():
             slug = slug_for(model)
             target_dir = models_root / slug
             target_dir.mkdir(parents=True, exist_ok=True)
-            (target_dir / "index.html").write_text(render_page(model, locale), encoding="utf-8")
+            (target_dir / "index.html").write_text(render_page(model, locale, models), encoding="utf-8")
     copy_images(models)
     generate_sitemap(models)
     print(f"Generated {len(models) * len(LOCALES)} model pages.")
