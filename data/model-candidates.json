@@ -1,0 +1,110 @@
+{
+  "verified_at": "2026-10-09",
+  "source": "Sketchfab public API; licenses verified per model, not inferred from titles",
+  "models": [
+    {
+      "id": "51e0cc7840c54790bfd674d70dfb6bab",
+      "source_name": "CC0 アリアケギバチ Ariake Stream Catfis, Animation",
+      "topic": "animation",
+      "source_url": "https://sketchfab.com/3d-models/51e0cc7840c54790bfd674d70dfb6bab",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n  \nAnimalia 動物界  \n　Chordata 脊索動物門  \n　　Osteichthyes 硬骨魚綱  \n　　　Siluriformes ナマズ目  \n　　　　Bagridae ギギ科  \n　　　　　Tachysurus ギバチ属  \n　　　　　　Tachysurus aurantiacus アリアケギバチ",
+      "faces": 28610,
+      "vertices": 14305,
+      "animation_count": 1,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "e97f063a09ff4d9da06fc5183008e2c9",
+      "source_name": "CC0 オニヤンマ ♀ Golden-ringed Dragonfly",
+      "topic": "dragonfly",
+      "source_url": "https://sketchfab.com/3d-models/e97f063a09ff4d9da06fc5183008e2c9",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n\n  \nAnimalia 動物界  \n　Arthropoda 節足動物門  \n　　Insecta 昆虫綱  \n　　　Odonata トンボ目  \n　　　　Cordulegastridae オニヤンマ科  \n　　　　　Anotogaster オニヤンマ属  \n　　　　　　Anotogaster sieboldii オニヤンマ  \n  \nトンボ 蜻蛉",
+      "faces": 275673,
+      "vertices": 138577,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "eccb69c46a574d97ba0d755ed5a8b9a7",
+      "source_name": "CC0 ハラビロカマキリ ♀ Asian Mantis, H. patellifera",
+      "topic": "mantis",
+      "source_url": "https://sketchfab.com/3d-models/eccb69c46a574d97ba0d755ed5a8b9a7",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n\n  \nAnimalia 動物界  \n　Arthropoda 節足動物門  \n　　Insecta 昆虫綱  \n　　　Mantodea カマキリ目  \n　　　　Mantidae カマキリ科  \n　　　　　Hierodula ハラビロカマキリ属  \n　　　　　　Hierodula patellifera ハラビロカマキリ",
+      "faces": 282732,
+      "vertices": 139584,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "e821b05809e54ab18d53b51de529666e",
+      "source_name": "CC0 ミヤマクワガタ ♂ Mountain Stag Beetle",
+      "topic": "stag beetle",
+      "source_url": "https://sketchfab.com/3d-models/e821b05809e54ab18d53b51de529666e",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n\n  \nAnimalia 動物界  \n　Arthropoda 節足動物門  \n　　Insecta 昆虫綱  \n　　　Coleoptera 甲虫目・コウチュウ目  \n　　　　Lucanidae クワガタムシ科  \n　　　　　Lucanus ミヤマクワガタ属  \n　　　　　　Lucanus maculifemoratus maculifemoratus ミヤマクワガタ  \n  \nクワガタムシ クワガタ",
+      "faces": 240407,
+      "vertices": 120323,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "8f44452b86964f849cbd361c357b8587",
+      "source_name": "CC0 ツシマサンショウウオ ♀ Tsuhima Salamander",
+      "topic": "salamander",
+      "source_url": "https://sketchfab.com/3d-models/8f44452b86964f849cbd361c357b8587",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n\n  \nAnimalia 動物界  \n　Chordata 脊索動物門  \n　　Amphibia 両生綱  \n　　　Caudata 有尾目  \n　　　　Hynobiidae サンショウウオ科  \n　　　　　Hynobius サンショウウオ属  \n　　　　　　Hynobius tsuensis ツシマサンショウウオ  \n  \n両生類 山椒魚",
+      "faces": 363642,
+      "vertices": 181982,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "f0e348fa1b694fc5b49f990d8f1e3324",
+      "source_name": "CC0 ヒガシニホンアマガエル 🐸 Japanese Eastern Tree Frog",
+      "topic": "tree frog",
+      "source_url": "https://sketchfab.com/3d-models/f0e348fa1b694fc5b49f990d8f1e3324",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n  \n\n  \nAnimalia 動物界  \n　Chordata 脊索動物門  \n　　Amphibia 両生綱  \n　　　Anura カエル目  \n　　　　Hylidae アマガエル科  \n　　　　　Dryophytes アマガエル属  \n　　　　　　Dryophytes leopardus ヒガシニホンアマガエル  \n  \n両生類 カエル 蛙",
+      "faces": 300655,
+      "vertices": 150527,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "0f6de63d38c1410983b5a6a5c43fb8ea",
+      "source_name": "CC0 フナ類 🐟 Common Goldfish, Carassius auratus",
+      "topic": "goldfish",
+      "source_url": "https://sketchfab.com/3d-models/0f6de63d38c1410983b5a6a5c43fb8ea",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n山形盆地．ギンブナ？ キンブナ？ ナガブナ？ \n  \nAnimalia 動物界  \n　Chordata 脊索動物門  \n　　Osteichthyes 硬骨魚綱  \n　　　Cypriniformes コイ目  \n　　　　Cyprinidae コイ科  \n　　　　　Carassius フナ属  \n　　　　　　Carassius auratus フナ類 フナ類  \n  \n淡水魚 魚類 フナ ふな 銀鮒",
+      "faces": 337248,
+      "vertices": 168738,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    },
+    {
+      "id": "1c6af8acf9a7444a97632d8c973d7cc4",
+      "source_name": "CC0 ケスジヤドカリ Mediterranean Hermit Crab",
+      "topic": "hermit crab",
+      "source_url": "https://sketchfab.com/3d-models/1c6af8acf9a7444a97632d8c973d7cc4",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_description": "License: **CC0**  \n\n  \nAnimalia 動物界  \n　Arthropoda 節足動物門  \n　　Crustacea 甲殻綱  \n　　　Decapoda 十脚目・エビ目  \n　　　　Diogenidae ヤドカリ科  \n　　　　　Dardanus ヤドカリ属  \n　　　　　　Dardanus arrosor ケスジヤドカリ ヨコスジヤドカリ  \n  \n甲殻類 ヤドカリ",
+      "faces": 736332,
+      "vertices": 506472,
+      "animation_count": 0,
+      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+    }
+  ]
+}

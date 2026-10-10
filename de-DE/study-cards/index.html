@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natur-Lernkarten | Little Nature</title>
+  <meta name="description" content="Bildkarten mit Tieren und Pflanzen für Naturunterricht, Zuordnungsspiele und eigenes Lernen.">
+  <meta name="robots" content="index, follow">
+  <meta name="apple-itunes-app" content="app-id=6766551832">
+  <link rel="canonical" href="https://ar-asia.luopeike.com/de-DE/study-cards/">
+  <link rel="alternate" hreflang="en-US" href="https://ar-asia.luopeike.com/en-US/study-cards/">
+<link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/study-cards/">
+<link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/study-cards/">
+<link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/study-cards/">
+<link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/study-cards/">
+<link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/study-cards/">
+<link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/study-cards/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/experience.css">
+  <meta property="og:title" content="Natur-Lernkarten | Little Nature">
+  <meta property="og:description" content="Bildkarten mit Tieren und Pflanzen für Naturunterricht, Zuordnungsspiele und eigenes Lernen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ar-asia.luopeike.com/de-DE/study-cards/">
+  <meta property="og:image" content="https://ar-asia.luopeike.com/app-icon.png">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Natur-Lernkarten","url":"https://ar-asia.luopeike.com/de-DE/study-cards/","description":"Bildkarten mit Tieren und Pflanzen für Naturunterricht, Zuordnungsspiele und eigenes Lernen.","applicationCategory":"EducationalApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"inLanguage":"de"}</script>
+</head>
+<body class="experience-site"><main class="site-shell experience-shell">
+    <header class="site-header">
+      <a class="brand" href="/de-DE/"><img src="/favicon-64.png" alt="" width="36" height="36"><span>Little Nature</span></a>
+      <div class="header-actions">
+        <nav class="nav-links" aria-label="Modelle">
+          <a href="/de-DE/models/">Modelle</a>
+          <a class="study-link" href="/de-DE/study-cards/"><i data-lucide="book-open"></i>Lernkarten<span class="selection-badge" data-selection-count hidden>0</span></a>
+          <a href="/de-DE/help">Hilfe</a>
+        </nav>
+        <select class="language-select" aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/en-US/study-cards/">English</option><option value="/de-DE/study-cards/" selected>Deutsch</option><option value="/ja/study-cards/">日本語</option><option value="/ko/study-cards/">한국어</option><option value="/zh-Hans/study-cards/">简体中文</option><option value="/zh-Hant/study-cards/">繁體中文</option></select>
+      </div>
+    </header>
+    <section class="catalog-intro"><div><h1>Natur-Lernkarten</h1><p>Bildkarten mit Tieren und Pflanzen für Naturunterricht, Zuordnungsspiele und eigenes Lernen.</p></div></section>
+    <section class="study-workspace">
+      <div class="study-toolbar">
+        <label>Papier<select id="paper-size"><option value="A4">A4</option><option value="Letter">Letter</option></select></label>
+        <label>Kartensatz<select id="card-layout"><option value="named">Bild &amp; Name</option><option value="matching">Bilder + passende Namen</option></select></label>
+        <label class="scientific-toggle"><input type="checkbox" id="scientific-names" checked>Wissenschaftliche Namen</label>
+        <button class="button" id="print-cards" type="button"><i data-lucide="printer"></i>Karten drucken</button>
+      </div>
+      <div class="selection-toolbar"><p id="study-count" role="status"></p><button class="text-button" id="select-featured" type="button">Ausgewählte Modelle wählen</button><label class="sr-only" for="study-theme">Thema</label><select id="study-theme"><option value="">Thema</option><option value="motion">Modelle in Bewegung</option><option value="small-creatures">Kleine Lebewesen</option><option value="pond-life">Leben am Wasser</option><option value="flowers">Blüten aus der Nähe</option></select><button class="text-button" id="clear-cards" type="button"><i data-lucide="x"></i>Auswahl löschen</button></div>
+      <div class="study-preview" id="study-preview" aria-label="Druckvorschau"></div>
+      <div class="empty-state" id="study-empty" hidden><h2>Keine Karten ausgewählt</h2><a class="button secondary" href="/de-DE/models/">Modelle auswählen</a></div>
+    </section>
+    <section class="catalog-section"><div class="section-heading"><h2>Modelle auswählen</h2></div>
+    <form class="catalog-toolbar" role="search">
+      <label class="search-field"><i data-lucide="search"></i><span class="sr-only">Suche</span><input id="model-search" type="search" name="q" autocomplete="off" placeholder="Name oder wissenschaftlicher Name"></label>
+      <label class="filter-field"><span class="sr-only">Kategorie</span><select id="category-filter"><option value="">Alle Modelle</option><option value="animal">Tier</option><option value="plant">Pflanze</option><option value="special">Spezial</option></select></label>
+      <label class="filter-field"><span class="sr-only">Thema</span><select id="theme-filter"><option value="">Alle Themen</option><option value="motion">Modelle in Bewegung</option><option value="small-creatures">Kleine Lebewesen</option><option value="pond-life">Leben am Wasser</option><option value="flowers">Blüten aus der Nähe</option></select></label>
+      <label class="animation-filter"><input id="animated-filter" type="checkbox"><span>Animierte Modelle</span></label>
+    </form>
+      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+      <div class="specimen-grid">
+      <article class="specimen-tile" data-model-id="f5e6f5a985ea4fc2a14ee0b4b37572b5">
+        <a class="specimen-link" href="/de-DE/models/sakura-cherry-blossom/">
+          <div class="specimen-photo"><img src="/model-images/sakura_cherry_blossom_preview.jpeg" alt="Somei-Yoshino-Kirsche — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Somei-Yoshino-Kirsche</h3><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="f5e6f5a985ea4fc2a14ee0b4b37572b5" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Somei-Yoshino-Kirsche"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="3595e743a5b64d8699fac6dcf4af3f4f">
+        <a class="specimen-link" href="/de-DE/models/red-spider-lily/">
+          <div class="specimen-photo"><img src="/model-images/red_spider_lily_preview.jpeg" alt="Rote Spinnenlilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Rote Spinnenlilie</h3><span class="specimen-scientific">Lycoris radiata</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="3595e743a5b64d8699fac6dcf4af3f4f" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Rote Spinnenlilie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="d69e1be5895f40e484f0db472a721c2f">
+        <a class="specimen-link" href="/de-DE/models/indian-lotus/">
+          <div class="specimen-photo"><img src="/model-images/indian_lotus_preview.jpeg" alt="Indischer Lotus — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Indischer Lotus</h3><span class="specimen-scientific">Nelumbo nucifera</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="d69e1be5895f40e484f0db472a721c2f" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Indischer Lotus"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="a9c23391171c4e1abd859b05887e00af">
+        <a class="specimen-link" href="/de-DE/models/forest-green-tree-frog/">
+          <div class="specimen-photo"><img src="/model-images/forest_green_tree_frog_preview.jpeg" alt="Japanischer Waldlaubfrosch — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Waldlaubfrosch</h3><span class="specimen-scientific">Rhacophorus arboreus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="a9c23391171c4e1abd859b05887e00af" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Waldlaubfrosch"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="769234ce5f6c49ab89e51aedcc0eed4c">
+        <a class="specimen-link" href="/de-DE/models/satsuki-azalea/">
+          <div class="specimen-photo"><img src="/model-images/satsuki_azalea_preview.jpeg" alt="Satsuki-Azalee — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Satsuki-Azalee</h3><span class="specimen-scientific">Rhododendron indicum</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="769234ce5f6c49ab89e51aedcc0eed4c" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Satsuki-Azalee"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="45874734e4a64fc6938b3d58b50fd1e9">
+        <a class="specimen-link" href="/de-DE/models/japanese-apricot/">
+          <div class="specimen-photo"><img src="/model-images/japanese_apricot_preview.jpeg" alt="Japanische Aprikose / Ume — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Aprikose / Ume</h3><span class="specimen-scientific">Prunus mume</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="45874734e4a64fc6938b3d58b50fd1e9" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Aprikose / Ume"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="3f54b0670e9c49d79a0d19371b03baca">
+        <a class="specimen-link" href="/de-DE/models/tsukushi-rose/">
+          <div class="specimen-photo"><img src="/model-images/tsukushi_rose_preview.jpeg" alt="Tsukushi-Rose — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Tsukushi-Rose</h3><span class="specimen-scientific">Rosa multiflora var</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="3f54b0670e9c49d79a0d19371b03baca" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Tsukushi-Rose"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="abc1bba2bdac40d0acff87d52a3aa0a7">
+        <a class="specimen-link" href="/de-DE/models/rip-my-friend-lily/">
+          <div class="specimen-photo"><img src="/model-images/rip_my_friend_lily_preview.jpeg" alt="Gedenklilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Gedenklilie</h3><span class="specimen-scientific">Lilium cv</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="abc1bba2bdac40d0acff87d52a3aa0a7" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Gedenklilie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="8992b6b94b094a069930104a32d5e9f5">
+        <a class="specimen-link" href="/de-DE/models/hibiscus-red/">
+          <div class="specimen-photo"><img src="/model-images/hibiscus_red_preview.jpeg" alt="Roter Hibiskus — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Roter Hibiskus</h3><span class="specimen-scientific">Hibiscus cv</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="8992b6b94b094a069930104a32d5e9f5" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Roter Hibiskus"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b1d89a4c913c4ca192533bbca8a4d448">
+        <a class="specimen-link" href="/de-DE/models/japanese-wisteria/">
+          <div class="specimen-photo"><img src="/model-images/japanese_wisteria_preview.jpeg" alt="Japanische Glyzinie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Glyzinie</h3><span class="specimen-scientific">Wisteria floribunda</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b1d89a4c913c4ca192533bbca8a4d448" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Glyzinie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="f9c1f7e3f373491fbf01adf94ec8169e">
+        <a class="specimen-link" href="/de-DE/models/japanese-giant-hornet/">
+          <div class="specimen-photo"><img src="/model-images/japanese_giant_hornet_preview.jpeg" alt="Japanische Riesenhornisse — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Riesenhornisse</h3><span class="specimen-scientific">Vespa mandarinia japonica</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="f9c1f7e3f373491fbf01adf94ec8169e" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Riesenhornisse"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="acf183a0a0214b58b86b6ad2eeb2eefb">
+        <a class="specimen-link" href="/de-DE/models/long-arm-octopus/">
+          <div class="specimen-photo"><img src="/model-images/long_arm_octopus_preview.jpeg" alt="Langarm-Oktopus — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Langarm-Oktopus</h3><span class="specimen-scientific">Octopus minor</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="acf183a0a0214b58b86b6ad2eeb2eefb" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Langarm-Oktopus"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="2f5a16ad05db49bb83a9777031f9a530">
+        <a class="specimen-link" href="/de-DE/models/yamatsutsuji-azalea/">
+          <div class="specimen-photo"><img src="/model-images/yamatsutsuji_azalea_preview.jpeg" alt="Azalee — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Azalee</h3><span class="specimen-scientific">Rhododendron sp</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="2f5a16ad05db49bb83a9777031f9a530" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Azalee"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="2b2381a6a4bc4a68ac7449fbfb96df51">
+        <a class="specimen-link" href="/de-DE/models/japanese-crayfish/">
+          <div class="specimen-photo"><img src="/model-images/japanese_crayfish_preview.jpeg" alt="Japanischer Flusskrebs — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Flusskrebs</h3><span class="specimen-scientific">Cambaroides japonicus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="2b2381a6a4bc4a68ac7449fbfb96df51" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Flusskrebs"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="e7830f486a0248b6b894f3e7a63b8c16">
+        <a class="specimen-link" href="/de-DE/models/water-lily/">
+          <div class="specimen-photo"><img src="/model-images/water_lily_preview.jpeg" alt="Seerose — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Seerose</h3><span class="specimen-scientific">Nymphaea cv</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="e7830f486a0248b6b894f3e7a63b8c16" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Seerose"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="0d4dac6d670c46a38154bcc205cb9094">
+        <a class="specimen-link" href="/de-DE/models/deep-autumn/">
+          <div class="specimen-photo"><img src="/model-images/deep_autumn_preview.jpeg" alt="Spätherbst-Gedenkmodell — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Spätherbst-Gedenkmodell</h3><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="0d4dac6d670c46a38154bcc205cb9094" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Spätherbst-Gedenkmodell"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="9fb298fac2da414fab7b8cf2f7e5fa82">
+        <a class="specimen-link" href="/de-DE/models/japanese-mountain-cherry/">
+          <div class="specimen-photo"><img src="/model-images/japanese_mountain_cherry_preview.jpeg" alt="Japanische Bergkirsche — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Bergkirsche</h3><span class="specimen-scientific">Prunus jamasakura</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="9fb298fac2da414fab7b8cf2f7e5fa82" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Bergkirsche"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="8ec4811184f34fc5b6699eca34008f68">
+        <a class="specimen-link" href="/de-DE/models/japanese-grass-lizard/">
+          <div class="specimen-photo"><img src="/model-images/japanese_grass_lizard_preview.jpeg" alt="Japanische Gras-Eidechse — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Gras-Eidechse</h3><span class="specimen-scientific">Takydromus tachydromoides</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="8ec4811184f34fc5b6699eca34008f68" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Gras-Eidechse"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="8605a27d76634bbdafe8a934e2d3e84d">
+        <a class="specimen-link" href="/de-DE/models/yellow-chrysanthemum/">
+          <div class="specimen-photo"><img src="/model-images/yellow_chrysanthemum_preview.jpeg" alt="Gelbe Chrysantheme — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Gelbe Chrysantheme</h3><span class="specimen-scientific">Chrysanthemum cv</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="8605a27d76634bbdafe8a934e2d3e84d" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Gelbe Chrysantheme"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="14111c88dc994402a6318f6c1ba1b6f6">
+        <a class="specimen-link" href="/de-DE/models/hirsute-raspberry/">
+          <div class="specimen-photo"><img src="/model-images/hirsute_raspberry_preview.jpeg" alt="Behaarte Himbeere — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Behaarte Himbeere</h3><span class="specimen-scientific">Rubus hirsutus</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="14111c88dc994402a6318f6c1ba1b6f6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Behaarte Himbeere"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="4915ee5a2d9f46af9a24d3b8da505d00">
+        <a class="specimen-link" href="/de-DE/models/asian-paddle-crab/">
+          <div class="specimen-photo"><img src="/model-images/asian_paddle_crab_preview.jpeg" alt="Asiatische Paddelkrabbe — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Asiatische Paddelkrabbe</h3><span class="specimen-scientific">Charybdis japonica</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="4915ee5a2d9f46af9a24d3b8da505d00" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Asiatische Paddelkrabbe"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="701f33ba0db84058900232bf7ee91fec">
+        <a class="specimen-link" href="/de-DE/models/luna-lionfish/">
+          <div class="specimen-photo"><img src="/model-images/luna_lionfish_preview.jpeg" alt="Luna-Feuerfisch — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Luna-Feuerfisch</h3><span class="specimen-scientific">Pterois lunulata</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="701f33ba0db84058900232bf7ee91fec" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Luna-Feuerfisch"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="71f93eee4194460aafa5a9555b6099ef">
+        <a class="specimen-link" href="/de-DE/models/spotless-smooth-hound/">
+          <div class="specimen-photo"><img src="/model-images/spotless_smooth_hound_preview.jpeg" alt="Grauer Glatthai — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Grauer Glatthai</h3><span class="specimen-scientific">Mustelus griseus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="71f93eee4194460aafa5a9555b6099ef" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Grauer Glatthai"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b11d9f411194426bb16883aed176e4e6">
+        <a class="specimen-link" href="/de-DE/models/tiger-lily/">
+          <div class="specimen-photo"><img src="/model-images/tiger_lily_preview.jpeg" alt="Tigerlilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Tigerlilie</h3><span class="specimen-scientific">Lilium leichtlinii f</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b11d9f411194426bb16883aed176e4e6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Tigerlilie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="0e421206982f460ab58908a5b3880448">
+        <a class="specimen-link" href="/de-DE/models/white-spider-lily/">
+          <div class="specimen-photo"><img src="/model-images/white_spider_lily_preview.jpeg" alt="Weiße Spinnenlilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Weiße Spinnenlilie</h3><span class="specimen-scientific">Lycoris x albiflora</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="0e421206982f460ab58908a5b3880448" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Weiße Spinnenlilie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="6e08a55e2284409682fea1f89e5afb54">
+        <a class="specimen-link" href="/de-DE/models/japanese-honeysuckle/">
+          <div class="specimen-photo"><img src="/model-images/japanese_honeysuckle_preview.jpeg" alt="Japanisches Geißblatt — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanisches Geißblatt</h3><span class="specimen-scientific">Lonicera japonica</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="6e08a55e2284409682fea1f89e5afb54" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanisches Geißblatt"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="146ae65a1e134a45811acaefa3f1e27a">
+        <a class="specimen-link" href="/de-DE/models/oshima-cherry/">
+          <div class="specimen-photo"><img src="/model-images/oshima_cherry_preview.jpeg" alt="Oshima-Kirsche — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Oshima-Kirsche</h3><span class="specimen-scientific">Prunus speciosa</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="146ae65a1e134a45811acaefa3f1e27a" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Oshima-Kirsche"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="4a8be7619bc0468894a19b8f2464947f">
+        <a class="specimen-link" href="/de-DE/models/hydrangea/">
+          <div class="specimen-photo"><img src="/model-images/hydrangea_preview.jpeg" alt="Hortensie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Hortensie</h3><span class="specimen-scientific">Hydrangea macrophylla f</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="4a8be7619bc0468894a19b8f2464947f" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Hortensie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="15f772d7febd45a48d3cecf1cef6fe10">
+        <a class="specimen-link" href="/de-DE/models/sakishima-tree-lizard/">
+          <div class="specimen-photo"><img src="/model-images/sakishima_tree_lizard_preview.jpeg" alt="Sakishima-Baumeidechse — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Sakishima-Baumeidechse</h3><span class="specimen-scientific">Diploderma polygonatum ishigakiense</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="15f772d7febd45a48d3cecf1cef6fe10" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Sakishima-Baumeidechse"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="cb851e66c8674117b8c9ee13da686584">
+        <a class="specimen-link" href="/de-DE/models/siberian-lily/">
+          <div class="specimen-photo"><img src="/model-images/siberian_lily_preview.jpeg" alt="Sibirische Lilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Sibirische Lilie</h3><span class="specimen-scientific">Lilium pensylvanicum</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="cb851e66c8674117b8c9ee13da686584" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Sibirische Lilie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="4b71e4fd4250439f85c1aebe01eb945f">
+        <a class="specimen-link" href="/de-DE/models/hirado-azalea/">
+          <div class="specimen-photo"><img src="/model-images/hirado_azalea_preview.jpeg" alt="Hirado-Azalee — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Hirado-Azalee</h3><span class="specimen-scientific">Rhododendron x pulchrum</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="4b71e4fd4250439f85c1aebe01eb945f" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Hirado-Azalee"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="d9e174d623124d2aa23122683018f6e6">
+        <a class="specimen-link" href="/de-DE/models/japanese-silver-tree/">
+          <div class="specimen-photo"><img src="/model-images/japanese_silver_tree_preview.jpeg" alt="Japanischer Silberbaum — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Silberbaum</h3><span class="specimen-scientific">Neolitsea sericea</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="d9e174d623124d2aa23122683018f6e6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Silberbaum"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="7bd37dfa1f0246e5a60749a007082a82">
+        <a class="specimen-link" href="/de-DE/models/taiwan-lily/">
+          <div class="specimen-photo"><img src="/model-images/taiwan_lily_preview.jpeg" alt="Taiwan-Lilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Taiwan-Lilie</h3><span class="specimen-scientific">Lilium formosanum</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="7bd37dfa1f0246e5a60749a007082a82" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Taiwan-Lilie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="ea300256d9dc460b871dee878080fe7c">
+        <a class="specimen-link" href="/de-DE/models/common-tiger-butterfly/">
+          <div class="specimen-photo"><img src="/model-images/common_tiger_butterfly_preview.jpeg" alt="Gewöhnlicher Tigerfalter — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Gewöhnlicher Tigerfalter</h3><span class="specimen-scientific">Salatura genutia</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="ea300256d9dc460b871dee878080fe7c" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Gewöhnlicher Tigerfalter"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="263e196645fd420d830a06462e906d08">
+        <a class="specimen-link" href="/de-DE/models/aburazemi-cicada/">
+          <div class="specimen-photo"><img src="/model-images/aburazemi_cicada_preview.jpeg" alt="Aburazemi-Zikade — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Aburazemi-Zikade</h3><span class="specimen-scientific">Graptopsaltria nigrofuscata</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="263e196645fd420d830a06462e906d08" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Aburazemi-Zikade"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="8f8d1c0305d04637b7abaf4cb54d25a8">
+        <a class="specimen-link" href="/de-DE/models/chinese-red-headed-centipede/">
+          <div class="specimen-photo"><img src="/model-images/chinese_red_headed_centipede_preview.jpeg" alt="Chinesischer Rotkopf-Hundertfüßer — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Chinesischer Rotkopf-Hundertfüßer</h3><span class="specimen-scientific">Scolopendra mutilans</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="8f8d1c0305d04637b7abaf4cb54d25a8" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Chinesischer Rotkopf-Hundertfüßer"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="48dc404d5d444769955148c893dbb9ad">
+        <a class="specimen-link" href="/de-DE/models/japanese-freshwater-crab/">
+          <div class="specimen-photo"><img src="/model-images/japanese_freshwater_crab_preview.jpeg" alt="Japanische Süßwasserkrabbe — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Süßwasserkrabbe</h3><span class="specimen-scientific">Geothelphusa dehaani</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="48dc404d5d444769955148c893dbb9ad" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Süßwasserkrabbe"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="ef418bf372554dc29a8b5c3f50ae3506">
+        <a class="specimen-link" href="/de-DE/models/apple-moss/">
+          <div class="specimen-photo"><img src="/model-images/apple_moss_preview.jpeg" alt="Apfelmoos — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Apfelmoos</h3><span class="specimen-scientific">Bartramia pomiformis</span><span class="specimen-kind">Spezial</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="ef418bf372554dc29a8b5c3f50ae3506" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Apfelmoos"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="2d54c54618da4b1c8c0240119299f1c6">
+        <a class="specimen-link" href="/de-DE/models/japanese-buttercup/">
+          <div class="specimen-photo"><img src="/model-images/japanese_buttercup_preview.jpeg" alt="Japanischer Hahnenfuß — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Hahnenfuß</h3><span class="specimen-scientific">Ranunculus japonicus</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="2d54c54618da4b1c8c0240119299f1c6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Hahnenfuß"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="78f35818cac442ca9a274d639c62930c">
+        <a class="specimen-link" href="/de-DE/models/camellia-sasanqua/">
+          <div class="specimen-photo"><img src="/model-images/camellia_sasanqua_preview.jpeg" alt="Sasanqua-Kamelie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Sasanqua-Kamelie</h3><span class="specimen-scientific">Camellia sasanqua</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="78f35818cac442ca9a274d639c62930c" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Sasanqua-Kamelie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="dfc2d31732174dbc82a84d3237783590">
+        <a class="specimen-link" href="/de-DE/models/red-frog-crab/">
+          <div class="specimen-photo"><img src="/model-images/red_frog_crab_preview.jpeg" alt="Rote Froschkrabbe — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Rote Froschkrabbe</h3><span class="specimen-scientific">Ranina ranina</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="dfc2d31732174dbc82a84d3237783590" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Rote Froschkrabbe"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="35559c2236d04c1a80ccbe08cae863c6">
+        <a class="specimen-link" href="/de-DE/models/japanese-freshwater-crab-lowpoly/">
+          <div class="specimen-photo"><img src="/model-images/japanese_freshwater_crab_lowpoly_preview.jpeg" alt="Japanische Süßwasserkrabbe (Low Poly) — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"><span class="animation-mark"><i data-lucide="play"></i>Animation</span></div>
+          <div class="specimen-caption"><h3>Japanische Süßwasserkrabbe (Low Poly)</h3><span class="specimen-scientific">Geothelphusa dehaani</span><span class="specimen-kind">Spezial</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="35559c2236d04c1a80ccbe08cae863c6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Süßwasserkrabbe (Low Poly)"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="c5e1e73fce7d4caf803ecd8abd0797e1">
+        <a class="specimen-link" href="/de-DE/models/beautiful-branch-moss/">
+          <div class="specimen-photo"><img src="/model-images/beautiful_branch_moss_preview.jpeg" alt="Schönes Zweigmoos — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Schönes Zweigmoos</h3><span class="specimen-scientific">Callicladium haldanianum</span><span class="specimen-kind">Spezial</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="c5e1e73fce7d4caf803ecd8abd0797e1" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Schönes Zweigmoos"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="428f55efa9734c0b8524430bb7e4c114">
+        <a class="specimen-link" href="/de-DE/models/youko-sakura/">
+          <div class="specimen-photo"><img src="/model-images/youko_sakura_preview.jpeg" alt="Yoko-Kirsche — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Yoko-Kirsche</h3><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="428f55efa9734c0b8524430bb7e4c114" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Yoko-Kirsche"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="9818500118df4542b8ffb49128006b29">
+        <a class="specimen-link" href="/de-DE/models/stock-flower/">
+          <div class="specimen-photo"><img src="/model-images/stock_flower_preview.jpeg" alt="Levkoje — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Levkoje</h3><span class="specimen-scientific">Matthiola cv</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="9818500118df4542b8ffb49128006b29" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Levkoje"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="9958ba9e986240179142d85751b3adaf">
+        <a class="specimen-link" href="/de-DE/models/nishiki-utsugi/">
+          <div class="specimen-photo"><img src="/model-images/nishiki_utsugi_preview.jpeg" alt="Nishiki-Weigelie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Nishiki-Weigelie</h3><span class="specimen-scientific">Weigela decora</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="9958ba9e986240179142d85751b3adaf" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Nishiki-Weigelie"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="04e13f6fc8304c34b7928a7c7879a39a">
+        <a class="specimen-link" href="/de-DE/models/webfoot-octopus/">
+          <div class="specimen-photo"><img src="/model-images/webfoot_octopus_preview.jpeg" alt="Kurzarm-Oktopus — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Kurzarm-Oktopus</h3><span class="specimen-scientific">Octopus ocellatus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="04e13f6fc8304c34b7928a7c7879a39a" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Kurzarm-Oktopus"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="93bc064c84ba40a39a709804760610c7">
+        <a class="specimen-link" href="/de-DE/models/japanese-giant-water-bug/">
+          <div class="specimen-photo"><img src="/model-images/japanese_giant_water_bug_preview.jpeg" alt="Japanische Riesenwasserwanze — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanische Riesenwasserwanze</h3><span class="specimen-scientific">Appasus japonicus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="93bc064c84ba40a39a709804760610c7" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Riesenwasserwanze"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="23a849e380da4f89addf0a8375b0c32f">
+        <a class="specimen-link" href="/de-DE/models/sail-fin-poacher/">
+          <div class="specimen-photo"><img src="/model-images/sail_fin_poacher_preview.jpeg" alt="Segelflossen-Panzerfisch — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Segelflossen-Panzerfisch</h3><span class="specimen-scientific">Podothecus sachi</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="23a849e380da4f89addf0a8375b0c32f" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Segelflossen-Panzerfisch"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b67fb6cbe3fa455c81373aaa9f91fa1a">
+        <a class="specimen-link" href="/de-DE/models/japanese-rhinoceros-beetle/">
+          <div class="specimen-photo"><img src="/model-images/japanese_rhinoceros_beetle_preview.jpeg" alt="Japanischer Nashornkäfer (Larve) — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Nashornkäfer (Larve)</h3><span class="specimen-scientific">Trypoxylus dichotomus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b67fb6cbe3fa455c81373aaa9f91fa1a" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Nashornkäfer (Larve)"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="320e77ebe2e049dcbb759dd79ee03a8c">
+        <a class="specimen-link" href="/de-DE/models/fishing-spider/">
+          <div class="specimen-photo"><img src="/model-images/fishing_spider_preview.jpeg" alt="Fischerspinne — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Fischerspinne</h3><span class="specimen-scientific">Dolomedes orion</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="320e77ebe2e049dcbb759dd79ee03a8c" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Fischerspinne"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="638f29eae79d40ddb0adaf6ebb8375cc">
+        <a class="specimen-link" href="/de-DE/models/reeves-pond-turtle/">
+          <div class="specimen-photo"><img src="/model-images/reeves_pond_turtle_preview.jpeg" alt="Chinesische Dreikielschildkröte — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Chinesische Dreikielschildkröte</h3><span class="specimen-scientific">Mauremys reevesii</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="638f29eae79d40ddb0adaf6ebb8375cc" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Chinesische Dreikielschildkröte"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="80ccbb2feea24f85994cfb89bce55dbf">
+        <a class="specimen-link" href="/de-DE/models/mangrove-crab/">
+          <div class="specimen-photo"><img src="/model-images/mangrove_crab_preview.jpeg" alt="Mangrovenkrabbe — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Mangrovenkrabbe</h3><span class="specimen-scientific">Scylla olivacea</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="80ccbb2feea24f85994cfb89bce55dbf" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Mangrovenkrabbe"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="0f4f583d5e3842eca1152c0bb021ec32">
+        <a class="specimen-link" href="/de-DE/models/striped-snake/">
+          <div class="specimen-photo"><img src="/model-images/striped_snake_preview.jpeg" alt="Japanische Vierstreifennatter — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"><span class="animation-mark"><i data-lucide="play"></i>Animation</span></div>
+          <div class="specimen-caption"><h3>Japanische Vierstreifennatter</h3><span class="specimen-scientific">Elaphe quadrivirgata</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="0f4f583d5e3842eca1152c0bb021ec32" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Vierstreifennatter"><i data-lucide="plus"></i></button>
+      </article></div>
+      <div class="empty-state" id="catalog-empty" hidden><h2>Keine passenden Modelle</h2><button class="button secondary" id="reset-filters" type="button">Filter zurücksetzen</button></div>
+    </section>
+    <aside class="app-band">
+      <img src="/app-icon.png" alt="" width="52" height="52" loading="lazy">
+      <div><h2>Natur für unterwegs</h2><p>Speichere Modelle auf iPhone, iPad und Mac offline. Auf unterstützten iPhones und iPads kannst du sie auch in AR entdecken.</p></div>
+      <a class="button app-store-link" data-surface="study" href="https://apps.apple.com/app/id6766551832?ct=website_de-DE_study&amp;mt=8">Little Nature laden<i data-lucide="arrow-up-right"></i></a>
+    </aside>
+    <footer class="experience-footer">
+      <span>Little Nature · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span>
+      <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com · Sketchfab</a>
+      <a href="/de-DE/privacy-policy">Datenschutz</a>
+    </footer>
+    </main><div id="print-output" class="print-only"></div><style id="print-page-size"></style>
+    <script id="experience-data" type="application/json">{"locale":"de-DE","surface":"study","copy":{"catalogTitle":"Tiere & Pflanzen in 3D","homeSubtitle":"Die Natur aus der Nähe","catalogDescription":"Entdecke Tier- und Pflanzenmodelle in 3D, sieh dir vorhandene Animationen an und stelle druckbare Natur-Lernkarten zusammen.","featured":"Ausgewählte Modelle","all":"Alle Modelle","search":"Suche","searchPlaceholder":"Name oder wissenschaftlicher Name","theme":"Thema","allThemes":"Alle Themen","animatedOnly":"Animierte Modelle","results":"{count} / {total}","studyCards":"Lernkarten","addCard":"Zu Lernkarten hinzufügen","removeCard":"Aus Lernkarten entfernen","selected":"{count} ausgewählt","clear":"Auswahl löschen","view3d":"In 3D ansehen","loading":"Modell wird geladen…","loadError":"Das 3D-Modell konnte nicht geladen werden.","retry":"Erneut versuchen","sourceViewer":"Auf Sketchfab öffnen","providerNote":"Beim Öffnen verbindet sich die interaktive Ansicht mit Sketchfab.","play":"Animation abspielen","pause":"Animation pausieren","reset":"Ansicht zurücksetzen","fullscreen":"Vollbild","imageAlt":"{name} — 3D-Modell","observe":"Genauer hinsehen","back":"Zurück zu den Modellen","source":"Quelle","license":"Lizenz","quickLook":"In AR ansehen","downloadGLB":"GLB herunterladen","noResults":"Keine passenden Modelle","resetFilters":"Filter zurücksetzen","searchAll":"Alle Modelle durchsuchen","studyTitle":"Natur-Lernkarten","studyDescription":"Bildkarten mit Tieren und Pflanzen für Naturunterricht, Zuordnungsspiele und eigenes Lernen.","paper":"Papier","layout":"Kartensatz","namedCards":"Bild & Name","matchingCards":"Bilder + passende Namen","scientificNames":"Wissenschaftliche Namen","print":"Karten drucken","selectFeatured":"Ausgewählte Modelle wählen","emptySelection":"Keine Karten ausgewählt","chooseModels":"Modelle auswählen","preview":"Druckvorschau","appTitle":"Natur für unterwegs","appBody":"Speichere Modelle auf iPhone, iPad und Mac offline. Auf unterstützten iPhones und iPads kannst du sie auch in AR entdecken.","appCta":"Little Nature laden","websitePrivacyTitle":"Nutzung dieser Website","websitePrivacy":"Die Lernkartenauswahl wird nur in diesem Browser gespeichert. Wir erfassen begrenzte eigene Nutzungsereignisse wie erfolgreiche 3D-Ladevorgänge, Animationen, Drucken und Klicks zum App Store, mit einer zufälligen Kennung der Tab-Sitzung, Sprache, Geräteklasse und festen Modell- oder Themenkennungen. Suchtexte, ausgewählte Karteninhalte, Kamerabilder und vollständige Seiten-URLs werden nicht erfasst. Sitzungskennungen werden vor der Speicherung gehasht; Ereignisse werden bis zu 90 Tage aufbewahrt. Die Statistik respektiert Global Privacy Control und Do Not Track. Beim Öffnen der Sketchfab-Ansicht wird direkt dieser Drittanbieter kontaktiert; für diese Anfragen gilt dessen Datenschutzerklärung.","themes":{"motion":{"title":"Modelle in Bewegung","description":"Zwei animierte Modelle und ihre sich verändernden Formen.","prompts":["Vergleiche dieselbe Pose von vorne und von der Seite.","Pausiere die Animation und betrachte Beine oder Körperumriss.","Die Modellanimationen messen keine echten Tierbewegungen."]},"small-creatures":{"title":"Kleine Lebewesen","description":"Käfer, Schmetterlinge, Spinnen und andere kleine Tiere aus der Nähe.","prompts":["Vergleiche Anzahl und Anordnung der Beine.","Achte auf Fühler, Flügel und Körperabschnitte.","Eine Spinne ist ein Spinnentier, kein Insekt. Vergleiche ihren Körperbau."]},"pond-life":{"title":"Leben am Wasser","description":"Frösche, Schildkröten, Flusskrebse, Krabben und blühende Wasserpflanzen.","prompts":["Vergleiche Panzer, Außenskelett und weichen Körper.","Betrachte Form und Gelenke der Gliedmaßen.","Vergleiche Blüten und Blätter von Lotus und Seerose."]},"flowers":{"title":"Blüten aus der Nähe","description":"Kirschblüten, Lilien, Lotus und andere Blütenpflanzen.","prompts":["Vergleiche Form und Symmetrie der Blütenblätter.","Betrachte die Position der Blüte am Stängel.","Vergleiche sichtbare Staubblätter und die Blütenmitte."]}}},"models":[{"id":"f5e6f5a985ea4fc2a14ee0b4b37572b5","slug":"sakura-cherry-blossom","name":"Somei-Yoshino-Kirsche","names":["Sakura Cherry Blossom","Somei-Yoshino-Kirsche","ソメイヨシノ","왕벚나무","染井吉野樱","染井吉野櫻"],"scientific":"","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":true,"themes":["flowers"],"image":"/model-images/sakura_cherry_blossom_preview.jpeg","url":"/de-DE/models/sakura-cherry-blossom/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/sakura_cherry_blossom-1717f877b448.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/sakura_cherry_blossom.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/f5e6f5a985ea4fc2a14ee0b4b37572b5"},{"id":"3595e743a5b64d8699fac6dcf4af3f4f","slug":"red-spider-lily","name":"Rote Spinnenlilie","names":["Red Spider Lily","Rote Spinnenlilie","ヒガンバナ","석산","彼岸花","彼岸花"],"scientific":"Lycoris radiata","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":["flowers"],"image":"/model-images/red_spider_lily_preview.jpeg","url":"/de-DE/models/red-spider-lily/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/red_spider_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/3595e743a5b64d8699fac6dcf4af3f4f"},{"id":"d69e1be5895f40e484f0db472a721c2f","slug":"indian-lotus","name":"Indischer Lotus","names":["Indian Lotus","Indischer Lotus","ハス","연꽃","印度莲","印度蓮"],"scientific":"Nelumbo nucifera","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":true,"themes":["pond-life","flowers"],"image":"/model-images/indian_lotus_preview.jpeg","url":"/de-DE/models/indian-lotus/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/indian_lotus-093e2103bc5a.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/indian_lotus.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/d69e1be5895f40e484f0db472a721c2f"},{"id":"a9c23391171c4e1abd859b05887e00af","slug":"forest-green-tree-frog","name":"Japanischer Waldlaubfrosch","names":["Forest Green Tree Frog","Japanischer Waldlaubfrosch","モリアオガエル","모리아오개구리","森林绿树蛙","森林綠樹蛙"],"scientific":"Rhacophorus arboreus","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/forest_green_tree_frog_preview.jpeg","url":"/de-DE/models/forest-green-tree-frog/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/forest_green_tree_frog-61a2b59d397b.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/forest_green_tree_frog.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/a9c23391171c4e1abd859b05887e00af"},{"id":"769234ce5f6c49ab89e51aedcc0eed4c","slug":"satsuki-azalea","name":"Satsuki-Azalee","names":["Satsuki Azalea","Satsuki-Azalee","サツキ","사쓰키철쭉","皋月杜鹃","皋月杜鵑"],"scientific":"Rhododendron indicum","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/satsuki_azalea_preview.jpeg","url":"/de-DE/models/satsuki-azalea/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/satsuki_azalea.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/769234ce5f6c49ab89e51aedcc0eed4c"},{"id":"45874734e4a64fc6938b3d58b50fd1e9","slug":"japanese-apricot","name":"Japanische Aprikose / Ume","names":["Japanese Apricot","Japanische Aprikose / Ume","ウメ","매실나무 / 매화","日本杏 / 梅","日本杏 / 梅"],"scientific":"Prunus mume","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":["flowers"],"image":"/model-images/japanese_apricot_preview.jpeg","url":"/de-DE/models/japanese-apricot/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_apricot.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/45874734e4a64fc6938b3d58b50fd1e9"},{"id":"3f54b0670e9c49d79a0d19371b03baca","slug":"tsukushi-rose","name":"Tsukushi-Rose","names":["Tsukushi Rose","Tsukushi-Rose","ツクシイバラ","쓰쿠시찔레","筑紫蔷薇","筑紫薔薇"],"scientific":"Rosa multiflora var","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/tsukushi_rose_preview.jpeg","url":"/de-DE/models/tsukushi-rose/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/tsukushi_rose.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/3f54b0670e9c49d79a0d19371b03baca"},{"id":"abc1bba2bdac40d0acff87d52a3aa0a7","slug":"rip-my-friend-lily","name":"Gedenklilie","names":["RIP My Friend","Gedenklilie","追悼のユリ","추모 백합","百合纪念花","百合紀念花"],"scientific":"Lilium cv","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/rip_my_friend_lily_preview.jpeg","url":"/de-DE/models/rip-my-friend-lily/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/rip_my_friend_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/abc1bba2bdac40d0acff87d52a3aa0a7"},{"id":"8992b6b94b094a069930104a32d5e9f5","slug":"hibiscus-red","name":"Roter Hibiskus","names":["Red Hibiscus","Roter Hibiskus","赤いハイビスカス","붉은 히비스커스","红色扶桑花","紅色扶桑花"],"scientific":"Hibiscus cv","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/hibiscus_red_preview.jpeg","url":"/de-DE/models/hibiscus-red/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/hibiscus_red.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/8992b6b94b094a069930104a32d5e9f5"},{"id":"b1d89a4c913c4ca192533bbca8a4d448","slug":"japanese-wisteria","name":"Japanische Glyzinie","names":["Japanese Wisteria","Japanische Glyzinie","フジ","등나무","日本紫藤","日本紫藤"],"scientific":"Wisteria floribunda","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":["flowers"],"image":"/model-images/japanese_wisteria_preview.jpeg","url":"/de-DE/models/japanese-wisteria/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_wisteria.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/b1d89a4c913c4ca192533bbca8a4d448"},{"id":"f9c1f7e3f373491fbf01adf94ec8169e","slug":"japanese-giant-hornet","name":"Japanische Riesenhornisse","names":["Japanese Giant Hornet","Japanische Riesenhornisse","オオスズメバチ","장수말벌","日本大黄蜂","日本大黃蜂"],"scientific":"Vespa mandarinia japonica","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":["small-creatures"],"image":"/model-images/japanese_giant_hornet_preview.jpeg","url":"/de-DE/models/japanese-giant-hornet/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_giant_hornet.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/f9c1f7e3f373491fbf01adf94ec8169e"},{"id":"acf183a0a0214b58b86b6ad2eeb2eefb","slug":"long-arm-octopus","name":"Langarm-Oktopus","names":["Long Arm Octopus","Langarm-Oktopus","テナガダコ","낙지","长腕章鱼","長腕章魚"],"scientific":"Octopus minor","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/long_arm_octopus_preview.jpeg","url":"/de-DE/models/long-arm-octopus/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/long_arm_octopus.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/acf183a0a0214b58b86b6ad2eeb2eefb"},{"id":"2f5a16ad05db49bb83a9777031f9a530","slug":"yamatsutsuji-azalea","name":"Azalee","names":["Azalea","Azalee","ヤマツツジ類","철쭉","山杜鹃","山杜鵑"],"scientific":"Rhododendron sp","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/yamatsutsuji_azalea_preview.jpeg","url":"/de-DE/models/yamatsutsuji-azalea/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/yamatsutsuji_azalea.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/2f5a16ad05db49bb83a9777031f9a530"},{"id":"2b2381a6a4bc4a68ac7449fbfb96df51","slug":"japanese-crayfish","name":"Japanischer Flusskrebs","names":["Japanese Crayfish","Japanischer Flusskrebs","ニホンザリガニ","일본가재","日本小龙虾","日本小龍蝦"],"scientific":"Cambaroides japonicus","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/japanese_crayfish_preview.jpeg","url":"/de-DE/models/japanese-crayfish/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/japanese_crayfish-a76ebb9dc9fd.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_crayfish.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/2b2381a6a4bc4a68ac7449fbfb96df51"},{"id":"e7830f486a0248b6b894f3e7a63b8c16","slug":"water-lily","name":"Seerose","names":["Water Lily","Seerose","スイレン","수련","睡莲","睡蓮"],"scientific":"Nymphaea cv","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":["pond-life"],"image":"/model-images/water_lily_preview.jpeg","url":"/de-DE/models/water-lily/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/water_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/e7830f486a0248b6b894f3e7a63b8c16"},{"id":"0d4dac6d670c46a38154bcc205cb9094","slug":"deep-autumn","name":"Spätherbst-Gedenkmodell","names":["Deep Autumn","Spätherbst-Gedenkmodell","深まる秋の記念モデル","깊은 가을 기념 모델","深秋纪念模型","深秋紀念模型"],"scientific":"","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/deep_autumn_preview.jpeg","url":"/de-DE/models/deep-autumn/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/deep_autumn.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/0d4dac6d670c46a38154bcc205cb9094"},{"id":"9fb298fac2da414fab7b8cf2f7e5fa82","slug":"japanese-mountain-cherry","name":"Japanische Bergkirsche","names":["Japanese Mountain Cherry","Japanische Bergkirsche","ヤマザクラ","산벚나무","山樱","山櫻"],"scientific":"Prunus jamasakura","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/japanese_mountain_cherry_preview.jpeg","url":"/de-DE/models/japanese-mountain-cherry/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_mountain_cherry.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/9fb298fac2da414fab7b8cf2f7e5fa82"},{"id":"8ec4811184f34fc5b6699eca34008f68","slug":"japanese-grass-lizard","name":"Japanische Gras-Eidechse","names":["Japanese Grass Lizard","Japanische Gras-Eidechse","ニホンカナヘビ","일본장지뱀","日本草蜥","日本草蜥"],"scientific":"Takydromus tachydromoides","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/japanese_grass_lizard_preview.jpeg","url":"/de-DE/models/japanese-grass-lizard/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_grass_lizard.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/8ec4811184f34fc5b6699eca34008f68"},{"id":"8605a27d76634bbdafe8a934e2d3e84d","slug":"yellow-chrysanthemum","name":"Gelbe Chrysantheme","names":["Chrysanthemum","Gelbe Chrysantheme","イエギク","노란 국화","黄色菊花","黃色菊花"],"scientific":"Chrysanthemum cv","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/yellow_chrysanthemum_preview.jpeg","url":"/de-DE/models/yellow-chrysanthemum/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/yellow_chrysanthemum.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/8605a27d76634bbdafe8a934e2d3e84d"},{"id":"14111c88dc994402a6318f6c1ba1b6f6","slug":"hirsute-raspberry","name":"Behaarte Himbeere","names":["Hirsute Raspberry","Behaarte Himbeere","クサイチゴ","멍석딸기","蓬蘽 / 草莓状悬钩子","蓬蘽 / 草莓狀懸鉤子"],"scientific":"Rubus hirsutus","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/hirsute_raspberry_preview.jpeg","url":"/de-DE/models/hirsute-raspberry/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/hirsute_raspberry.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/14111c88dc994402a6318f6c1ba1b6f6"},{"id":"4915ee5a2d9f46af9a24d3b8da505d00","slug":"asian-paddle-crab","name":"Asiatische Paddelkrabbe","names":["Asian Paddle Crab","Asiatische Paddelkrabbe","イシガニ","일본민꽃게","日本石蟹","日本石蟹"],"scientific":"Charybdis japonica","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/asian_paddle_crab_preview.jpeg","url":"/de-DE/models/asian-paddle-crab/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/asian_paddle_crab.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/4915ee5a2d9f46af9a24d3b8da505d00"},{"id":"701f33ba0db84058900232bf7ee91fec","slug":"luna-lionfish","name":"Luna-Feuerfisch","names":["Luna Lionfish","Luna-Feuerfisch","ミノカサゴ","달무늬쏠배감펭","月斑蓑鲉","月斑蓑鮋"],"scientific":"Pterois lunulata","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/luna_lionfish_preview.jpeg","url":"/de-DE/models/luna-lionfish/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/luna_lionfish.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/701f33ba0db84058900232bf7ee91fec"},{"id":"71f93eee4194460aafa5a9555b6099ef","slug":"spotless-smooth-hound","name":"Grauer Glatthai","names":["Spotless Smooth-hound","Grauer Glatthai","シロザメ","별상어","灰星鲨","灰星鯊"],"scientific":"Mustelus griseus","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/spotless_smooth_hound_preview.jpeg","url":"/de-DE/models/spotless-smooth-hound/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/spotless_smooth_hound.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/71f93eee4194460aafa5a9555b6099ef"},{"id":"b11d9f411194426bb16883aed176e4e6","slug":"tiger-lily","name":"Tigerlilie","names":["Tiger Lily","Tigerlilie","コオニユリ","참나리","卷丹百合","卷丹百合"],"scientific":"Lilium leichtlinii f","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":true,"themes":["flowers"],"image":"/model-images/tiger_lily_preview.jpeg","url":"/de-DE/models/tiger-lily/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/tiger_lily-9ced5dcbc83f.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/tiger_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/b11d9f411194426bb16883aed176e4e6"},{"id":"0e421206982f460ab58908a5b3880448","slug":"white-spider-lily","name":"Weiße Spinnenlilie","names":["White Spider Lily","Weiße Spinnenlilie","シロバナマンジュシャゲ","흰상사화","白花曼珠沙华","白花曼珠沙華"],"scientific":"Lycoris x albiflora","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/white_spider_lily_preview.jpeg","url":"/de-DE/models/white-spider-lily/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/white_spider_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/0e421206982f460ab58908a5b3880448"},{"id":"6e08a55e2284409682fea1f89e5afb54","slug":"japanese-honeysuckle","name":"Japanisches Geißblatt","names":["Japanese Honeysuckle","Japanisches Geißblatt","スイカズラ","인동덩굴","忍冬 / 金银花","忍冬 / 金銀花"],"scientific":"Lonicera japonica","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/japanese_honeysuckle_preview.jpeg","url":"/de-DE/models/japanese-honeysuckle/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_honeysuckle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/6e08a55e2284409682fea1f89e5afb54"},{"id":"146ae65a1e134a45811acaefa3f1e27a","slug":"oshima-cherry","name":"Oshima-Kirsche","names":["Oshima Cherry","Oshima-Kirsche","オオシマザクラ","오시마벚나무","大岛樱","大島櫻"],"scientific":"Prunus speciosa","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/oshima_cherry_preview.jpeg","url":"/de-DE/models/oshima-cherry/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/oshima_cherry.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/146ae65a1e134a45811acaefa3f1e27a"},{"id":"4a8be7619bc0468894a19b8f2464947f","slug":"hydrangea","name":"Hortensie","names":["Hydrangea","Hortensie","セイヨウアジサイ","수국","西洋绣球","西洋繡球"],"scientific":"Hydrangea macrophylla f","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":["flowers"],"image":"/model-images/hydrangea_preview.jpeg","url":"/de-DE/models/hydrangea/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/hydrangea.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/4a8be7619bc0468894a19b8f2464947f"},{"id":"15f772d7febd45a48d3cecf1cef6fe10","slug":"sakishima-tree-lizard","name":"Sakishima-Baumeidechse","names":["Sakishima Tree Lizard","Sakishima-Baumeidechse","サキシマキノボリトカゲ","사키시마키노보리도마뱀","先岛树蜥","先島樹蜥"],"scientific":"Diploderma polygonatum ishigakiense","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/sakishima_tree_lizard_preview.jpeg","url":"/de-DE/models/sakishima-tree-lizard/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/sakishima_tree_lizard.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/15f772d7febd45a48d3cecf1cef6fe10"},{"id":"cb851e66c8674117b8c9ee13da686584","slug":"siberian-lily","name":"Sibirische Lilie","names":["Siberian Lily","Sibirische Lilie","エゾスカシユリ","시베리아나리","西伯利亚百合","西伯利亞百合"],"scientific":"Lilium pensylvanicum","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/siberian_lily_preview.jpeg","url":"/de-DE/models/siberian-lily/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/siberian_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cb851e66c8674117b8c9ee13da686584"},{"id":"4b71e4fd4250439f85c1aebe01eb945f","slug":"hirado-azalea","name":"Hirado-Azalee","names":["Hirado Azalea","Hirado-Azalee","ヒラドツツジ","히라도철쭉","平户杜鹃","平戶杜鵑"],"scientific":"Rhododendron x pulchrum","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/hirado_azalea_preview.jpeg","url":"/de-DE/models/hirado-azalea/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/hirado_azalea.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/4b71e4fd4250439f85c1aebe01eb945f"},{"id":"d9e174d623124d2aa23122683018f6e6","slug":"japanese-silver-tree","name":"Japanischer Silberbaum","names":["Japanese Silver Tree","Japanischer Silberbaum","シロダモ","참식나무","绒毛新木姜子","絨毛新木薑子"],"scientific":"Neolitsea sericea","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/japanese_silver_tree_preview.jpeg","url":"/de-DE/models/japanese-silver-tree/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_silver_tree.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/d9e174d623124d2aa23122683018f6e6"},{"id":"7bd37dfa1f0246e5a60749a007082a82","slug":"taiwan-lily","name":"Taiwan-Lilie","names":["Taiwan Lily","Taiwan-Lilie","タカサゴユリ","대만나리","台湾百合","臺灣百合"],"scientific":"Lilium formosanum","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":["flowers"],"image":"/model-images/taiwan_lily_preview.jpeg","url":"/de-DE/models/taiwan-lily/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/taiwan_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/7bd37dfa1f0246e5a60749a007082a82"},{"id":"ea300256d9dc460b871dee878080fe7c","slug":"common-tiger-butterfly","name":"Gewöhnlicher Tigerfalter","names":["Common Tiger Butterfly","Gewöhnlicher Tigerfalter","スジグロカバマダラ","검은맥호랑나비","黑脉桦斑蝶","黑脈樺斑蝶"],"scientific":"Salatura genutia","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/common_tiger_butterfly_preview.jpeg","url":"/de-DE/models/common-tiger-butterfly/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/common_tiger_butterfly-fb7998b5d659.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/common_tiger_butterfly.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/ea300256d9dc460b871dee878080fe7c"},{"id":"263e196645fd420d830a06462e906d08","slug":"aburazemi-cicada","name":"Aburazemi-Zikade","names":["Aburazemi Cicada","Aburazemi-Zikade","アブラゼミ","유지매미","油蝉","油蟬"],"scientific":"Graptopsaltria nigrofuscata","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/aburazemi_cicada_preview.jpeg","url":"/de-DE/models/aburazemi-cicada/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/aburazemi_cicada-86dde984317d.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/aburazemi_cicada.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/263e196645fd420d830a06462e906d08"},{"id":"8f8d1c0305d04637b7abaf4cb54d25a8","slug":"chinese-red-headed-centipede","name":"Chinesischer Rotkopf-Hundertfüßer","names":["Chinese Red-headed Centipede","Chinesischer Rotkopf-Hundertfüßer","トビズムカデ","왕지네","少棘蜈蚣","少棘蜈蚣"],"scientific":"Scolopendra mutilans","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":["small-creatures"],"image":"/model-images/chinese_red_headed_centipede_preview.jpeg","url":"/de-DE/models/chinese-red-headed-centipede/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/chinese_red_headed_centipede.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/8f8d1c0305d04637b7abaf4cb54d25a8"},{"id":"48dc404d5d444769955148c893dbb9ad","slug":"japanese-freshwater-crab","name":"Japanische Süßwasserkrabbe","names":["Japanese Freshwater Crab","Japanische Süßwasserkrabbe","サワガニ","일본민물게","日本泽蟹","日本澤蟹"],"scientific":"Geothelphusa dehaani","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/japanese_freshwater_crab_preview.jpeg","url":"/de-DE/models/japanese-freshwater-crab/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_freshwater_crab.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/48dc404d5d444769955148c893dbb9ad"},{"id":"ef418bf372554dc29a8b5c3f50ae3506","slug":"apple-moss","name":"Apfelmoos","names":["Apple Moss","Apfelmoos","タマゴケ","사과이끼","苹果藓","蘋果蘚"],"scientific":"Bartramia pomiformis","category":"special","categoryLabel":"Spezial","animated":false,"featured":false,"themes":[],"image":"/model-images/apple_moss_preview.jpeg","url":"/de-DE/models/apple-moss/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/apple_moss.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/ef418bf372554dc29a8b5c3f50ae3506"},{"id":"2d54c54618da4b1c8c0240119299f1c6","slug":"japanese-buttercup","name":"Japanischer Hahnenfuß","names":["Japanese Buttercup","Japanischer Hahnenfuß","ウマノアシガタ","왜미나리아재비","日本毛茛","日本毛茛"],"scientific":"Ranunculus japonicus","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/japanese_buttercup_preview.jpeg","url":"/de-DE/models/japanese-buttercup/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_buttercup.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/2d54c54618da4b1c8c0240119299f1c6"},{"id":"78f35818cac442ca9a274d639c62930c","slug":"camellia-sasanqua","name":"Sasanqua-Kamelie","names":["Camellia Sasanqua","Sasanqua-Kamelie","カンツバキ","애기동백","寒椿","寒椿"],"scientific":"Camellia sasanqua","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/camellia_sasanqua_preview.jpeg","url":"/de-DE/models/camellia-sasanqua/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/camellia_sasanqua.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/78f35818cac442ca9a274d639c62930c"},{"id":"dfc2d31732174dbc82a84d3237783590","slug":"red-frog-crab","name":"Rote Froschkrabbe","names":["Red Frog Crab","Rote Froschkrabbe","アサヒガニ","개구리게","蛙形蟹","蛙形蟹"],"scientific":"Ranina ranina","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/red_frog_crab_preview.jpeg","url":"/de-DE/models/red-frog-crab/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/red_frog_crab.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/dfc2d31732174dbc82a84d3237783590"},{"id":"35559c2236d04c1a80ccbe08cae863c6","slug":"japanese-freshwater-crab-lowpoly","name":"Japanische Süßwasserkrabbe (Low Poly)","names":["Japanese Freshwater Crab Low Poly","Japanische Süßwasserkrabbe (Low Poly)","サワガニ（低ポリゴン版）","일본민물게 저폴리곤","日本泽蟹（低面数版）","日本澤蟹（低面數版）"],"scientific":"Geothelphusa dehaani","category":"special","categoryLabel":"Spezial","animated":true,"featured":true,"themes":["motion","pond-life"],"image":"/model-images/japanese_freshwater_crab_lowpoly_preview.jpeg","url":"/de-DE/models/japanese-freshwater-crab-lowpoly/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_freshwater_crab_lowpoly.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/35559c2236d04c1a80ccbe08cae863c6"},{"id":"c5e1e73fce7d4caf803ecd8abd0797e1","slug":"beautiful-branch-moss","name":"Schönes Zweigmoos","names":["Beautiful Branch Moss","Schönes Zweigmoos","クサゴケ","아름다운가지이끼","美枝藓","美枝蘚"],"scientific":"Callicladium haldanianum","category":"special","categoryLabel":"Spezial","animated":false,"featured":false,"themes":[],"image":"/model-images/beautiful_branch_moss_preview.jpeg","url":"/de-DE/models/beautiful-branch-moss/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/beautiful_branch_moss.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/c5e1e73fce7d4caf803ecd8abd0797e1"},{"id":"428f55efa9734c0b8524430bb7e4c114","slug":"youko-sakura","name":"Yoko-Kirsche","names":["Youko Sakura","Yoko-Kirsche","ヨウコウザクラ","요코 벚꽃","阳光樱","陽光櫻"],"scientific":"","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/youko_sakura_preview.jpeg","url":"/de-DE/models/youko-sakura/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/youko_sakura.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/428f55efa9734c0b8524430bb7e4c114"},{"id":"9818500118df4542b8ffb49128006b29","slug":"stock-flower","name":"Levkoje","names":["Stock Flower","Levkoje","ストック","스토크 꽃","紫罗兰花","紫羅蘭花"],"scientific":"Matthiola cv","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/stock_flower_preview.jpeg","url":"/de-DE/models/stock-flower/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/stock_flower.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/9818500118df4542b8ffb49128006b29"},{"id":"9958ba9e986240179142d85751b3adaf","slug":"nishiki-utsugi","name":"Nishiki-Weigelie","names":["Nishiki Utsugi","Nishiki-Weigelie","ニシキウツギ","니시키병꽃나무","二色锦带花","二色錦帶花"],"scientific":"Weigela decora","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":false,"themes":[],"image":"/model-images/nishiki_utsugi_preview.jpeg","url":"/de-DE/models/nishiki-utsugi/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/nishiki_utsugi.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/9958ba9e986240179142d85751b3adaf"},{"id":"04e13f6fc8304c34b7928a7c7879a39a","slug":"webfoot-octopus","name":"Kurzarm-Oktopus","names":["Webfoot Octopus","Kurzarm-Oktopus","イイダコ","주꾸미","短蛸","短蛸"],"scientific":"Octopus ocellatus","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/webfoot_octopus_preview.jpeg","url":"/de-DE/models/webfoot-octopus/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/webfoot_octopus.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-webfoot-octopus-octopus-ocellatus-04e13f6fc8304c34b7928a7c7879a39a"},{"id":"93bc064c84ba40a39a709804760610c7","slug":"japanese-giant-water-bug","name":"Japanische Riesenwasserwanze","names":["Japanese Giant Water Bug","Japanische Riesenwasserwanze","コオイムシ","일본물장군","负子蝽","負子蝽"],"scientific":"Appasus japonicus","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":["small-creatures"],"image":"/model-images/japanese_giant_water_bug_preview.jpeg","url":"/de-DE/models/japanese-giant-water-bug/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_giant_water_bug.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-japanese-giant-water-bug-93bc064c84ba40a39a709804760610c7"},{"id":"23a849e380da4f89addf0a8375b0c32f","slug":"sail-fin-poacher","name":"Segelflossen-Panzerfisch","names":["Sail-fin Poacher","Segelflossen-Panzerfisch","トクビレ","돛지느러미팔각어","特鳍鱼","特鰭魚"],"scientific":"Podothecus sachi","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/sail_fin_poacher_preview.jpeg","url":"/de-DE/models/sail-fin-poacher/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/sail_fin_poacher.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-sail-fin-poacher-podothecus-sachi-23a849e380da4f89addf0a8375b0c32f"},{"id":"b67fb6cbe3fa455c81373aaa9f91fa1a","slug":"japanese-rhinoceros-beetle","name":"Japanischer Nashornkäfer (Larve)","names":["Japanese Rhinoceros Beetle Larva","Japanischer Nashornkäfer (Larve)","カブトムシ（幼虫）","장수풍뎅이 유충","日本独角仙幼虫","日本獨角仙幼蟲"],"scientific":"Trypoxylus dichotomus","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/japanese_rhinoceros_beetle_preview.jpeg","url":"/de-DE/models/japanese-rhinoceros-beetle/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/japanese_rhinoceros_beetle-f1021e46ab27.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_rhinoceros_beetle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-japanese-rhinoceros-beetle-b67fb6cbe3fa455c81373aaa9f91fa1a"},{"id":"320e77ebe2e049dcbb759dd79ee03a8c","slug":"fishing-spider","name":"Fischerspinne","names":["Fishing Spider","Fischerspinne","オオハシリグモ","낚시거미","大长脚蛛","大長腳蛛"],"scientific":"Dolomedes orion","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/fishing_spider_preview.jpeg","url":"/de-DE/models/fishing-spider/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/fishing_spider-1b4fdfe68356.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/fishing_spider.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-fishing-spider-dolomedes-orion-320e77ebe2e049dcbb759dd79ee03a8c"},{"id":"638f29eae79d40ddb0adaf6ebb8375cc","slug":"reeves-pond-turtle","name":"Chinesische Dreikielschildkröte","names":["Reeve's Pond Turtle","Chinesische Dreikielschildkröte","クサガメ","남생이","草龟","草龜"],"scientific":"Mauremys reevesii","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/reeves_pond_turtle_preview.jpeg","url":"/de-DE/models/reeves-pond-turtle/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/reeves_pond_turtle-74045ab5c638.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/reeves_pond_turtle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-reeves-pond-turtle-m-reevesii-638f29eae79d40ddb0adaf6ebb8375cc"},{"id":"80ccbb2feea24f85994cfb89bce55dbf","slug":"mangrove-crab","name":"Mangrovenkrabbe","names":["Mangrove Crab","Mangrovenkrabbe","アカテノコギリガザミ","맹그로브게","红螯蟳","紅螯蟳"],"scientific":"Scylla olivacea","category":"animal","categoryLabel":"Tier","animated":false,"featured":false,"themes":[],"image":"/model-images/mangrove_crab_preview.jpeg","url":"/de-DE/models/mangrove-crab/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/mangrove_crab.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-mangrove-crab-s-olivacea-80ccbb2feea24f85994cfb89bce55dbf"},{"id":"0f4f583d5e3842eca1152c0bb021ec32","slug":"striped-snake","name":"Japanische Vierstreifennatter","names":["Striped Snake","Japanische Vierstreifennatter","シマヘビ","일본줄무늬뱀","日本锦蛇","日本錦蛇"],"scientific":"Elaphe quadrivirgata","category":"animal","categoryLabel":"Tier","animated":true,"featured":true,"themes":["motion"],"image":"/model-images/striped_snake_preview.jpeg","url":"/de-DE/models/striped-snake/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/striped_snake.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-striped-snake-elaphe-quadrivirgata-0f4f583d5e3842eca1152c0bb021ec32"}]}</script>
+<script defer src="/assets/vendor/icons.js"></script>
+<script type="module" src="/assets/experience.js"></script></body></html>

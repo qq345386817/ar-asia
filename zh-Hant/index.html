@@ -1,181 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小小自然 - Apple 裝置上的 AR 3D 生物模型圖鑑</title>
-  <meta name="description" content="小小自然是一款適用於 iPhone、iPad 和 Mac 的 AR 3D 生物模型圖鑑。瀏覽精選 CC0 動植物模型資料，按需下載，並在支援的裝置上用 AR 查看。">
-  <meta name="keywords" content="小小自然,AR生物應用,3D生物模型,動物模型,植物模型,亞洲生物多樣性,ARKit,RealityKit,CC0模型,自然教育">
-  <meta name="author" content="Peike Luo">
-  <meta name="application-name" content="Little Nature">
-  <meta name="apple-mobile-web-app-title" content="Little Nature">
-  <meta name="apple-itunes-app" content="app-id=6766551832">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Little Nature | 動植物 3D 圖鑑</title>
+  <meta name="description" content="線上觀察動植物 3D 模型、觀看已有動畫，並製作可列印的自然學習卡。">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="../favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <link rel="stylesheet" href="../style/base.css">
+  <meta name="apple-itunes-app" content="app-id=6766551832">
   <link rel="canonical" href="https://ar-asia.luopeike.com/zh-Hant/">
   <link rel="alternate" hreflang="en-US" href="https://ar-asia.luopeike.com/en-US/">
-  <link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/">
-  <link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/">
-  <link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/">
-  <link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/">
-  <link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/">
-  <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/">
-  <meta property="og:title" content="小小自然 - AR 3D 生物模型圖鑑">
-  <meta property="og:description" content="瀏覽精選 CC0 3D 生物模型資料，按需下載，並在支援的裝置上用 AR 查看。">
+<link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/">
+<link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/experience.css">
+  <meta property="og:title" content="Little Nature | 動植物 3D 圖鑑">
+  <meta property="og:description" content="線上觀察動植物 3D 模型、觀看已有動畫，並製作可列印的自然學習卡。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ar-asia.luopeike.com/zh-Hant/">
-  <meta property="og:site_name" content="Little Nature">
-  <meta property="og:locale" content="zh_TW">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta property="og:locale:alternate" content="ja_JP">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="小小自然 - AR 3D 生物模型圖鑑">
-  <meta name="twitter:description" content="一款安靜清晰的 CC0 3D 動植物模型圖鑑，適用於 Apple 裝置。">
   <meta property="og:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-  <meta name="twitter:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://ar-asia.luopeike.com/#organization",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ar-asia.luopeike.com/apple-touch-icon.png",
-        "width": 180,
-        "height": 180
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766551832",
-        "https://sketchfab.com/ffishAsia-and-floraZia"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://ar-asia.luopeike.com/#website",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "inLanguage": "zh-Hant",
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://ar-asia.luopeike.com/#app",
-      "name": "Little Nature",
-      "alternateName": "小小自然",
-      "description": "小小自然是一款適用於 iPhone、iPad 和 Mac 的 AR 3D 生物模型圖鑑。瀏覽精選 CC0 動植物模型資料，按需下載，並在支援的裝置上用 AR 查看。",
-      "url": "https://ar-asia.luopeike.com/zh-Hant/",
-      "downloadUrl": "https://apps.apple.com/app/id6766551832",
-      "mainEntityOfPage": {
-        "@id": "https://ar-asia.luopeike.com/#website"
-      },
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766551832",
-        "https://sketchfab.com/ffishAsia-and-floraZia"
-      ],
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "iOS, iPadOS, macOS",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://ar-asia.luopeike.com/zh-Hant/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Little Nature",
-          "item": "https://ar-asia.luopeike.com/zh-Hant/"
-        }
-      ]
-    }
-  ]
-}
-  </script>
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Little Nature","description":"近距離觀察自然","url":"https://ar-asia.luopeike.com/zh-Hant/","inLanguage":"zh-Hant","isPartOf":{"@id":"https://ar-asia.luopeike.com/#website"},"mainEntity":{"@type":"ItemList","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"name":"日本澤蟹（低面數版）","url":"https://ar-asia.luopeike.com/zh-Hant/models/japanese-freshwater-crab-lowpoly/"},{"@type":"ListItem","position":2,"name":"日本錦蛇","url":"https://ar-asia.luopeike.com/zh-Hant/models/striped-snake/"},{"@type":"ListItem","position":3,"name":"日本獨角仙幼蟲","url":"https://ar-asia.luopeike.com/zh-Hant/models/japanese-rhinoceros-beetle/"},{"@type":"ListItem","position":4,"name":"黑脈樺斑蝶","url":"https://ar-asia.luopeike.com/zh-Hant/models/common-tiger-butterfly/"},{"@type":"ListItem","position":5,"name":"油蟬","url":"https://ar-asia.luopeike.com/zh-Hant/models/aburazemi-cicada/"},{"@type":"ListItem","position":6,"name":"大長腳蛛","url":"https://ar-asia.luopeike.com/zh-Hant/models/fishing-spider/"},{"@type":"ListItem","position":7,"name":"森林綠樹蛙","url":"https://ar-asia.luopeike.com/zh-Hant/models/forest-green-tree-frog/"},{"@type":"ListItem","position":8,"name":"草龜","url":"https://ar-asia.luopeike.com/zh-Hant/models/reeves-pond-turtle/"},{"@type":"ListItem","position":9,"name":"日本小龍蝦","url":"https://ar-asia.luopeike.com/zh-Hant/models/japanese-crayfish/"},{"@type":"ListItem","position":10,"name":"染井吉野櫻","url":"https://ar-asia.luopeike.com/zh-Hant/models/sakura-cherry-blossom/"},{"@type":"ListItem","position":11,"name":"印度蓮","url":"https://ar-asia.luopeike.com/zh-Hant/models/indian-lotus/"},{"@type":"ListItem","position":12,"name":"卷丹百合","url":"https://ar-asia.luopeike.com/zh-Hant/models/tiger-lily/"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Little Nature","item":"https://ar-asia.luopeike.com/zh-Hant/"}]},{"@type":"WebSite","@id":"https://ar-asia.luopeike.com/#website","name":"Little Nature","url":"https://ar-asia.luopeike.com/zh-Hant/","inLanguage":"zh-Hant"}]}</script>
 </head>
-
-<body>
-  <main class="site-shell home-shell">
+<body class="experience-site"><main class="site-shell experience-shell">
     <header class="site-header">
-      <a class="brand" href="./" aria-label="小小自然首頁">
-        <span class="brand-mark">LN</span>
-        <span>Little Nature</span>
-      </a>
+      <a class="brand" href="/zh-Hant/"><img src="/favicon-64.png" alt="" width="36" height="36"><span>Little Nature</span></a>
       <div class="header-actions">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="help">說明</a>
-          <a href="models/">模型</a>
-          <a href="privacy-policy">隱私</a>
-          <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+        <nav class="nav-links" aria-label="模型">
+          <a href="/zh-Hant/models/">模型</a>
+          <a class="study-link" href="/zh-Hant/study-cards/"><i data-lucide="book-open"></i>學習卡<span class="selection-badge" data-selection-count hidden>0</span></a>
+          <a href="/zh-Hant/help">幫助</a>
         </nav>
-        <select class="language-select" aria-label="語言" onchange="if (this.value) window.location.href = this.value;"><option value="../en-US/">English</option><option value="../zh-Hans/">简体中文</option><option value="../zh-Hant/" selected>繁體中文</option><option value="../ja/">日本語</option><option value="../ko/">한국어</option><option value="../de-DE/">Deutsch</option></select><noscript><span class="language-noscript"><a href="../en-US/">English</a><a href="../zh-Hans/">简体中文</a><a href="../zh-Hant/">繁體中文</a><a href="../ja/">日本語</a><a href="../ko/">한국어</a><a href="../de-DE/">Deutsch</a></span></noscript>
+        <select class="language-select" aria-label="語言" onchange="if(this.value)location.href=this.value"><option value="/en-US/">English</option><option value="/de-DE/">Deutsch</option><option value="/ja/">日本語</option><option value="/ko/">한국어</option><option value="/zh-Hans/">简体中文</option><option value="/zh-Hant/" selected>繁體中文</option></select>
       </div>
     </header>
+    <section class="catalog-intro"><div><h1>Little Nature</h1><p>近距離觀察自然</p></div></section>
+    <nav class="theme-links" aria-label="主題"><a href="/zh-Hant/collections/motion/"><i data-lucide="play"></i>會動的模型</a><a href="/zh-Hant/collections/small-creatures/"><i data-lucide="bug"></i>小小生物</a><a href="/zh-Hant/collections/pond-life/"><i data-lucide="waves"></i>水邊的生命</a><a href="/zh-Hant/collections/flowers/"><i data-lucide="leaf"></i>近看花朵</a></nav>
 
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">AR 生物模型圖鑑</p>
-        <h1>用 3D 探索亞洲生物多樣性。</h1>
-        <p class="lead">小小自然幫助你瀏覽精選動植物模型資料，只在需要時下載模型，並在 iPhone 和 iPad 上用 AR 查看支援的模型。</p>
-        <div class="cta-row">
-          <a class="button" href="https://apps.apple.com/app/id6766551832">前往 App Store</a>
-          <a class="button secondary" href="help">閱讀說明</a>
-        </div>
-      </div>
+    <section class="catalog-section" aria-label="精選模型">
+      <div class="section-heading"><h2>精選模型</h2><a class="text-link" href="/zh-Hant/models/">全部模型<i data-lucide="arrow-up-right"></i></a></div>
 
-      <aside class="preview-panel" aria-label="App 功能預覽">
-        <article class="specimen-card">
-          <div class="specimen-image" role="img" aria-label="風格化 3D 花卉模型預覽"></div>
-          <h2 class="specimen-title">染井吉野櫻</h2>
-          <p class="specimen-meta">植物 · 38.8 MB · 基於 CC0 的模型資料</p>
-          <div class="chip-row"><span class="chip">搜尋</span><span class="chip">分類</span><span class="chip">按需下載</span></div>
-        </article>
-      </aside>
+    <form class="catalog-toolbar" role="search">
+      <label class="search-field"><i data-lucide="search"></i><span class="sr-only">搜尋</span><input id="model-search" type="search" name="q" autocomplete="off" placeholder="名稱或學名"></label>
+      <label class="filter-field"><span class="sr-only">分類</span><select id="category-filter"><option value="">全部模型</option><option value="animal">動物</option><option value="plant">植物</option><option value="special">特別</option></select></label>
+      <label class="filter-field"><span class="sr-only">主題</span><select id="theme-filter"><option value="">全部主題</option><option value="motion">會動的模型</option><option value="small-creatures">小小生物</option><option value="pond-life">水邊的生命</option><option value="flowers">近看花朵</option></select></label>
+      <label class="animation-filter"><input id="animated-filter" type="checkbox"><span>動畫模型</span></label>
+    </form>
+      <p class="result-count" id="result-count" role="status" aria-live="polite">12 / 12</p>
+      <div class="specimen-grid">
+      <article class="specimen-tile" data-model-id="35559c2236d04c1a80ccbe08cae863c6">
+        <a class="specimen-link" href="/zh-Hant/models/japanese-freshwater-crab-lowpoly/">
+          <div class="specimen-photo"><img src="/model-images/japanese_freshwater_crab_lowpoly_preview.jpeg" alt="日本澤蟹（低面數版）的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"><span class="animation-mark"><i data-lucide="play"></i>動畫</span></div>
+          <div class="specimen-caption"><h3>日本澤蟹（低面數版）</h3><span class="specimen-scientific">Geothelphusa dehaani</span><span class="specimen-kind">特別</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="35559c2236d04c1a80ccbe08cae863c6" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 日本澤蟹（低面數版）"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="0f4f583d5e3842eca1152c0bb021ec32">
+        <a class="specimen-link" href="/zh-Hant/models/striped-snake/">
+          <div class="specimen-photo"><img src="/model-images/striped_snake_preview.jpeg" alt="日本錦蛇的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"><span class="animation-mark"><i data-lucide="play"></i>動畫</span></div>
+          <div class="specimen-caption"><h3>日本錦蛇</h3><span class="specimen-scientific">Elaphe quadrivirgata</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="0f4f583d5e3842eca1152c0bb021ec32" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 日本錦蛇"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b67fb6cbe3fa455c81373aaa9f91fa1a">
+        <a class="specimen-link" href="/zh-Hant/models/japanese-rhinoceros-beetle/">
+          <div class="specimen-photo"><img src="/model-images/japanese_rhinoceros_beetle_preview.jpeg" alt="日本獨角仙幼蟲的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>日本獨角仙幼蟲</h3><span class="specimen-scientific">Trypoxylus dichotomus</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b67fb6cbe3fa455c81373aaa9f91fa1a" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 日本獨角仙幼蟲"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="ea300256d9dc460b871dee878080fe7c">
+        <a class="specimen-link" href="/zh-Hant/models/common-tiger-butterfly/">
+          <div class="specimen-photo"><img src="/model-images/common_tiger_butterfly_preview.jpeg" alt="黑脈樺斑蝶的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>黑脈樺斑蝶</h3><span class="specimen-scientific">Salatura genutia</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="ea300256d9dc460b871dee878080fe7c" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 黑脈樺斑蝶"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="263e196645fd420d830a06462e906d08">
+        <a class="specimen-link" href="/zh-Hant/models/aburazemi-cicada/">
+          <div class="specimen-photo"><img src="/model-images/aburazemi_cicada_preview.jpeg" alt="油蟬的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>油蟬</h3><span class="specimen-scientific">Graptopsaltria nigrofuscata</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="263e196645fd420d830a06462e906d08" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 油蟬"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="320e77ebe2e049dcbb759dd79ee03a8c">
+        <a class="specimen-link" href="/zh-Hant/models/fishing-spider/">
+          <div class="specimen-photo"><img src="/model-images/fishing_spider_preview.jpeg" alt="大長腳蛛的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>大長腳蛛</h3><span class="specimen-scientific">Dolomedes orion</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="320e77ebe2e049dcbb759dd79ee03a8c" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 大長腳蛛"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="a9c23391171c4e1abd859b05887e00af">
+        <a class="specimen-link" href="/zh-Hant/models/forest-green-tree-frog/">
+          <div class="specimen-photo"><img src="/model-images/forest_green_tree_frog_preview.jpeg" alt="森林綠樹蛙的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>森林綠樹蛙</h3><span class="specimen-scientific">Rhacophorus arboreus</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="a9c23391171c4e1abd859b05887e00af" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 森林綠樹蛙"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="638f29eae79d40ddb0adaf6ebb8375cc">
+        <a class="specimen-link" href="/zh-Hant/models/reeves-pond-turtle/">
+          <div class="specimen-photo"><img src="/model-images/reeves_pond_turtle_preview.jpeg" alt="草龜的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>草龜</h3><span class="specimen-scientific">Mauremys reevesii</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="638f29eae79d40ddb0adaf6ebb8375cc" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 草龜"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="2b2381a6a4bc4a68ac7449fbfb96df51">
+        <a class="specimen-link" href="/zh-Hant/models/japanese-crayfish/">
+          <div class="specimen-photo"><img src="/model-images/japanese_crayfish_preview.jpeg" alt="日本小龍蝦的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>日本小龍蝦</h3><span class="specimen-scientific">Cambaroides japonicus</span><span class="specimen-kind">動物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="2b2381a6a4bc4a68ac7449fbfb96df51" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 日本小龍蝦"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="f5e6f5a985ea4fc2a14ee0b4b37572b5">
+        <a class="specimen-link" href="/zh-Hant/models/sakura-cherry-blossom/">
+          <div class="specimen-photo"><img src="/model-images/sakura_cherry_blossom_preview.jpeg" alt="染井吉野櫻的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>染井吉野櫻</h3><span class="specimen-kind">植物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="f5e6f5a985ea4fc2a14ee0b4b37572b5" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 染井吉野櫻"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="d69e1be5895f40e484f0db472a721c2f">
+        <a class="specimen-link" href="/zh-Hant/models/indian-lotus/">
+          <div class="specimen-photo"><img src="/model-images/indian_lotus_preview.jpeg" alt="印度蓮的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>印度蓮</h3><span class="specimen-scientific">Nelumbo nucifera</span><span class="specimen-kind">植物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="d69e1be5895f40e484f0db472a721c2f" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 印度蓮"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b11d9f411194426bb16883aed176e4e6">
+        <a class="specimen-link" href="/zh-Hant/models/tiger-lily/">
+          <div class="specimen-photo"><img src="/model-images/tiger_lily_preview.jpeg" alt="卷丹百合的 3D 模型" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>卷丹百合</h3><span class="specimen-scientific">Lilium leichtlinii f</span><span class="specimen-kind">植物</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b11d9f411194426bb16883aed176e4e6" type="button" aria-pressed="false" title="加入學習卡" aria-label="加入學習卡: 卷丹百合"><i data-lucide="plus"></i></button>
+      </article></div><div class="empty-state" id="catalog-empty" hidden><h2>沒有相符的模型</h2><button class="button secondary" id="reset-filters" type="button"><i data-lucide="rotate-ccw"></i>重設篩選</button><a id="search-all-link" href="/zh-Hant/models/" hidden>搜尋全部模型</a></div>
     </section>
 
-    <section class="section">
-      <h2>為安靜探索而設計</h2>
-      <div class="grid">
-        <article class="feature-card"><h3>精選模型目錄</h3><p>瀏覽亞洲動植物模型資料，查看名稱、分類、檔案大小、幾何數量和來源連結。</p></article>
-        <article class="feature-card"><h3>搜尋與篩選</h3><p>透過日文名、英文名、中文名或學名查找模型，再按分類縮小結果。</p></article>
-        <article class="feature-card"><h3>本地內容控制</h3><p>按需下載模型，查看已儲存內容，並在下載管理中清理本地檔案。</p></article>
-      </div>
-    </section>
+    <aside class="app-band">
+      <img src="/app-icon.png" alt="" width="52" height="52" loading="lazy">
+      <div><h2>隨時隨地，觀察自然</h2><p>在 iPhone、iPad 和 Mac 的小小自然中離線儲存模型，並在支援的裝置上用 AR 觀察。</p></div>
+      <a class="button app-store-link" data-surface="home" href="https://apps.apple.com/app/id6766551832?ct=website_zh-Hant_home&amp;mt=8">取得小小自然<i data-lucide="arrow-up-right"></i></a>
+    </aside>
 
-    <section class="section">
-      <h2>關於模型來源</h2>
-      <div class="grid">
-        <article class="feature-card"><h3>開放模型參考</h3><p>模型資料整理自公開來源，並在可用時展示署名和來源連結。</p></article>
-        <article class="feature-card"><h3>基於 CC0 的使用</h3><p>內建模型資源基於 CC0 授權，用於瀏覽、下載管理和 AR 查看。</p></article>
-        <article class="feature-card"><h3>無需帳號</h3><p>小小自然不要求註冊、登入或提供個人資料即可瀏覽目錄。</p></article>
-      </div>
-    </section>
-
-    <p class="footer">有問題或回饋？請聯絡 cameoshell09@gmail.com。</p>
-  </main>
-</body>
-
-</html>
+    <footer class="experience-footer">
+      <span>Little Nature · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span>
+      <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com · Sketchfab</a>
+      <a href="/zh-Hant/privacy-policy">隱私</a>
+    </footer>
+    </main><script id="experience-data" type="application/json">{"locale":"zh-Hant","surface":"catalog","copy":{"catalogTitle":"動植物 3D 圖鑑","homeSubtitle":"近距離觀察自然","catalogDescription":"線上觀察動植物 3D 模型、觀看已有動畫，並製作可列印的自然學習卡。","featured":"精選模型","all":"全部模型","search":"搜尋","searchPlaceholder":"名稱或學名","theme":"主題","allThemes":"全部主題","animatedOnly":"動畫模型","results":"{count} / {total}","studyCards":"學習卡","addCard":"加入學習卡","removeCard":"移出學習卡","selected":"已選 {count} 個","clear":"清空選擇","view3d":"3D 預覽","loading":"正在載入模型…","loadError":"未能載入 3D 模型。","retry":"重試","sourceViewer":"在 Sketchfab 開啟","providerNote":"開啟互動預覽時會連線至 Sketchfab。","play":"播放動畫","pause":"暫停動畫","reset":"重設視角","fullscreen":"全螢幕","imageAlt":"{name}的 3D 模型","observe":"觀察重點","back":"返回模型列表","source":"來源","license":"授權","quickLook":"在 AR 中查看","downloadGLB":"下載 GLB","noResults":"沒有相符的模型","resetFilters":"重設篩選","searchAll":"搜尋全部模型","studyTitle":"自然學習卡","studyDescription":"用於自然課堂、配對活動與自主學習的動植物圖片卡。","paper":"紙張","layout":"卡片形式","namedCards":"圖片與名稱","matchingCards":"圖片卡 + 名稱卡","scientificNames":"顯示學名","print":"列印學習卡","selectFeatured":"選擇精選模型","emptySelection":"尚未選擇學習卡","chooseModels":"選擇模型","preview":"列印預覽","appTitle":"隨時隨地，觀察自然","appBody":"在 iPhone、iPad 和 Mac 的小小自然中離線儲存模型，並在支援的裝置上用 AR 觀察。","appCta":"取得小小自然","websitePrivacyTitle":"使用本網站","websitePrivacy":"學習卡選擇僅儲存在目前瀏覽器中。我們收集有限的第一方使用事件，例如 3D 載入成功、動畫播放、列印與 App Store 連結點擊，以及隨機產生的分頁工作階段識別碼、語言、裝置類別與固定的模型或主題識別碼。不收集搜尋文字、所選卡片內容、攝影機畫面或完整頁面網址。工作階段識別碼在儲存前經過雜湊處理，事件最多保留 90 天。統計尊重 Global Privacy Control 和 Do Not Track。開啟 Sketchfab 預覽會直接連線至該第三方服務，相關請求適用其隱私政策。","themes":{"motion":{"title":"會動的模型","description":"觀察兩個動畫模型在運動過程中的形態變化。","prompts":["從正面與側面比較同一個姿態。","暫停動畫，觀察足部或身體輪廓。","這些是模型動畫，並非對動物真實運動的測量。"]},"small-creatures":{"title":"小小生物","description":"近距離觀察甲蟲、蝴蝶、蜘蛛與其他小動物。","prompts":["比較足的數量與排列方式。","尋找觸角、翅與不同的身體分區。","蜘蛛屬於蛛形類，不是昆蟲。比較牠們的身體結構。"]},"pond-life":{"title":"水邊的生命","description":"青蛙、龜、螯蝦、蟹與開花的水生植物。","prompts":["比較龜甲、外骨骼與柔軟的身體。","觀察肢體的形狀與關節。","比較蓮與睡蓮的花與葉形。"]},"flowers":{"title":"近看花朵","description":"觀察櫻花、百合、蓮與其他開花植物。","prompts":["比較花瓣形狀與花朵的對稱性。","觀察花與莖的位置關係。","比較可見的雄蕊與花朵中心。"]}}},"models":[{"id":"35559c2236d04c1a80ccbe08cae863c6","slug":"japanese-freshwater-crab-lowpoly","name":"日本澤蟹（低面數版）","names":["Japanese Freshwater Crab Low Poly","Japanische Süßwasserkrabbe (Low Poly)","サワガニ（低ポリゴン版）","일본민물게 저폴리곤","日本泽蟹（低面数版）","日本澤蟹（低面數版）"],"scientific":"Geothelphusa dehaani","category":"special","categoryLabel":"特別","animated":true,"featured":true,"themes":["motion","pond-life"],"image":"/model-images/japanese_freshwater_crab_lowpoly_preview.jpeg","url":"/zh-Hant/models/japanese-freshwater-crab-lowpoly/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_freshwater_crab_lowpoly.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/35559c2236d04c1a80ccbe08cae863c6"},{"id":"0f4f583d5e3842eca1152c0bb021ec32","slug":"striped-snake","name":"日本錦蛇","names":["Striped Snake","Japanische Vierstreifennatter","シマヘビ","일본줄무늬뱀","日本锦蛇","日本錦蛇"],"scientific":"Elaphe quadrivirgata","category":"animal","categoryLabel":"動物","animated":true,"featured":true,"themes":["motion"],"image":"/model-images/striped_snake_preview.jpeg","url":"/zh-Hant/models/striped-snake/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/striped_snake.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-striped-snake-elaphe-quadrivirgata-0f4f583d5e3842eca1152c0bb021ec32"},{"id":"b67fb6cbe3fa455c81373aaa9f91fa1a","slug":"japanese-rhinoceros-beetle","name":"日本獨角仙幼蟲","names":["Japanese Rhinoceros Beetle Larva","Japanischer Nashornkäfer (Larve)","カブトムシ（幼虫）","장수풍뎅이 유충","日本独角仙幼虫","日本獨角仙幼蟲"],"scientific":"Trypoxylus dichotomus","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/japanese_rhinoceros_beetle_preview.jpeg","url":"/zh-Hant/models/japanese-rhinoceros-beetle/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/japanese_rhinoceros_beetle-f1021e46ab27.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_rhinoceros_beetle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-japanese-rhinoceros-beetle-b67fb6cbe3fa455c81373aaa9f91fa1a"},{"id":"ea300256d9dc460b871dee878080fe7c","slug":"common-tiger-butterfly","name":"黑脈樺斑蝶","names":["Common Tiger Butterfly","Gewöhnlicher Tigerfalter","スジグロカバマダラ","검은맥호랑나비","黑脉桦斑蝶","黑脈樺斑蝶"],"scientific":"Salatura genutia","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/common_tiger_butterfly_preview.jpeg","url":"/zh-Hant/models/common-tiger-butterfly/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/common_tiger_butterfly-fb7998b5d659.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/common_tiger_butterfly.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/ea300256d9dc460b871dee878080fe7c"},{"id":"263e196645fd420d830a06462e906d08","slug":"aburazemi-cicada","name":"油蟬","names":["Aburazemi Cicada","Aburazemi-Zikade","アブラゼミ","유지매미","油蝉","油蟬"],"scientific":"Graptopsaltria nigrofuscata","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/aburazemi_cicada_preview.jpeg","url":"/zh-Hant/models/aburazemi-cicada/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/aburazemi_cicada-86dde984317d.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/aburazemi_cicada.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/263e196645fd420d830a06462e906d08"},{"id":"320e77ebe2e049dcbb759dd79ee03a8c","slug":"fishing-spider","name":"大長腳蛛","names":["Fishing Spider","Fischerspinne","オオハシリグモ","낚시거미","大长脚蛛","大長腳蛛"],"scientific":"Dolomedes orion","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/fishing_spider_preview.jpeg","url":"/zh-Hant/models/fishing-spider/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/fishing_spider-1b4fdfe68356.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/fishing_spider.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-fishing-spider-dolomedes-orion-320e77ebe2e049dcbb759dd79ee03a8c"},{"id":"a9c23391171c4e1abd859b05887e00af","slug":"forest-green-tree-frog","name":"森林綠樹蛙","names":["Forest Green Tree Frog","Japanischer Waldlaubfrosch","モリアオガエル","모리아오개구리","森林绿树蛙","森林綠樹蛙"],"scientific":"Rhacophorus arboreus","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/forest_green_tree_frog_preview.jpeg","url":"/zh-Hant/models/forest-green-tree-frog/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/forest_green_tree_frog-61a2b59d397b.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/forest_green_tree_frog.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/a9c23391171c4e1abd859b05887e00af"},{"id":"638f29eae79d40ddb0adaf6ebb8375cc","slug":"reeves-pond-turtle","name":"草龜","names":["Reeve's Pond Turtle","Chinesische Dreikielschildkröte","クサガメ","남생이","草龟","草龜"],"scientific":"Mauremys reevesii","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/reeves_pond_turtle_preview.jpeg","url":"/zh-Hant/models/reeves-pond-turtle/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/reeves_pond_turtle-74045ab5c638.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/reeves_pond_turtle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-reeves-pond-turtle-m-reevesii-638f29eae79d40ddb0adaf6ebb8375cc"},{"id":"2b2381a6a4bc4a68ac7449fbfb96df51","slug":"japanese-crayfish","name":"日本小龍蝦","names":["Japanese Crayfish","Japanischer Flusskrebs","ニホンザリガニ","일본가재","日本小龙虾","日本小龍蝦"],"scientific":"Cambaroides japonicus","category":"animal","categoryLabel":"動物","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/japanese_crayfish_preview.jpeg","url":"/zh-Hant/models/japanese-crayfish/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/japanese_crayfish-a76ebb9dc9fd.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_crayfish.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/2b2381a6a4bc4a68ac7449fbfb96df51"},{"id":"f5e6f5a985ea4fc2a14ee0b4b37572b5","slug":"sakura-cherry-blossom","name":"染井吉野櫻","names":["Sakura Cherry Blossom","Somei-Yoshino-Kirsche","ソメイヨシノ","왕벚나무","染井吉野樱","染井吉野櫻"],"scientific":"","category":"plant","categoryLabel":"植物","animated":false,"featured":true,"themes":["flowers"],"image":"/model-images/sakura_cherry_blossom_preview.jpeg","url":"/zh-Hant/models/sakura-cherry-blossom/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/sakura_cherry_blossom-1717f877b448.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/sakura_cherry_blossom.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/f5e6f5a985ea4fc2a14ee0b4b37572b5"},{"id":"d69e1be5895f40e484f0db472a721c2f","slug":"indian-lotus","name":"印度蓮","names":["Indian Lotus","Indischer Lotus","ハス","연꽃","印度莲","印度蓮"],"scientific":"Nelumbo nucifera","category":"plant","categoryLabel":"植物","animated":false,"featured":true,"themes":["pond-life","flowers"],"image":"/model-images/indian_lotus_preview.jpeg","url":"/zh-Hant/models/indian-lotus/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/indian_lotus-093e2103bc5a.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/indian_lotus.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/d69e1be5895f40e484f0db472a721c2f"},{"id":"b11d9f411194426bb16883aed176e4e6","slug":"tiger-lily","name":"卷丹百合","names":["Tiger Lily","Tigerlilie","コオニユリ","참나리","卷丹百合","卷丹百合"],"scientific":"Lilium leichtlinii f","category":"plant","categoryLabel":"植物","animated":false,"featured":true,"themes":["flowers"],"image":"/model-images/tiger_lily_preview.jpeg","url":"/zh-Hant/models/tiger-lily/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/tiger_lily-9ced5dcbc83f.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/tiger_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/b11d9f411194426bb16883aed176e4e6"}],"initialCategory":"","theme":"","home":true}</script>
+<script defer src="/assets/vendor/icons.js"></script>
+<script type="module" src="/assets/experience.js"></script></body></html>

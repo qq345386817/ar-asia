@@ -1,181 +1,155 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Little Nature - 3D-Tier- und Pflanzenmodell-Führer</title>
-  <meta name="description" content="Durchsuche kuratierte CC0-3D-Modelle von Tieren und Pflanzen auf Apple-Geräten. Lade bei Bedarf und sieh unterstützte iPhone- und iPad-Modelle in AR an.">
-  <meta name="keywords" content="Little Nature,AR Biologie App,3D Biologiemodelle,Tiermodelle,Pflanzenmodelle,asiatische Biodiversität,ARKit,RealityKit,CC0 Modelle,Naturbildung">
-  <meta name="author" content="Peike Luo">
-  <meta name="application-name" content="Little Nature">
-  <meta name="apple-mobile-web-app-title" content="Little Nature">
-  <meta name="apple-itunes-app" content="app-id=6766551832">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Little Nature | Tiere &amp; Pflanzen in 3D</title>
+  <meta name="description" content="Entdecke Tier- und Pflanzenmodelle in 3D, sieh dir vorhandene Animationen an und stelle druckbare Natur-Lernkarten zusammen.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="../favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <link rel="stylesheet" href="../style/base.css">
+  <meta name="apple-itunes-app" content="app-id=6766551832">
   <link rel="canonical" href="https://ar-asia.luopeike.com/de-DE/">
   <link rel="alternate" hreflang="en-US" href="https://ar-asia.luopeike.com/en-US/">
-  <link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/">
-  <link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/">
-  <link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/">
-  <link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/">
-  <link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/">
-  <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/">
-  <meta property="og:title" content="Little Nature - 3D-Tier- und Pflanzenmodell-Führer">
-  <meta property="og:description" content="Durchsuche kuratierte CC0-3D-Modelle, lade bei Bedarf und sieh unterstützte iPhone- und iPad-Modelle in AR an.">
+<link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/">
+<link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/experience.css">
+  <meta property="og:title" content="Little Nature | Tiere &amp; Pflanzen in 3D">
+  <meta property="og:description" content="Entdecke Tier- und Pflanzenmodelle in 3D, sieh dir vorhandene Animationen an und stelle druckbare Natur-Lernkarten zusammen.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ar-asia.luopeike.com/de-DE/">
-  <meta property="og:site_name" content="Little Nature">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta property="og:locale:alternate" content="zh_TW">
-  <meta property="og:locale:alternate" content="ja_JP">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Little Nature - 3D-Tier- und Pflanzenmodell-Führer">
-  <meta name="twitter:description" content="Ein ruhiger Führer für CC0-3D-Tier- und Pflanzenmodelle auf Apple-Geräten.">
   <meta property="og:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-  <meta name="twitter:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://ar-asia.luopeike.com/#organization",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ar-asia.luopeike.com/apple-touch-icon.png",
-        "width": 180,
-        "height": 180
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766551832",
-        "https://sketchfab.com/ffishAsia-and-floraZia"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://ar-asia.luopeike.com/#website",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "inLanguage": "de",
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://ar-asia.luopeike.com/#app",
-      "name": "Little Nature",
-      "alternateName": "小小自然",
-      "description": "Durchsuche kuratierte CC0-3D-Modelle von Tieren und Pflanzen auf Apple-Geräten. Lade bei Bedarf und sieh unterstützte iPhone- und iPad-Modelle in AR an.",
-      "url": "https://ar-asia.luopeike.com/de-DE/",
-      "downloadUrl": "https://apps.apple.com/app/id6766551832",
-      "mainEntityOfPage": {
-        "@id": "https://ar-asia.luopeike.com/#website"
-      },
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766551832",
-        "https://sketchfab.com/ffishAsia-and-floraZia"
-      ],
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "iOS, iPadOS, macOS",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://ar-asia.luopeike.com/de-DE/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Little Nature",
-          "item": "https://ar-asia.luopeike.com/de-DE/"
-        }
-      ]
-    }
-  ]
-}
-  </script>
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Little Nature","description":"Die Natur aus der Nähe","url":"https://ar-asia.luopeike.com/de-DE/","inLanguage":"de","isPartOf":{"@id":"https://ar-asia.luopeike.com/#website"},"mainEntity":{"@type":"ItemList","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"name":"Japanische Süßwasserkrabbe (Low Poly)","url":"https://ar-asia.luopeike.com/de-DE/models/japanese-freshwater-crab-lowpoly/"},{"@type":"ListItem","position":2,"name":"Japanische Vierstreifennatter","url":"https://ar-asia.luopeike.com/de-DE/models/striped-snake/"},{"@type":"ListItem","position":3,"name":"Japanischer Nashornkäfer (Larve)","url":"https://ar-asia.luopeike.com/de-DE/models/japanese-rhinoceros-beetle/"},{"@type":"ListItem","position":4,"name":"Gewöhnlicher Tigerfalter","url":"https://ar-asia.luopeike.com/de-DE/models/common-tiger-butterfly/"},{"@type":"ListItem","position":5,"name":"Aburazemi-Zikade","url":"https://ar-asia.luopeike.com/de-DE/models/aburazemi-cicada/"},{"@type":"ListItem","position":6,"name":"Fischerspinne","url":"https://ar-asia.luopeike.com/de-DE/models/fishing-spider/"},{"@type":"ListItem","position":7,"name":"Japanischer Waldlaubfrosch","url":"https://ar-asia.luopeike.com/de-DE/models/forest-green-tree-frog/"},{"@type":"ListItem","position":8,"name":"Chinesische Dreikielschildkröte","url":"https://ar-asia.luopeike.com/de-DE/models/reeves-pond-turtle/"},{"@type":"ListItem","position":9,"name":"Japanischer Flusskrebs","url":"https://ar-asia.luopeike.com/de-DE/models/japanese-crayfish/"},{"@type":"ListItem","position":10,"name":"Somei-Yoshino-Kirsche","url":"https://ar-asia.luopeike.com/de-DE/models/sakura-cherry-blossom/"},{"@type":"ListItem","position":11,"name":"Indischer Lotus","url":"https://ar-asia.luopeike.com/de-DE/models/indian-lotus/"},{"@type":"ListItem","position":12,"name":"Tigerlilie","url":"https://ar-asia.luopeike.com/de-DE/models/tiger-lily/"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Little Nature","item":"https://ar-asia.luopeike.com/de-DE/"}]},{"@type":"WebSite","@id":"https://ar-asia.luopeike.com/#website","name":"Little Nature","url":"https://ar-asia.luopeike.com/de-DE/","inLanguage":"de"}]}</script>
 </head>
-
-<body>
-  <main class="site-shell home-shell">
+<body class="experience-site"><main class="site-shell experience-shell">
     <header class="site-header">
-      <a class="brand" href="./" aria-label="Little Nature Startseite">
-        <span class="brand-mark">LN</span>
-        <span>Little Nature</span>
-      </a>
+      <a class="brand" href="/de-DE/"><img src="/favicon-64.png" alt="" width="36" height="36"><span>Little Nature</span></a>
       <div class="header-actions">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="help">Hilfe</a>
-          <a href="models/">Modelle</a>
-          <a href="privacy-policy">Datenschutz</a>
-          <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+        <nav class="nav-links" aria-label="Modelle">
+          <a href="/de-DE/models/">Modelle</a>
+          <a class="study-link" href="/de-DE/study-cards/"><i data-lucide="book-open"></i>Lernkarten<span class="selection-badge" data-selection-count hidden>0</span></a>
+          <a href="/de-DE/help">Hilfe</a>
         </nav>
-        <select class="language-select" aria-label="Sprache" onchange="if (this.value) window.location.href = this.value;"><option value="../en-US/">English</option><option value="../zh-Hans/">简体中文</option><option value="../zh-Hant/">繁體中文</option><option value="../ja/">日本語</option><option value="../ko/">한국어</option><option value="../de-DE/" selected>Deutsch</option></select><noscript><span class="language-noscript"><a href="../en-US/">English</a><a href="../zh-Hans/">简体中文</a><a href="../zh-Hant/">繁體中文</a><a href="../ja/">日本語</a><a href="../ko/">한국어</a><a href="../de-DE/">Deutsch</a></span></noscript>
+        <select class="language-select" aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/en-US/">English</option><option value="/de-DE/" selected>Deutsch</option><option value="/ja/">日本語</option><option value="/ko/">한국어</option><option value="/zh-Hans/">简体中文</option><option value="/zh-Hant/">繁體中文</option></select>
       </div>
     </header>
+    <section class="catalog-intro"><div><h1>Little Nature</h1><p>Die Natur aus der Nähe</p></div></section>
+    <nav class="theme-links" aria-label="Thema"><a href="/de-DE/collections/motion/"><i data-lucide="play"></i>Modelle in Bewegung</a><a href="/de-DE/collections/small-creatures/"><i data-lucide="bug"></i>Kleine Lebewesen</a><a href="/de-DE/collections/pond-life/"><i data-lucide="waves"></i>Leben am Wasser</a><a href="/de-DE/collections/flowers/"><i data-lucide="leaf"></i>Blüten aus der Nähe</a></nav>
 
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Feldführer für biologische 3D-Modelle</p>
-        <h1>Asiatische Biodiversität in 3D erkunden.</h1>
-        <p class="lead">Little Nature hilft dir, kuratierte Tier- und Pflanzenrecords zu durchsuchen, Modelle nur bei Bedarf zu laden und unterstützte Modelle auf iPhone und iPad in AR anzusehen.</p>
-        <div class="cta-row">
-          <a class="button" href="https://apps.apple.com/app/id6766551832">Im App Store ansehen</a>
-          <a class="button secondary" href="help">Hilfe lesen</a>
-        </div>
-      </div>
+    <section class="catalog-section" aria-label="Ausgewählte Modelle">
+      <div class="section-heading"><h2>Ausgewählte Modelle</h2><a class="text-link" href="/de-DE/models/">Alle Modelle<i data-lucide="arrow-up-right"></i></a></div>
 
-      <aside class="preview-panel" aria-label="App-Funktionsvorschau">
-        <article class="specimen-card">
-          <div class="specimen-image" role="img" aria-label="Stilisierte Vorschau eines 3D-Blumenmodells"></div>
-          <h2 class="specimen-title">Sakura Cherry Blossom</h2>
-          <p class="specimen-meta">Pflanze · 38,8 MB · CC0-basierter Modellrecord</p>
-          <div class="chip-row"><span class="chip">Suche</span><span class="chip">Kategorien</span><span class="chip">Downloads bei Bedarf</span></div>
-        </article>
-      </aside>
+    <form class="catalog-toolbar" role="search">
+      <label class="search-field"><i data-lucide="search"></i><span class="sr-only">Suche</span><input id="model-search" type="search" name="q" autocomplete="off" placeholder="Name oder wissenschaftlicher Name"></label>
+      <label class="filter-field"><span class="sr-only">Kategorie</span><select id="category-filter"><option value="">Alle Modelle</option><option value="animal">Tier</option><option value="plant">Pflanze</option><option value="special">Spezial</option></select></label>
+      <label class="filter-field"><span class="sr-only">Thema</span><select id="theme-filter"><option value="">Alle Themen</option><option value="motion">Modelle in Bewegung</option><option value="small-creatures">Kleine Lebewesen</option><option value="pond-life">Leben am Wasser</option><option value="flowers">Blüten aus der Nähe</option></select></label>
+      <label class="animation-filter"><input id="animated-filter" type="checkbox"><span>Animierte Modelle</span></label>
+    </form>
+      <p class="result-count" id="result-count" role="status" aria-live="polite">12 / 12</p>
+      <div class="specimen-grid">
+      <article class="specimen-tile" data-model-id="35559c2236d04c1a80ccbe08cae863c6">
+        <a class="specimen-link" href="/de-DE/models/japanese-freshwater-crab-lowpoly/">
+          <div class="specimen-photo"><img src="/model-images/japanese_freshwater_crab_lowpoly_preview.jpeg" alt="Japanische Süßwasserkrabbe (Low Poly) — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"><span class="animation-mark"><i data-lucide="play"></i>Animation</span></div>
+          <div class="specimen-caption"><h3>Japanische Süßwasserkrabbe (Low Poly)</h3><span class="specimen-scientific">Geothelphusa dehaani</span><span class="specimen-kind">Spezial</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="35559c2236d04c1a80ccbe08cae863c6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Süßwasserkrabbe (Low Poly)"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="0f4f583d5e3842eca1152c0bb021ec32">
+        <a class="specimen-link" href="/de-DE/models/striped-snake/">
+          <div class="specimen-photo"><img src="/model-images/striped_snake_preview.jpeg" alt="Japanische Vierstreifennatter — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"><span class="animation-mark"><i data-lucide="play"></i>Animation</span></div>
+          <div class="specimen-caption"><h3>Japanische Vierstreifennatter</h3><span class="specimen-scientific">Elaphe quadrivirgata</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="0f4f583d5e3842eca1152c0bb021ec32" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanische Vierstreifennatter"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b67fb6cbe3fa455c81373aaa9f91fa1a">
+        <a class="specimen-link" href="/de-DE/models/japanese-rhinoceros-beetle/">
+          <div class="specimen-photo"><img src="/model-images/japanese_rhinoceros_beetle_preview.jpeg" alt="Japanischer Nashornkäfer (Larve) — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Nashornkäfer (Larve)</h3><span class="specimen-scientific">Trypoxylus dichotomus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b67fb6cbe3fa455c81373aaa9f91fa1a" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Nashornkäfer (Larve)"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="ea300256d9dc460b871dee878080fe7c">
+        <a class="specimen-link" href="/de-DE/models/common-tiger-butterfly/">
+          <div class="specimen-photo"><img src="/model-images/common_tiger_butterfly_preview.jpeg" alt="Gewöhnlicher Tigerfalter — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Gewöhnlicher Tigerfalter</h3><span class="specimen-scientific">Salatura genutia</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="ea300256d9dc460b871dee878080fe7c" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Gewöhnlicher Tigerfalter"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="263e196645fd420d830a06462e906d08">
+        <a class="specimen-link" href="/de-DE/models/aburazemi-cicada/">
+          <div class="specimen-photo"><img src="/model-images/aburazemi_cicada_preview.jpeg" alt="Aburazemi-Zikade — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Aburazemi-Zikade</h3><span class="specimen-scientific">Graptopsaltria nigrofuscata</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="263e196645fd420d830a06462e906d08" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Aburazemi-Zikade"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="320e77ebe2e049dcbb759dd79ee03a8c">
+        <a class="specimen-link" href="/de-DE/models/fishing-spider/">
+          <div class="specimen-photo"><img src="/model-images/fishing_spider_preview.jpeg" alt="Fischerspinne — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Fischerspinne</h3><span class="specimen-scientific">Dolomedes orion</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="320e77ebe2e049dcbb759dd79ee03a8c" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Fischerspinne"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="a9c23391171c4e1abd859b05887e00af">
+        <a class="specimen-link" href="/de-DE/models/forest-green-tree-frog/">
+          <div class="specimen-photo"><img src="/model-images/forest_green_tree_frog_preview.jpeg" alt="Japanischer Waldlaubfrosch — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Waldlaubfrosch</h3><span class="specimen-scientific">Rhacophorus arboreus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="a9c23391171c4e1abd859b05887e00af" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Waldlaubfrosch"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="638f29eae79d40ddb0adaf6ebb8375cc">
+        <a class="specimen-link" href="/de-DE/models/reeves-pond-turtle/">
+          <div class="specimen-photo"><img src="/model-images/reeves_pond_turtle_preview.jpeg" alt="Chinesische Dreikielschildkröte — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Chinesische Dreikielschildkröte</h3><span class="specimen-scientific">Mauremys reevesii</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="638f29eae79d40ddb0adaf6ebb8375cc" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Chinesische Dreikielschildkröte"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="2b2381a6a4bc4a68ac7449fbfb96df51">
+        <a class="specimen-link" href="/de-DE/models/japanese-crayfish/">
+          <div class="specimen-photo"><img src="/model-images/japanese_crayfish_preview.jpeg" alt="Japanischer Flusskrebs — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Japanischer Flusskrebs</h3><span class="specimen-scientific">Cambaroides japonicus</span><span class="specimen-kind">Tier</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="2b2381a6a4bc4a68ac7449fbfb96df51" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Japanischer Flusskrebs"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="f5e6f5a985ea4fc2a14ee0b4b37572b5">
+        <a class="specimen-link" href="/de-DE/models/sakura-cherry-blossom/">
+          <div class="specimen-photo"><img src="/model-images/sakura_cherry_blossom_preview.jpeg" alt="Somei-Yoshino-Kirsche — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Somei-Yoshino-Kirsche</h3><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="f5e6f5a985ea4fc2a14ee0b4b37572b5" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Somei-Yoshino-Kirsche"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="d69e1be5895f40e484f0db472a721c2f">
+        <a class="specimen-link" href="/de-DE/models/indian-lotus/">
+          <div class="specimen-photo"><img src="/model-images/indian_lotus_preview.jpeg" alt="Indischer Lotus — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Indischer Lotus</h3><span class="specimen-scientific">Nelumbo nucifera</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="d69e1be5895f40e484f0db472a721c2f" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Indischer Lotus"><i data-lucide="plus"></i></button>
+      </article>
+      <article class="specimen-tile" data-model-id="b11d9f411194426bb16883aed176e4e6">
+        <a class="specimen-link" href="/de-DE/models/tiger-lily/">
+          <div class="specimen-photo"><img src="/model-images/tiger_lily_preview.jpeg" alt="Tigerlilie — 3D-Modell" width="1024" height="576" loading="lazy" decoding="async"></div>
+          <div class="specimen-caption"><h3>Tigerlilie</h3><span class="specimen-scientific">Lilium leichtlinii f</span><span class="specimen-kind">Pflanze</span></div>
+        </a>
+        <button class="icon-button card-toggle" data-card-id="b11d9f411194426bb16883aed176e4e6" type="button" aria-pressed="false" title="Zu Lernkarten hinzufügen" aria-label="Zu Lernkarten hinzufügen: Tigerlilie"><i data-lucide="plus"></i></button>
+      </article></div><div class="empty-state" id="catalog-empty" hidden><h2>Keine passenden Modelle</h2><button class="button secondary" id="reset-filters" type="button"><i data-lucide="rotate-ccw"></i>Filter zurücksetzen</button><a id="search-all-link" href="/de-DE/models/" hidden>Alle Modelle durchsuchen</a></div>
     </section>
 
-    <section class="section">
-      <h2>Für ruhiges Erkunden gemacht</h2>
-      <div class="grid">
-        <article class="feature-card"><h3>Kuratierter Modellkatalog</h3><p>Durchsuche asiatische Tier- und Pflanzenrecords mit Namen, Taxonomie, Dateigröße, Geometriewerten und Quellenlinks.</p></article>
-        <article class="feature-card"><h3>Suchen und filtern</h3><p>Finde Modelle nach japanischem, englischem, chinesischem oder wissenschaftlichem Namen und grenze Ergebnisse nach Kategorie ein.</p></article>
-        <article class="feature-card"><h3>Kontrolle über lokale Inhalte</h3><p>Lade Modelle bei Bedarf, prüfe gespeicherte Inhalte und lösche lokale Dateien im Download-Manager.</p></article>
-      </div>
-    </section>
+    <aside class="app-band">
+      <img src="/app-icon.png" alt="" width="52" height="52" loading="lazy">
+      <div><h2>Natur für unterwegs</h2><p>Speichere Modelle auf iPhone, iPad und Mac offline. Auf unterstützten iPhones und iPads kannst du sie auch in AR entdecken.</p></div>
+      <a class="button app-store-link" data-surface="home" href="https://apps.apple.com/app/id6766551832?ct=website_de-DE_home&amp;mt=8">Little Nature laden<i data-lucide="arrow-up-right"></i></a>
+    </aside>
 
-    <section class="section">
-      <h2>Über die Modellquellen</h2>
-      <div class="grid">
-        <article class="feature-card"><h3>Offene Modellreferenzen</h3><p>Modellrecords werden aus öffentlichen Quellen kuratiert und, wenn verfügbar, mit Zuordnung und Quellenlinks dargestellt.</p></article>
-        <article class="feature-card"><h3>CC0-basierte Nutzung</h3><p>Die enthaltenen Modellressourcen basieren auf CC0-Lizenzierung für Katalogansicht, Downloadverwaltung und AR-Ansicht.</p></article>
-        <article class="feature-card"><h3>Kein Konto erforderlich</h3><p>Little Nature benötigt keine Registrierung, Anmeldung oder ein persönliches Profil, um den Katalog zu durchsuchen.</p></article>
-      </div>
-    </section>
-
-    <p class="footer">Fragen oder Feedback? Kontakt: cameoshell09@gmail.com.</p>
-  </main>
-</body>
-
-</html>
+    <footer class="experience-footer">
+      <span>Little Nature · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span>
+      <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com · Sketchfab</a>
+      <a href="/de-DE/privacy-policy">Datenschutz</a>
+    </footer>
+    </main><script id="experience-data" type="application/json">{"locale":"de-DE","surface":"catalog","copy":{"catalogTitle":"Tiere & Pflanzen in 3D","homeSubtitle":"Die Natur aus der Nähe","catalogDescription":"Entdecke Tier- und Pflanzenmodelle in 3D, sieh dir vorhandene Animationen an und stelle druckbare Natur-Lernkarten zusammen.","featured":"Ausgewählte Modelle","all":"Alle Modelle","search":"Suche","searchPlaceholder":"Name oder wissenschaftlicher Name","theme":"Thema","allThemes":"Alle Themen","animatedOnly":"Animierte Modelle","results":"{count} / {total}","studyCards":"Lernkarten","addCard":"Zu Lernkarten hinzufügen","removeCard":"Aus Lernkarten entfernen","selected":"{count} ausgewählt","clear":"Auswahl löschen","view3d":"In 3D ansehen","loading":"Modell wird geladen…","loadError":"Das 3D-Modell konnte nicht geladen werden.","retry":"Erneut versuchen","sourceViewer":"Auf Sketchfab öffnen","providerNote":"Beim Öffnen verbindet sich die interaktive Ansicht mit Sketchfab.","play":"Animation abspielen","pause":"Animation pausieren","reset":"Ansicht zurücksetzen","fullscreen":"Vollbild","imageAlt":"{name} — 3D-Modell","observe":"Genauer hinsehen","back":"Zurück zu den Modellen","source":"Quelle","license":"Lizenz","quickLook":"In AR ansehen","downloadGLB":"GLB herunterladen","noResults":"Keine passenden Modelle","resetFilters":"Filter zurücksetzen","searchAll":"Alle Modelle durchsuchen","studyTitle":"Natur-Lernkarten","studyDescription":"Bildkarten mit Tieren und Pflanzen für Naturunterricht, Zuordnungsspiele und eigenes Lernen.","paper":"Papier","layout":"Kartensatz","namedCards":"Bild & Name","matchingCards":"Bilder + passende Namen","scientificNames":"Wissenschaftliche Namen","print":"Karten drucken","selectFeatured":"Ausgewählte Modelle wählen","emptySelection":"Keine Karten ausgewählt","chooseModels":"Modelle auswählen","preview":"Druckvorschau","appTitle":"Natur für unterwegs","appBody":"Speichere Modelle auf iPhone, iPad und Mac offline. Auf unterstützten iPhones und iPads kannst du sie auch in AR entdecken.","appCta":"Little Nature laden","websitePrivacyTitle":"Nutzung dieser Website","websitePrivacy":"Die Lernkartenauswahl wird nur in diesem Browser gespeichert. Wir erfassen begrenzte eigene Nutzungsereignisse wie erfolgreiche 3D-Ladevorgänge, Animationen, Drucken und Klicks zum App Store, mit einer zufälligen Kennung der Tab-Sitzung, Sprache, Geräteklasse und festen Modell- oder Themenkennungen. Suchtexte, ausgewählte Karteninhalte, Kamerabilder und vollständige Seiten-URLs werden nicht erfasst. Sitzungskennungen werden vor der Speicherung gehasht; Ereignisse werden bis zu 90 Tage aufbewahrt. Die Statistik respektiert Global Privacy Control und Do Not Track. Beim Öffnen der Sketchfab-Ansicht wird direkt dieser Drittanbieter kontaktiert; für diese Anfragen gilt dessen Datenschutzerklärung.","themes":{"motion":{"title":"Modelle in Bewegung","description":"Zwei animierte Modelle und ihre sich verändernden Formen.","prompts":["Vergleiche dieselbe Pose von vorne und von der Seite.","Pausiere die Animation und betrachte Beine oder Körperumriss.","Die Modellanimationen messen keine echten Tierbewegungen."]},"small-creatures":{"title":"Kleine Lebewesen","description":"Käfer, Schmetterlinge, Spinnen und andere kleine Tiere aus der Nähe.","prompts":["Vergleiche Anzahl und Anordnung der Beine.","Achte auf Fühler, Flügel und Körperabschnitte.","Eine Spinne ist ein Spinnentier, kein Insekt. Vergleiche ihren Körperbau."]},"pond-life":{"title":"Leben am Wasser","description":"Frösche, Schildkröten, Flusskrebse, Krabben und blühende Wasserpflanzen.","prompts":["Vergleiche Panzer, Außenskelett und weichen Körper.","Betrachte Form und Gelenke der Gliedmaßen.","Vergleiche Blüten und Blätter von Lotus und Seerose."]},"flowers":{"title":"Blüten aus der Nähe","description":"Kirschblüten, Lilien, Lotus und andere Blütenpflanzen.","prompts":["Vergleiche Form und Symmetrie der Blütenblätter.","Betrachte die Position der Blüte am Stängel.","Vergleiche sichtbare Staubblätter und die Blütenmitte."]}}},"models":[{"id":"35559c2236d04c1a80ccbe08cae863c6","slug":"japanese-freshwater-crab-lowpoly","name":"Japanische Süßwasserkrabbe (Low Poly)","names":["Japanese Freshwater Crab Low Poly","Japanische Süßwasserkrabbe (Low Poly)","サワガニ（低ポリゴン版）","일본민물게 저폴리곤","日本泽蟹（低面数版）","日本澤蟹（低面數版）"],"scientific":"Geothelphusa dehaani","category":"special","categoryLabel":"Spezial","animated":true,"featured":true,"themes":["motion","pond-life"],"image":"/model-images/japanese_freshwater_crab_lowpoly_preview.jpeg","url":"/de-DE/models/japanese-freshwater-crab-lowpoly/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_freshwater_crab_lowpoly.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/35559c2236d04c1a80ccbe08cae863c6"},{"id":"0f4f583d5e3842eca1152c0bb021ec32","slug":"striped-snake","name":"Japanische Vierstreifennatter","names":["Striped Snake","Japanische Vierstreifennatter","シマヘビ","일본줄무늬뱀","日本锦蛇","日本錦蛇"],"scientific":"Elaphe quadrivirgata","category":"animal","categoryLabel":"Tier","animated":true,"featured":true,"themes":["motion"],"image":"/model-images/striped_snake_preview.jpeg","url":"/de-DE/models/striped-snake/","glb":"","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/striped_snake.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-striped-snake-elaphe-quadrivirgata-0f4f583d5e3842eca1152c0bb021ec32"},{"id":"b67fb6cbe3fa455c81373aaa9f91fa1a","slug":"japanese-rhinoceros-beetle","name":"Japanischer Nashornkäfer (Larve)","names":["Japanese Rhinoceros Beetle Larva","Japanischer Nashornkäfer (Larve)","カブトムシ（幼虫）","장수풍뎅이 유충","日本独角仙幼虫","日本獨角仙幼蟲"],"scientific":"Trypoxylus dichotomus","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/japanese_rhinoceros_beetle_preview.jpeg","url":"/de-DE/models/japanese-rhinoceros-beetle/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/japanese_rhinoceros_beetle-f1021e46ab27.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_rhinoceros_beetle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-japanese-rhinoceros-beetle-b67fb6cbe3fa455c81373aaa9f91fa1a"},{"id":"ea300256d9dc460b871dee878080fe7c","slug":"common-tiger-butterfly","name":"Gewöhnlicher Tigerfalter","names":["Common Tiger Butterfly","Gewöhnlicher Tigerfalter","スジグロカバマダラ","검은맥호랑나비","黑脉桦斑蝶","黑脈樺斑蝶"],"scientific":"Salatura genutia","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/common_tiger_butterfly_preview.jpeg","url":"/de-DE/models/common-tiger-butterfly/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/common_tiger_butterfly-fb7998b5d659.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/common_tiger_butterfly.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/ea300256d9dc460b871dee878080fe7c"},{"id":"263e196645fd420d830a06462e906d08","slug":"aburazemi-cicada","name":"Aburazemi-Zikade","names":["Aburazemi Cicada","Aburazemi-Zikade","アブラゼミ","유지매미","油蝉","油蟬"],"scientific":"Graptopsaltria nigrofuscata","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/aburazemi_cicada_preview.jpeg","url":"/de-DE/models/aburazemi-cicada/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/aburazemi_cicada-86dde984317d.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/aburazemi_cicada.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/263e196645fd420d830a06462e906d08"},{"id":"320e77ebe2e049dcbb759dd79ee03a8c","slug":"fishing-spider","name":"Fischerspinne","names":["Fishing Spider","Fischerspinne","オオハシリグモ","낚시거미","大长脚蛛","大長腳蛛"],"scientific":"Dolomedes orion","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["small-creatures"],"image":"/model-images/fishing_spider_preview.jpeg","url":"/de-DE/models/fishing-spider/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/fishing_spider-1b4fdfe68356.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/fishing_spider.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-fishing-spider-dolomedes-orion-320e77ebe2e049dcbb759dd79ee03a8c"},{"id":"a9c23391171c4e1abd859b05887e00af","slug":"forest-green-tree-frog","name":"Japanischer Waldlaubfrosch","names":["Forest Green Tree Frog","Japanischer Waldlaubfrosch","モリアオガエル","모리아오개구리","森林绿树蛙","森林綠樹蛙"],"scientific":"Rhacophorus arboreus","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/forest_green_tree_frog_preview.jpeg","url":"/de-DE/models/forest-green-tree-frog/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/forest_green_tree_frog-61a2b59d397b.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/forest_green_tree_frog.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/a9c23391171c4e1abd859b05887e00af"},{"id":"638f29eae79d40ddb0adaf6ebb8375cc","slug":"reeves-pond-turtle","name":"Chinesische Dreikielschildkröte","names":["Reeve's Pond Turtle","Chinesische Dreikielschildkröte","クサガメ","남생이","草龟","草龜"],"scientific":"Mauremys reevesii","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/reeves_pond_turtle_preview.jpeg","url":"/de-DE/models/reeves-pond-turtle/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/reeves_pond_turtle-74045ab5c638.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/reeves_pond_turtle.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/cc0-reeves-pond-turtle-m-reevesii-638f29eae79d40ddb0adaf6ebb8375cc"},{"id":"2b2381a6a4bc4a68ac7449fbfb96df51","slug":"japanese-crayfish","name":"Japanischer Flusskrebs","names":["Japanese Crayfish","Japanischer Flusskrebs","ニホンザリガニ","일본가재","日本小龙虾","日本小龍蝦"],"scientific":"Cambaroides japonicus","category":"animal","categoryLabel":"Tier","animated":false,"featured":true,"themes":["pond-life"],"image":"/model-images/japanese_crayfish_preview.jpeg","url":"/de-DE/models/japanese-crayfish/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/japanese_crayfish-a76ebb9dc9fd.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/japanese_crayfish.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/2b2381a6a4bc4a68ac7449fbfb96df51"},{"id":"f5e6f5a985ea4fc2a14ee0b4b37572b5","slug":"sakura-cherry-blossom","name":"Somei-Yoshino-Kirsche","names":["Sakura Cherry Blossom","Somei-Yoshino-Kirsche","ソメイヨシノ","왕벚나무","染井吉野樱","染井吉野櫻"],"scientific":"","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":true,"themes":["flowers"],"image":"/model-images/sakura_cherry_blossom_preview.jpeg","url":"/de-DE/models/sakura-cherry-blossom/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/sakura_cherry_blossom-1717f877b448.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/sakura_cherry_blossom.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/f5e6f5a985ea4fc2a14ee0b4b37572b5"},{"id":"d69e1be5895f40e484f0db472a721c2f","slug":"indian-lotus","name":"Indischer Lotus","names":["Indian Lotus","Indischer Lotus","ハス","연꽃","印度莲","印度蓮"],"scientific":"Nelumbo nucifera","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":true,"themes":["pond-life","flowers"],"image":"/model-images/indian_lotus_preview.jpeg","url":"/de-DE/models/indian-lotus/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/indian_lotus-093e2103bc5a.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/indian_lotus.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/d69e1be5895f40e484f0db472a721c2f"},{"id":"b11d9f411194426bb16883aed176e4e6","slug":"tiger-lily","name":"Tigerlilie","names":["Tiger Lily","Tigerlilie","コオニユリ","참나리","卷丹百合","卷丹百合"],"scientific":"Lilium leichtlinii f","category":"plant","categoryLabel":"Pflanze","animated":false,"featured":true,"themes":["flowers"],"image":"/model-images/tiger_lily_preview.jpeg","url":"/de-DE/models/tiger-lily/","glb":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/web-models/tiger_lily-9ced5dcbc83f.glb","usdz":"https://pub-0154a542ca38442c855387e2736c8f19.r2.dev/models/tiger_lily.usdz","creator":"ffish.asia / floraZia.com","source":"https://sketchfab.com/3d-models/b11d9f411194426bb16883aed176e4e6"}],"initialCategory":"","theme":"","home":true}</script>
+<script defer src="/assets/vendor/icons.js"></script>
+<script type="module" src="/assets/experience.js"></script></body></html>

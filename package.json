@@ -1,0 +1,26 @@
+{
+  "name": "little-nature-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/pages_postinstall.mjs",
+    "generate": "python3 generate_model_pages.py",
+    "build:vendor": "node scripts/build_vendor.mjs",
+    "build": "npm run build:vendor && node scripts/build_site.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "@gltf-transform/functions": "4.5.1",
+    "@google/model-viewer": "4.3.1",
+    "@playwright/test": "1.61.1",
+    "draco3d": "1.5.7",
+    "esbuild": "0.28.2",
+    "lucide": "1.54.0",
+    "meshoptimizer": "1.0.1",
+    "sharp": "0.35.5"
+  }
+}

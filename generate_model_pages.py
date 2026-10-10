@@ -5,6 +5,9 @@ import re
 import shutil
 from datetime import date
 from pathlib import Path
+import xml.etree.ElementTree as ET
+
+from web_experience import Experience
 
 ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parent
@@ -15,6 +18,7 @@ SITE = "https://ar-asia.luopeike.com"
 APP_STORE_URL = "https://apps.apple.com/app/id6766551832"
 SKETCHFAB_SOURCE_URL = "https://sketchfab.com/ffishAsia-and-floraZia"
 LASTMOD = date.today().isoformat()
+CHANGED_URLS = set()
 
 LOCALES = {
     "en-US": {
@@ -375,37 +379,17 @@ def format_number(value):
 
 def description_for(model, locale):
     name = name_for(model, locale)
-    category = LOCALES[locale]["category_labels"].get(model.get("category"), model.get("category", ""))
-    scientific = model.get("scientific_name") or ""
-    if locale == "de-DE":
-        base = f"{name} ist ein kuratierter CC0-basierter 3D-Modellrecord in Little Nature."
-        if scientific:
-            base += f" Wissenschaftlicher Name: {scientific}."
-        return f"{base} Kategorie: {category}. Dateigröße: {model.get('file_size_mb', '')} MB."
-    if locale == "ja":
-        base = f"{name}は、小さな自然で閲覧できるCC0ベースの3Dモデル資料です。"
-        if scientific:
-            base += f" 学名: {scientific}。"
-        return f"{base} カテゴリー: {category}。ファイルサイズ: {model.get('file_size_mb', '')} MB。"
-    if locale == "ko":
-        base = f"{name}는 Little Nature에서 탐색할 수 있는 CC0 기반 3D 모델 기록입니다."
-        if scientific:
-            base += f" 학명: {scientific}."
-        return f"{base} 카테고리: {category}. 파일 크기: {model.get('file_size_mb', '')} MB."
-    if locale == "zh-Hans":
-        base = f"{name} 是小小自然中的一条 CC0 3D 模型资料。"
-        if scientific:
-            base += f" 学名：{scientific}。"
-        return f"{base} 分类：{category}。文件大小：{model.get('file_size_mb', '')} MB。可查看模型预览、几何信息、动画状态和来源链接。"
-    if locale == "zh-Hant":
-        base = f"{name} 是小小自然中的一條 CC0 3D 模型資料。"
-        if scientific:
-            base += f" 學名：{scientific}。"
-        return f"{base} 分類：{category}。檔案大小：{model.get('file_size_mb', '')} MB。可查看模型預覽、幾何資訊、動畫狀態和來源連結。"
-    base = f"{name} is a curated CC0-based 3D model record in Little Nature."
-    if scientific:
-        base += f" Scientific name: {scientific}."
-    return f"{base} Category: {category}. File size: {model.get('file_size_mb', '')} MB."
+    leads = {
+        "en-US": f"Explore {name} in 3D and add it to printable nature study cards.",
+        "de-DE": f"Entdecke {name} in 3D und füge das Modell zu druckbaren Natur-Lernkarten hinzu.",
+        "ja": f"{name}を3Dで観察し、印刷できる自然学習カードに追加できます。",
+        "ko": f"{name} 3D 모델을 살펴보고 인쇄할 자연 학습 카드에 추가하세요.",
+        "zh-Hans": f"在线观察{name}的 3D 模型，并加入可打印的自然学习卡。",
+        "zh-Hant": f"線上觀察{name}的 3D 模型，並加入可列印的自然學習卡。",
+    }
+    scientific = model.get("scientific_name")
+    suffix = f" {LOCALES[locale]['scientific']}: {scientific}." if scientific else ""
+    return leads[locale] + suffix + " CC0."
 
 
 def parse_taxonomy(taxonomy):
@@ -634,7 +618,7 @@ def item_list_schema(models, locale, base_url):
     }
 
 
-def render_page(model, locale, all_models):
+def render_page(model, locale, all_models, experience):
     spec = LOCALES[locale]
     slug = slug_for(model)
     name = name_for(model, locale)
@@ -646,7 +630,10 @@ def render_page(model, locale, all_models):
     category = spec["category_labels"].get(model.get("category"), model.get("category", ""))
     taxonomy = tax_for(model, locale)
     taxonomy_html = "<br>".join(esc(line) for line in taxonomy.splitlines() if line.strip()) or esc(spec["none"])
-    scientific = model.get("scientific_name") or spec["none"]
+    scientific = model.get("scientific_name") or {
+        "en-US": "Not recorded", "de-DE": "Nicht angegeben", "ja": "未記録",
+        "ko": "미등록", "zh-Hans": "未记录", "zh-Hant": "未記錄",
+    }[locale]
     animation = spec["available"] if model.get("has_animation") else spec["none"]
     notes = model_notes(locale, name, category, scientific, taxonomy, model)
     notes_html = "\n".join(f"        <p>{esc(note)}</p>" for note in notes)
@@ -683,8 +670,9 @@ def render_page(model, locale, all_models):
                 "description": description,
                 "url": model_url(locale, slug),
                 "image": image,
-                "encodingFormat": "model/vnd.usdz+zip",
-                "fileFormat": "USDZ",
+                "encodingFormat": ["model/gltf-binary", "model/vnd.usdz+zip"] if experience.model_data(model, locale)["glb"] else "model/vnd.usdz+zip",
+                "fileFormat": ["GLB", "USDZ"] if experience.model_data(model, locale)["glb"] else "USDZ",
+                "inLanguage": spec["lang"],
                 "license": "https://creativecommons.org/publicdomain/zero/1.0/",
                 "isPartOf": {"@id": f"{SITE}/#app"},
                 "sameAs": [value for value in [model.get("sketchfab_url") or SKETCHFAB_SOURCE_URL, reference_url] if value],
@@ -708,6 +696,7 @@ def render_page(model, locale, all_models):
   <link rel="icon" type="image/png" sizes="64x64" href="../../../favicon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
   <link rel="stylesheet" href="../../../style/base.css">
+  <link rel="stylesheet" href="/style/experience.css">
 {meta_links(locale, slug)}
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description[:180])}">
@@ -726,26 +715,27 @@ def render_page(model, locale, all_models):
   </script>
 </head>
 
-<body>
-  <main class="site-shell">
-{nav(locale, slug)}
-    <article class="content-card model-page">
-      <p class="eyebrow">Little Nature / {esc(spec["models"])}</p>
+<body class="experience-site">
+  <main class="site-shell experience-shell">
+{experience.header(locale, "models/" + slug + "/")}
+    <article class="model-page">
+      <p class="eyebrow"><a href="/{locale}/models/">{esc(experience.copy[locale]["back"])}</a></p>
       <h1>{esc(name)}</h1>
-      <p class="lead">{esc(spec["lead"])}</p>
+      <p class="lead">{esc(model.get("scientific_name") or category)}</p>
       <div class="model-layout">
-        <figure class="model-figure">
-          <img src="{local_image}" alt="{esc(name)} 3D model preview" loading="eager">
-          <figcaption>{esc(english_name)}</figcaption>
-        </figure>
+{experience.viewer(model, locale)}
+        <div class="model-detail-sidebar">
         <dl class="model-facts">
           <div><dt>{esc(spec["category"])}</dt><dd>{esc(category)}</dd></div>
           <div><dt>{esc(spec["scientific"])}</dt><dd>{esc(scientific)}</dd></div>
-          <div><dt>{esc(spec["file_size"])}</dt><dd>{esc(model.get("file_size_mb", ""))} MB</dd></div>
-          <div><dt>{esc(spec["geometry"])}</dt><dd>{format_number(model.get("face_count"))} {esc(spec["faces"])} · {format_number(model.get("vertex_count"))} {esc(spec["vertices"])}</dd></div>
+          <div><dt>{esc(spec["file_size"])} (USDZ)</dt><dd>{esc(model.get("file_size_mb", ""))} MB</dd></div>
+          <div><dt>{esc(spec["geometry"])} (USDZ)</dt><dd>{format_number(model.get("face_count"))} {esc(spec["faces"])} · {format_number(model.get("vertex_count"))} {esc(spec["vertices"])}</dd></div>
           <div><dt>{esc(spec["animation"])}</dt><dd>{esc(animation)}</dd></div>
         </dl>
+{experience.detail_actions(model, locale)}
+        </div>
       </div>
+{experience.observation(locale, experience.model_data(model, locale)["themes"][0]) if experience.model_data(model, locale)["themes"] else ""}
       <section class="section">
         <h2>{esc(spec["taxonomy"])}</h2>
         <p class="taxonomy-text">{taxonomy_html}</p>
@@ -764,10 +754,13 @@ def render_page(model, locale, all_models):
       <section class="section">
         <h2>{esc(spec["source"])}</h2>
         <p><a href="{esc(model.get("sketchfab_url") or SKETCHFAB_SOURCE_URL)}">{esc(spec["source_link"])}</a></p>
-        <p><a class="button" href="{APP_STORE_URL}">{esc(spec["cta"])}</a></p>
+        <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> · {esc(experience.model_data(model, locale)["creator"])}</p>
       </section>
     </article>
+{experience.app_band(locale, "model")}
+{experience.footer(locale)}
   </main>
+{experience.runtime([model], locale, "model")}
 </body>
 
 </html>
@@ -1050,10 +1043,19 @@ def copy_images(models):
 
 
 def generate_sitemap(models):
+    old_dates = {}
+    if (ROOT / "sitemap.xml").exists():
+        previous = ET.parse(ROOT / "sitemap.xml")
+        for entry in previous.findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url"):
+            location = entry.findtext("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
+            lastmod = entry.findtext("{http://www.sitemaps.org/schemas/sitemap/0.9}lastmod")
+            if location and lastmod:
+                old_dates[location] = lastmod
     alternates = list(LOCALES)
     page_specs = [
         ("", "1.0"),
         ("models/", "0.9"),
+        ("study-cards/", "0.8"),
         ("help", "0.8"),
         ("privacy-policy", "0.7"),
     ]
@@ -1076,6 +1078,13 @@ def generate_sitemap(models):
                 links.append(f'    <xhtml:link rel="alternate" hreflang="{alt}" href="{category_url(alt, category)}" />')
             links.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{category_url("en-US", category)}" />')
             entries.append((loc, "0.8", links))
+    themes = json.loads((ROOT / "data" / "experience.json").read_text())["themes"]
+    for theme in themes:
+        for locale in LOCALES:
+            loc = f"{SITE}/{locale}/collections/{theme}/"
+            links = [f'    <xhtml:link rel="alternate" hreflang="{alt}" href="{SITE}/{alt}/collections/{theme}/" />' for alt in alternates]
+            links.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/en-US/collections/{theme}/" />')
+            entries.append((loc, "0.8", links))
     for model in models:
         slug = slug_for(model)
         for locale in LOCALES:
@@ -1088,7 +1097,8 @@ def generate_sitemap(models):
     for loc, priority, links in entries:
         body.append("  <url>")
         body.append(f"    <loc>{loc}</loc>")
-        body.append(f"    <lastmod>{LASTMOD}</lastmod>")
+        lastmod = LASTMOD if loc in CHANGED_URLS or loc not in old_dates else old_dates[loc]
+        body.append(f"    <lastmod>{lastmod}</lastmod>")
         body.extend(links)
         body.append(f"    <priority>{priority}</priority>")
         body.append("  </url>")
@@ -1096,23 +1106,87 @@ def generate_sitemap(models):
     (ROOT / "sitemap.xml").write_text("\n".join(body) + "\n", encoding="utf-8")
 
 
+def write_page(path, content, url):
+    content = "\n".join(line.rstrip() for line in content.splitlines()) + "\n"
+    if path.exists() and path.read_text(encoding="utf-8") == content:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+    CHANGED_URLS.add(url)
+
+
+def update_website_privacy(experience, locale):
+    from html.parser import HTMLParser
+
+    path = ROOT / locale / "privacy-policy.html"
+    document = path.read_text(encoding="utf-8")
+    lines = document.splitlines(keepends=True)
+
+    class PolicyParser(HTMLParser):
+        start = None
+        end = None
+        insertion = None
+        section_depth = 0
+
+        def character_offset(self):
+            line, column = self.getpos()
+            return sum(map(len, lines[:line - 1])) + column
+
+        def handle_starttag(self, tag, attributes):
+            attrs = dict(attributes)
+            if tag == "section":
+                if attrs.get("id") == "website-privacy":
+                    self.start = self.character_offset()
+                    self.section_depth = 1
+                elif self.section_depth:
+                    self.section_depth += 1
+            if tag == "p" and "footer" in attrs.get("class", "").split():
+                self.insertion = self.character_offset()
+
+        def handle_endtag(self, tag):
+            if tag == "section" and self.section_depth:
+                self.section_depth -= 1
+                if not self.section_depth:
+                    self.end = self.character_offset() + len("</section>")
+
+    parser = PolicyParser()
+    parser.feed(document)
+    copy = experience.copy[locale]
+    section = (
+        f'<section class="section" id="website-privacy"><h2>{esc(copy["websitePrivacyTitle"])}</h2>'
+        f'<p>{esc(copy["websitePrivacy"])}</p>'
+        '<p><a href="https://sketchfab.com/privacy">Sketchfab</a></p></section>'
+    )
+    if parser.start is not None and parser.end is not None:
+        updated = document[:parser.start] + section + document[parser.end:]
+    elif parser.insertion is not None:
+        updated = document[:parser.insertion] + section + "\n\n      " + document[parser.insertion:]
+    else:
+        raise ValueError("Cannot locate privacy-policy content: " + locale)
+    write_page(path, updated, f"{SITE}/{locale}/privacy-policy")
+
+
 def main():
     models = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))["models"]
+    experience = Experience(models, LOCALES, LANGUAGE_NAMES)
     for locale in LOCALES:
         models_root = ROOT / locale / "models"
-        if models_root.exists():
-            shutil.rmtree(models_root)
         models_root.mkdir(parents=True, exist_ok=True)
-        (models_root / "index.html").write_text(render_model_index(models, locale), encoding="utf-8")
+        write_page(ROOT / locale / "index.html", experience.render_listing(locale, home=True), f"{SITE}/{locale}/")
+        write_page(models_root / "index.html", experience.render_listing(locale), model_index_url(locale))
         for category in CATEGORY_SLUGS:
             category_root = models_root / CATEGORY_SLUGS[category]
             category_root.mkdir(parents=True, exist_ok=True)
-            (category_root / "index.html").write_text(render_category_page(models, locale, category), encoding="utf-8")
+            write_page(category_root / "index.html", experience.render_listing(locale, category=category), category_url(locale, category))
         for model in models:
             slug = slug_for(model)
             target_dir = models_root / slug
             target_dir.mkdir(parents=True, exist_ok=True)
-            (target_dir / "index.html").write_text(render_page(model, locale, models), encoding="utf-8")
+            write_page(target_dir / "index.html", render_page(model, locale, models, experience), model_url(locale, slug))
+        write_page(ROOT / locale / "study-cards" / "index.html", experience.render_study(locale), f"{SITE}/{locale}/study-cards/")
+        for theme in experience.config["themes"]:
+            write_page(ROOT / locale / "collections" / theme / "index.html", experience.render_listing(locale, theme=theme), f"{SITE}/{locale}/collections/{theme}/")
+        update_website_privacy(experience, locale)
     copy_images(models)
     generate_sitemap(models)
     print(f"Generated {len(models) * len(LOCALES)} model pages.")

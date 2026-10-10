@@ -1,0 +1,27 @@
+{
+  "featured": [
+    "japanese_freshwater_crab_lowpoly", "striped_snake",
+    "japanese_rhinoceros_beetle", "common_tiger_butterfly",
+    "aburazemi_cicada", "fishing_spider", "forest_green_tree_frog",
+    "reeves_pond_turtle", "japanese_crayfish", "sakura_cherry_blossom",
+    "indian_lotus", "tiger_lily"
+  ],
+  "themes": {
+    "motion": {
+      "icon": "play",
+      "models": ["japanese_freshwater_crab_lowpoly", "striped_snake"]
+    },
+    "small-creatures": {
+      "icon": "bug",
+      "models": ["japanese_rhinoceros_beetle", "common_tiger_butterfly", "aburazemi_cicada", "fishing_spider", "japanese_giant_hornet", "japanese_giant_water_bug", "chinese_red_headed_centipede"]
+    },
+    "pond-life": {
+      "icon": "waves",
+      "models": ["forest_green_tree_frog", "reeves_pond_turtle", "japanese_crayfish", "japanese_freshwater_crab_lowpoly", "indian_lotus", "water_lily"]
+    },
+    "flowers": {
+      "icon": "leaf",
+      "models": ["sakura_cherry_blossom", "indian_lotus", "tiger_lily", "red_spider_lily", "japanese_apricot", "hydrangea", "taiwan_lily", "japanese_wisteria"]
+    }
+  }
+}
