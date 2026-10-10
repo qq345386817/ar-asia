@@ -91,12 +91,14 @@ does not add untested models to the app or the published website.
 ## Publishing
 
 GitHub pushes to main trigger Cloudflare Pages automatically. The existing
-dashboard build command is empty. During automatic dependency installation,
-the Pages-only postinstall hook copies the already-generated pages and
-committed browser assets into public; wrangler.toml selects that directory.
-No parent app repository or Sketchfab token is needed for publishing.
-An explicit npm run build also produces the same public output locally.
-The build copies only public pages, images, styles, browser
+dashboard build command is empty, so Pages skips both dependency installation
+and building. wrangler.toml explicitly selects the repository root, where
+the generated HTML and browser assets are already committed. No parent app
+repository or Sketchfab token is needed for publishing. Ignored caches,
+local credentials, node_modules, and model archives never enter the repository.
+
+For a future build-based deployment, use npm run build and output directory
+public in the Pages dashboard. The local build copies only public pages, images, styles, browser
 assets, sitemap, and routing files. Credentials, archives, preparation
 records, node_modules, and tests are excluded. The build checks the
 25 MiB per-file and 20,000-file Pages limits.

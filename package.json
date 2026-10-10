@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "node scripts/pages_postinstall.mjs",
     "generate": "python3 generate_model_pages.py",
     "build:vendor": "node scripts/build_vendor.mjs",
     "build": "npm run build:vendor && node scripts/build_site.mjs",
