@@ -45,20 +45,28 @@ function saveSelection() {
 
 function startCatalogImages() {
   for (const image of document.querySelectorAll(".specimen-photo img")) {
-    let attempts = 0, pending = false;
+    let attempts = 0, pending = false, timeout;
+    const armTimeout = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(retry, 12000);
+    };
     const retry = () => {
       if (pending || attempts >= 2) return;
       pending = true;
+      clearTimeout(timeout);
       setTimeout(() => {
         pending = false;
         if (image.naturalWidth > 0) return;
-        const source = new URL(image.src, location.href);
+        const source = new URL(image.dataset.fallbackSrc || image.src, location.href);
         source.searchParams.set("retry", String(++attempts));
         image.src = source.href;
+        armTimeout();
       }, 1000);
     };
+    image.addEventListener("load", () => clearTimeout(timeout));
     image.addEventListener("error", retry);
     if (image.complete && image.naturalWidth === 0) retry();
+    else if (image.naturalWidth === 0) armTimeout();
   }
 }
 

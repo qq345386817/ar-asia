@@ -13,9 +13,12 @@ APP_STORE = "https://apps.apple.com/app/id6766551832"
 
 
 @cache
+def asset_digest(path):
+    return hashlib.sha256((ROOT / path.lstrip("/")).read_bytes()).hexdigest()[:12]
+
+
 def asset_url(path):
-    digest = hashlib.sha256((ROOT / path.lstrip("/")).read_bytes()).hexdigest()[:12]
-    return path + "?v=" + digest
+    return path + "?v=" + asset_digest(path)
 
 
 def esc(value):
@@ -68,6 +71,9 @@ class Experience:
     def model_data(self, model, locale):
         names = [model.get(spec["name_key"], "") for spec in self.locales.values()]
         asset = self.assets.get(model["id"], {})
+        thumbnail = "/model-images/" + stem(model) + "_thumb.jpeg"
+        fallback_base = self.config.get("imageFallbackBaseURL", "").rstrip("/")
+        thumbnail_fallback = fallback_base + "/thumbnails/" + stem(model) + "_thumb-" + asset_digest(thumbnail) + ".jpeg" if fallback_base else ""
         return {
             "id": model["id"], "slug": slug(model), "name": self.name(model, locale),
             "names": names, "scientific": model.get("scientific_name", ""),
@@ -77,7 +83,7 @@ class Experience:
             "featured": stem(model) in self.config["featured"],
             "themes": [key for key, theme in self.config["themes"].items() if stem(model) in theme["models"]],
             "image": "/model-images/" + stem(model) + "_preview.jpeg",
-            "thumbnail": asset_url("/model-images/" + stem(model) + "_thumb.jpeg"),
+            "thumbnail": asset_url(thumbnail), "thumbnailFallback": thumbnail_fallback,
             "url": "/" + locale + "/models/" + slug(model) + "/",
             "glb": asset.get("glb_url", ""),
             "usdz": model["download_url"],
@@ -173,7 +179,7 @@ class Experience:
             output.append(f"""
       <article class="specimen-tile" data-model-id="{item['id']}">
         <a class="specimen-link" href="{item['url']}">
-          <div class="specimen-photo"><img src="{item['thumbnail']}" alt="{esc(alt)}" width="256" height="144" loading="eager" decoding="async">{animation}</div>
+          <div class="specimen-photo"><img src="{item['thumbnail']}" data-fallback-src="{esc(item['thumbnailFallback'])}" alt="{esc(alt)}" width="256" height="144" loading="eager" decoding="async">{animation}</div>
           <div class="specimen-caption"><h3>{esc(item['name'])}</h3>{scientific}<span class="specimen-kind">{esc(item['categoryLabel'])}</span></div>
         </a>
         <button class="icon-button card-toggle" data-card-id="{item['id']}" type="button" aria-pressed="false" title="{esc(text['addCard'])}" aria-label="{esc(text['addCard'] + ': ' + item['name'])}"><i data-lucide="plus"></i></button>

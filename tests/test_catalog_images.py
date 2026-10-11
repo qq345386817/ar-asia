@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 import json
+import hashlib
 from pathlib import Path
 import sys
 import tempfile
@@ -45,6 +46,9 @@ class CatalogImageTests(unittest.TestCase):
         for model in payload["models"]:
             self.assertTrue(model["image"].endswith("_preview.jpeg"))
             self.assertIn("_thumb.jpeg?v=", model["thumbnail"])
+            path = ROOT / urlparse(model["thumbnail"]).path.lstrip("/")
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+            self.assertTrue(model["thumbnailFallback"].endswith(path.stem + "-" + digest + ".jpeg"))
 
     def test_generation_fails_before_publishing_a_missing_image(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -39,8 +39,16 @@ scrolling or filtering to later models does not wait for native lazy loading.
 Detail pages and printed cards retain the 1024px preview images. Generation
 fails if a model's thumbnail or preview is missing instead of publishing
 broken references.
-Transient thumbnail failures retry at most twice, preserving the asset version
-parameter and avoiding an unbounded request loop.
+Failed or stalled thumbnail requests switch to an immutable R2 copy after a
+12-second timeout, with at most two retries. The normal source remains Pages;
+the fallback uses the same file bytes. After changing thumbnails, upload the
+fallbacks before pushing generated pages:
+
+~~~sh
+python3 scripts/upload_catalog_images.py
+~~~
+
+This uses the existing local `r2` AWS profile. No credentials enter the site.
 
 Study cards support A4 and Letter, picture/name cards, and separate
 picture/name matching sets. Selection stays in this browser and follows

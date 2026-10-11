@@ -25,20 +25,22 @@ test("catalog thumbnails finish loading before scrolling to the last models", as
 
 test("a failed catalog thumbnail automatically retries without reloading the page", async ({ page }) => {
   let attempts = 0;
-  await page.route("**/mangrove_crab_thumb.jpeg*", route => {
+  const body = await readFile(new URL("../../model-images/mangrove_crab_thumb.jpeg", import.meta.url));
+  await page.route("**/*mangrove_crab_thumb*.jpeg*", route => {
     attempts++;
-    return attempts === 1 ? route.abort() : route.continue();
+    return attempts === 1 ? route.abort() : route.fulfill({ status: 200, contentType: "image/jpeg", body });
   });
   await page.goto("/zh-Hans/models/");
-  const image = page.locator('.specimen-photo img[src*="mangrove_crab_thumb.jpeg"]');
+  const image = page.locator('.specimen-photo img[src*="mangrove_crab_thumb"]');
   await expect.poll(() => image.evaluate(node => node.complete && node.naturalWidth > 0)).toBe(true);
   expect(attempts).toBe(2);
   await expect(image).toHaveAttribute("src", /retry=1/);
+  await expect(image).toHaveAttribute("src", /^https:\/\/pub-.*\.r2\.dev\/thumbnails\//);
 });
 
 test("catalog thumbnail retries stop after two failures", async ({ page }) => {
   let attempts = 0;
-  await page.route("**/mangrove_crab_thumb.jpeg*", route => {
+  await page.route("**/*mangrove_crab_thumb*.jpeg*", route => {
     attempts++;
     return route.abort();
   });
@@ -46,6 +48,20 @@ test("catalog thumbnail retries stop after two failures", async ({ page }) => {
   await expect.poll(() => attempts).toBe(3);
   await page.waitForTimeout(1500);
   expect(attempts).toBe(3);
+});
+
+test("a stalled thumbnail switches to R2 instead of remaining blank", async ({ page }) => {
+  const body = await readFile(new URL("../../model-images/mangrove_crab_thumb.jpeg", import.meta.url));
+  await page.route("**/*mangrove_crab_thumb*.jpeg*", route => {
+    if (new URL(route.request().url()).pathname.startsWith("/thumbnails/")) {
+      return route.fulfill({ status: 200, contentType: "image/jpeg", body });
+    }
+    // Deliberately leave the primary request pending without an error event.
+  });
+  await page.goto("/zh-Hans/models/", { waitUntil: "domcontentloaded" });
+  const image = page.locator('.specimen-photo img[src*="mangrove_crab_thumb"]');
+  await expect.poll(() => image.evaluate(node => node.complete && node.naturalWidth > 0), { timeout: 20000 }).toBe(true);
+  await expect(image).toHaveAttribute("src", /^https:\/\/pub-.*\.r2\.dev\/thumbnails\//);
 });
 
 test("all languages render and search without overflow at desktop and mobile widths", async ({ page }) => {
