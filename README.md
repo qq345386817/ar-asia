@@ -74,10 +74,24 @@ self-hosted. The original app USDZ files are not modified. The current
 ten static previews are about 1.8–2.7 MiB each.
 
 Animated USDZ import did not preserve the source animation tracks in
-Blender, so the two animated models keep the official Sketchfab viewer.
-Download the original GLB/glTF with authenticated Sketchfab access before
-switching those models to self-hosted files. Never mark a static
-conversion as an animated preview.
+Blender. The original Sketchfab downloads now provide self-hosted crab,
+snake, and catfish animations. Animated geometry is not simplified, and
+the optimized GLB is decoded again to verify its animation count.
+Never mark a static conversion as an animated preview.
+
+To import browser downloads without an API token:
+
+~~~sh
+python3 scripts/prepare_web_assets.py --local-downloads ../usdz_resources/04
+export WEB_ASSET_BASE_URL=https://pub-0154a542ca38442c855387e2736c8f19.r2.dev
+node scripts/optimize_web_assets.mjs --upload
+python3 generate_model_pages.py
+npm run build
+~~~
+
+The importer verifies source licenses and checks downloads.json SHA-256
+values before unpacking. GLB archives with external textures are repacked
+into self-contained files. Original archives and app USDZ files are retained.
 
 Without a prepared GLB, the official Sketchfab viewer loads only when the
 user opens a 3D preview. Source links and localized retry states remain
@@ -85,8 +99,19 @@ available. Prepared GLB is preferred automatically, while existing USDZ
 resources serve iOS Quick Look.
 
 data/experience.json defines featured specimens and themes, not a second
-model catalog. data/model-candidates.json is a preparation shortlist; it
-does not add untested models to the app or the published website.
+model catalog. data/model-candidates.json records the sourcing shortlist
+and its import status; runtime pages still use only the canonical app manifest.
+
+The new specimens have names and taxonomy in all six languages. The
+Carassius specimen keeps a broad carp label because the source does not
+identify its exact variety. The East Japan Tree Frog follows the source
+Dryophytes leopardus identification and the American Museum of Natural
+History species account, rather than reusing the older Japanese tree frog name.
+
+New app thumbnail and preview URLs use content-hashed R2 filenames. App
+code prefers bundled images and supports online images for later catalog
+updates. Existing installed versions without that fallback require an
+app update to display thumbnails for models not bundled in those versions.
 
 ## Publishing
 
@@ -98,7 +123,8 @@ repository or Sketchfab token is needed for publishing. Ignored caches,
 local credentials, node_modules, and model archives never enter the repository.
 
 For a future build-based deployment, use npm run build and output directory
-public in the Pages dashboard. The local build copies only public pages, images, styles, browser
+public in the Pages dashboard, and update pages_build_output_dir in
+wrangler.toml to ./public at the same time. The local build copies only public pages, images, styles, browser
 assets, sitemap, and routing files. Credentials, archives, preparation
 records, node_modules, and tests are excluded. The build checks the
 25 MiB per-file and 20,000-file Pages limits.

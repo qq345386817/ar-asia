@@ -1,23 +1,22 @@
 {
   "featured": [
-    "japanese_freshwater_crab_lowpoly", "striped_snake",
-    "japanese_rhinoceros_beetle", "common_tiger_butterfly",
-    "aburazemi_cicada", "fishing_spider", "forest_green_tree_frog",
-    "reeves_pond_turtle", "japanese_crayfish", "sakura_cherry_blossom",
-    "indian_lotus", "tiger_lily"
+    "japanese_freshwater_crab_lowpoly", "striped_snake", "ariake_stream_catfish",
+    "golden_ringed_dragonfly", "asian_mantis", "mountain_stag_beetle",
+    "tsushima_salamander", "japanese_eastern_tree_frog", "carassius_auratus",
+    "mediterranean_hermit_crab", "sakura_cherry_blossom", "indian_lotus"
   ],
   "themes": {
     "motion": {
       "icon": "play",
-      "models": ["japanese_freshwater_crab_lowpoly", "striped_snake"]
+      "models": ["japanese_freshwater_crab_lowpoly", "striped_snake", "ariake_stream_catfish"]
     },
     "small-creatures": {
       "icon": "bug",
-      "models": ["japanese_rhinoceros_beetle", "common_tiger_butterfly", "aburazemi_cicada", "fishing_spider", "japanese_giant_hornet", "japanese_giant_water_bug", "chinese_red_headed_centipede"]
+      "models": ["golden_ringed_dragonfly", "asian_mantis", "mountain_stag_beetle", "japanese_rhinoceros_beetle", "common_tiger_butterfly", "aburazemi_cicada", "fishing_spider", "japanese_giant_hornet", "japanese_giant_water_bug", "chinese_red_headed_centipede"]
     },
     "pond-life": {
       "icon": "waves",
-      "models": ["forest_green_tree_frog", "reeves_pond_turtle", "japanese_crayfish", "japanese_freshwater_crab_lowpoly", "indian_lotus", "water_lily"]
+      "models": ["ariake_stream_catfish", "japanese_eastern_tree_frog", "carassius_auratus", "forest_green_tree_frog", "reeves_pond_turtle", "japanese_crayfish", "japanese_freshwater_crab_lowpoly", "indian_lotus", "water_lily"]
     },
     "flowers": {
       "icon": "leaf",

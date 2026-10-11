@@ -3,6 +3,8 @@ import { readFile } from "node:fs/promises";
 
 const languages = ["en-US", "de-DE", "ja", "ko", "zh-Hans", "zh-Hant"];
 const allCopy = JSON.parse(await readFile(new URL("../../data/web-copy.json", import.meta.url), "utf8"));
+const catalog = JSON.parse(await readFile(new URL("../../../FFishAsia/Resources/manifest.json", import.meta.url), "utf8"));
+const experience = JSON.parse(await readFile(new URL("../../data/experience.json", import.meta.url), "utf8"));
 
 test("all languages render and search without overflow at desktop and mobile widths", async ({ page }) => {
   const errors = [];
@@ -12,17 +14,17 @@ test("all languages render and search without overflow at desktop and mobile wid
       await page.setViewportSize({ width, height: 900 });
       await page.goto("/" + locale + "/models/");
       await expect(page.locator("h1")).toHaveText(allCopy[locale].catalogTitle);
-      await expect(page.locator(".specimen-tile:visible")).toHaveCount(54);
+      await expect(page.locator(".specimen-tile:visible")).toHaveCount(catalog.models.length);
       await page.locator("#model-search").fill("Geothelphusa dehaani");
       await expect(page.locator(".specimen-tile:visible")).toHaveCount(2);
       await page.locator("#model-search").fill("");
       await page.locator("#animated-filter").check();
-      await expect(page.locator(".specimen-tile:visible")).toHaveCount(2);
+      await expect(page.locator(".specimen-tile:visible")).toHaveCount(catalog.models.filter(model => model.has_animation).length);
       await page.locator("#animated-filter").uncheck();
       await page.locator("#model-search").fill("no-such-species-1234");
       await expect(page.locator("#catalog-empty")).toBeVisible();
       await page.locator("#reset-filters").click();
-      await expect(page.locator(".specimen-tile:visible")).toHaveCount(54);
+      await expect(page.locator(".specimen-tile:visible")).toHaveCount(catalog.models.length);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     }
   }
@@ -36,11 +38,11 @@ test("selection survives model navigation and language changes; print sets pagin
   await page.goto("/de-DE/study-cards/");
   await expect(page.locator(".study-preview .print-card")).toHaveCount(2);
   await page.locator("#select-featured").click();
-  await expect(page.locator(".study-preview .print-card")).toHaveCount(12);
+  await expect(page.locator(".study-preview .print-card")).toHaveCount(experience.featured.length);
   await page.locator("#card-layout").selectOption("matching");
   await page.evaluate(() => window.dispatchEvent(new Event("beforeprint")));
-  await expect(page.locator("#print-output .print-page")).toHaveCount(4);
-  await expect(page.locator("#print-output .print-card")).toHaveCount(24);
+  await expect(page.locator("#print-output .print-page")).toHaveCount(Math.ceil(experience.featured.length / 9) * 2);
+  await expect(page.locator("#print-output .print-card")).toHaveCount(experience.featured.length * 2);
   await page.emulateMedia({ media: "print" });
   await page.pdf({ path: "/tmp/little-nature-cards-de-A4.pdf", preferCSSPageSize: true, printBackground: true });
   await page.emulateMedia({ media: "screen" });
@@ -61,14 +63,15 @@ test("a browser with unavailable local storage can still select and print cards"
   await page.locator("#clear-cards").click();
   await expect(page.locator("#print-cards")).toBeDisabled();
   await page.locator("#select-featured").click();
-  await expect(page.locator(".study-preview .print-card")).toHaveCount(12);
+  await expect(page.locator(".study-preview .print-card")).toHaveCount(experience.featured.length);
 });
 
-test("third-party viewer is lazy; a network failure has a working retry", async ({ page }) => {
+test("model loading is lazy; a network failure has a working retry", async ({ page }) => {
   const requests = [];
   page.on("request", request => { if (request.url().includes("sketchfab.com")) requests.push(request.url()); });
   await page.goto("/en-US/models/japanese-freshwater-crab-lowpoly/");
   expect(requests).toEqual([]);
+  await page.route("https://pub-*.r2.dev/**", route => route.abort());
   await page.route("https://static.sketchfab.com/**", route => route.abort());
   await page.locator("#load-viewer").click();
   await expect(page.locator("#retry-viewer")).toBeVisible();
@@ -77,10 +80,12 @@ test("third-party viewer is lazy; a network failure has a working retry", async 
   await expect(page.locator("#retry-viewer")).toBeVisible();
 });
 
-test("source animation actually loads and advances in the crab and snake viewers", async ({ page }) => {
+test("self-hosted animation loads and advances without Sketchfab requests", async ({ page }) => {
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
-  for (const slug of ["japanese-freshwater-crab-lowpoly", "striped-snake"]) {
+  const sourceRequests = [];
+  page.on("request", request => { if (request.url().includes("sketchfab.com")) sourceRequests.push(request.url()); });
+  for (const slug of ["japanese-freshwater-crab-lowpoly", "striped-snake", "ariake-stream-catfish"]) {
     await page.goto("/en-US/models/" + slug + "/");
     await page.locator("#load-viewer").click();
     await expect(page.locator("#specimen-viewer")).toHaveAttribute("data-ready", "true", { timeout: 65000 });
@@ -99,10 +104,11 @@ test("source animation actually loads and advances in the crab and snake viewers
     expect(first.equals(second)).toBe(false);
   }
   expect(errors).toEqual([]);
+  expect(sourceRequests).toEqual([]);
 });
 
 test("prepared GLB models render locally without falling back to the source viewer", async ({ page }) => {
-  test.setTimeout(240000);
+  test.setTimeout(480000);
   const registry = JSON.parse(await readFile(new URL("../../data/web-assets.json", import.meta.url), "utf8"));
   const manifest = JSON.parse(await readFile(new URL("../../../FFishAsia/Resources/manifest.json", import.meta.url), "utf8"));
   const models = manifest.models.filter(model => registry.models[model.id]?.glb_url);

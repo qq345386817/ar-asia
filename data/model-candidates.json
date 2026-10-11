@@ -13,7 +13,7 @@
       "faces": 28610,
       "vertices": 14305,
       "animation_count": 1,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "e97f063a09ff4d9da06fc5183008e2c9",
@@ -26,7 +26,7 @@
       "faces": 275673,
       "vertices": 138577,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "eccb69c46a574d97ba0d755ed5a8b9a7",
@@ -39,7 +39,7 @@
       "faces": 282732,
       "vertices": 139584,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "e821b05809e54ab18d53b51de529666e",
@@ -52,7 +52,7 @@
       "faces": 240407,
       "vertices": 120323,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "8f44452b86964f849cbd361c357b8587",
@@ -65,7 +65,7 @@
       "faces": 363642,
       "vertices": 181982,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "f0e348fa1b694fc5b49f990d8f1e3324",
@@ -78,7 +78,7 @@
       "faces": 300655,
       "vertices": 150527,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "0f6de63d38c1410983b5a6a5c43fb8ea",
@@ -91,7 +91,7 @@
       "faces": 337248,
       "vertices": 168738,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     },
     {
       "id": "1c6af8acf9a7444a97632d8c973d7cc4",
@@ -104,7 +104,7 @@
       "faces": 736332,
       "vertices": 506472,
       "animation_count": 0,
-      "status": "candidate_only: needs download, visual review, localized naming, and device testing"
+      "status": "integrated: canonical manifest, six-language names and taxonomy, native USDZ loading and self-hosted browser GLB verified"
     }
   ]
 }

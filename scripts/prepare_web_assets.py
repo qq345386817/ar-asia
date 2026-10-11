@@ -154,18 +154,40 @@ def prepare_from_usdz(model, record, blender):
     return prepared_record(model, output, record, "Existing source USDZ; Blender conversion")
 
 
+def prepare_from_local(model, record, directory, entries):
+    entry = next((item for item in entries if item["sketchfab_id"] == model["id"]
+                  and item["format"] != "usdz"), None)
+    if not entry:
+        raise ValueError("No local GLB/glTF download for " + model["filename"])
+    source = (directory / entry["file"]).resolve()
+    if not source.is_relative_to(directory.resolve()):
+        raise ValueError("Unsafe local download path")
+    data = source.read_bytes()
+    if len(data) != entry["bytes"] or hashlib.sha256(data).hexdigest() != entry["sha256"]:
+        raise ValueError("Local download checksum mismatch: " + model["filename"])
+    CACHE.mkdir(parents=True, exist_ok=True)
+    output = CACHE / (Path(model["filename"]).stem + ".glb")
+    with tempfile.TemporaryDirectory(prefix="little-nature-local-") as temporary:
+        if zipfile.is_zipfile(source):
+            source = unpack_gltf(source, Path(temporary) / "extracted")
+        # Original GLB uploads may reference textures shipped beside the GLB.
+        subprocess.run(["node", str(ROOT / "scripts/pack_gltf.mjs"), str(source), str(output)], check=True)
+    return prepared_record(model, output, record, "Local original Sketchfab GLB/glTF download")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--download", action="store_true", help="Download the featured source models; requires local authentication")
     parser.add_argument("--from-usdz", action="store_true", help="Prepare static featured models from already downloaded USDZ")
+    parser.add_argument("--local-downloads", type=Path, help="Import verified downloads.json and local browser downloads without an API token")
     parser.add_argument("--blender", default=os.environ.get("BLENDER_BIN", "blender"), help="Blender command path")
     parser.add_argument("--only", help="Prepare one featured filename stem")
     parser.add_argument("--upload", action="store_true", help="Upload downloaded GLB files using the existing R2 AWS profile")
     args = parser.parse_args()
-    if args.download and args.from_usdz:
-        parser.error("Choose --download or --from-usdz")
-    if args.upload and not (args.download or args.from_usdz):
-        parser.error("--upload requires --download or --from-usdz")
+    if sum(bool(value) for value in (args.download, args.from_usdz, args.local_downloads)) > 1:
+        parser.error("Choose only one source: --download, --from-usdz, or --local-downloads")
+    if args.upload and not (args.download or args.from_usdz or args.local_downloads):
+        parser.error("--upload requires a model source")
     settings = local_settings()
     manifest = json.loads(MANIFEST.read_text())
     models = manifest["models"]
@@ -175,13 +197,17 @@ def main():
     for model_id, record in verified.items():
         assets["models"][model_id] = {**assets["models"].get(model_id, {}), **record}
     print("Verified CC0 licenses for " + str(len(verified)) + " models.")
-    if args.download or args.from_usdz:
+    if args.download or args.from_usdz or args.local_downloads:
         base_url = settings.get("WEB_ASSET_BASE_URL", "").rstrip("/")
         if args.upload and not base_url.startswith("https://"):
             raise ValueError("Set WEB_ASSET_BASE_URL to the public HTTPS R2 domain before uploading")
         featured = set(json.loads((ROOT / "data/experience.json").read_text())["featured"])
+        entries = json.loads((args.local_downloads / "downloads.json").read_text())["files"] if args.local_downloads else []
+        local_ids = {item["sketchfab_id"] for item in entries if item["format"] != "usdz"}
         for model in models:
-            if Path(model["filename"]).stem not in featured:
+            if args.local_downloads and model["id"] not in local_ids:
+                continue
+            if not args.local_downloads and Path(model["filename"]).stem not in featured:
                 continue
             if args.only and Path(model["filename"]).stem != args.only:
                 continue
@@ -189,7 +215,9 @@ def main():
                 print("Keep source viewer for " + model["filename"] + ": original GLB/glTF is required to preserve animation.")
                 continue
             record = assets["models"][model["id"]]
-            if args.from_usdz:
+            if args.local_downloads:
+                output, key, record = prepare_from_local(model, record, args.local_downloads, entries)
+            elif args.from_usdz:
                 output, key, record = prepare_from_usdz(model, record, args.blender)
             else:
                 output, key, record = prepare_model(model, settings, record)

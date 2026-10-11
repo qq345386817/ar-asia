@@ -1,13 +1,21 @@
 """Static, localized entry points for browsing and studying the app's model catalog."""
 import html
+import hashlib
 import json
 import os
+from functools import cache
 from pathlib import Path
 from urllib.parse import urlencode
 
 ROOT = Path(__file__).resolve().parent
 SITE = "https://ar-asia.luopeike.com"
 APP_STORE = "https://apps.apple.com/app/id6766551832"
+
+
+@cache
+def asset_url(path):
+    digest = hashlib.sha256((ROOT / path.lstrip("/")).read_bytes()).hexdigest()[:12]
+    return path + "?v=" + digest
 
 
 def esc(value):
@@ -80,8 +88,8 @@ class Experience:
                    "models": [self.model_data(model, locale) for model in models], **extra}
         return (
             '<script id="experience-data" type="application/json">' + json_script(payload) + "</script>\n"
-            '<script defer src="/assets/vendor/icons.js"></script>\n'
-            '<script type="module" src="/assets/experience.js"></script>'
+            '<script defer src="' + asset_url("/assets/vendor/icons.js") + '"></script>\n'
+            '<script type="module" src="' + asset_url("/assets/experience.js") + '"></script>'
         )
 
     def header(self, locale, path=""):
@@ -140,8 +148,8 @@ class Experience:
   {alternates}<link rel="alternate" hreflang="x-default" href="{SITE}/en-US/{path}">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/style/base.css">
-  <link rel="stylesheet" href="/style/experience.css">
+  <link rel="stylesheet" href="{asset_url('/style/base.css')}">
+  <link rel="stylesheet" href="{asset_url('/style/experience.css')}">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description)}">
   <meta property="og:type" content="website">

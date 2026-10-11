@@ -7,7 +7,7 @@ from datetime import date
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from web_experience import Experience
+from web_experience import Experience, asset_url
 
 ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parent
@@ -695,8 +695,8 @@ def render_page(model, locale, all_models, experience):
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="../../../favicon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
-  <link rel="stylesheet" href="../../../style/base.css">
-  <link rel="stylesheet" href="/style/experience.css">
+  <link rel="stylesheet" href="{asset_url('/style/base.css')}">
+  <link rel="stylesheet" href="{asset_url('/style/experience.css')}">
 {meta_links(locale, slug)}
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description[:180])}">

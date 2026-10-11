@@ -23,7 +23,7 @@
     "appCta": "Get Little Nature", "websitePrivacyTitle": "Using this website",
     "websitePrivacy": "Study-card selections are saved only in this browser. We collect limited first-party usage events such as successful 3D loads, animations, printing, and App Store link clicks, with a random tab-session identifier, language, device class, and fixed model or theme identifiers. We do not collect search text, selected card contents, camera images, or full page URLs. Session identifiers are hashed before storage and events are retained for up to 90 days. Analytics respects Global Privacy Control and Do Not Track. Opening the Sketchfab viewer connects directly to that third-party service; its privacy policy applies to those requests.",
     "themes": {
-      "motion": {"title": "Models in motion", "description": "Two animated specimens, with time to notice how their shapes change.", "prompts": ["Compare the same pose from the front and the side.", "Pause the animation and inspect the legs or body outline.", "These are model animations, not a measurement of real animal movement."]},
+      "motion": {"title": "Models in motion", "description": "Watch animated specimens and notice how their shapes change.", "prompts": ["Compare the same pose from the front and the side.", "Pause the animation and inspect the legs or body outline.", "These are model animations, not a measurement of real animal movement."]},
       "small-creatures": {"title": "Small creatures", "description": "Beetles, butterflies, spiders, and other small animals, seen up close.", "prompts": ["Compare the number and arrangement of the legs.", "Look for antennae, wings, and distinct body sections.", "A spider is an arachnid, not an insect. Compare their body plans."]},
       "pond-life": {"title": "Life around water", "description": "Frogs, turtles, crayfish, crabs, and flowering aquatic plants.", "prompts": ["Compare a shell, an exoskeleton, and a soft body.", "Notice the shapes of the limbs and their joints.", "Compare the flower and leaf shapes of lotus and water lily."]},
       "flowers": {"title": "Flowers up close", "description": "Cherry blossom, lilies, lotus, and other flowering plants.", "prompts": ["Compare petal shapes and the symmetry of each flower.", "Look at the position of the flower on the stem.", "Compare visible stamens and the centre of the flower."]}
@@ -53,7 +53,7 @@
     "appCta": "Little Nature laden", "websitePrivacyTitle": "Nutzung dieser Website",
     "websitePrivacy": "Die Lernkartenauswahl wird nur in diesem Browser gespeichert. Wir erfassen begrenzte eigene Nutzungsereignisse wie erfolgreiche 3D-Ladevorgänge, Animationen, Drucken und Klicks zum App Store, mit einer zufälligen Kennung der Tab-Sitzung, Sprache, Geräteklasse und festen Modell- oder Themenkennungen. Suchtexte, ausgewählte Karteninhalte, Kamerabilder und vollständige Seiten-URLs werden nicht erfasst. Sitzungskennungen werden vor der Speicherung gehasht; Ereignisse werden bis zu 90 Tage aufbewahrt. Die Statistik respektiert Global Privacy Control und Do Not Track. Beim Öffnen der Sketchfab-Ansicht wird direkt dieser Drittanbieter kontaktiert; für diese Anfragen gilt dessen Datenschutzerklärung.",
     "themes": {
-      "motion": {"title": "Modelle in Bewegung", "description": "Zwei animierte Modelle und ihre sich verändernden Formen.", "prompts": ["Vergleiche dieselbe Pose von vorne und von der Seite.", "Pausiere die Animation und betrachte Beine oder Körperumriss.", "Die Modellanimationen messen keine echten Tierbewegungen."]},
+      "motion": {"title": "Modelle in Bewegung", "description": "Beobachte animierte Modelle und ihre sich verändernden Formen.", "prompts": ["Vergleiche dieselbe Pose von vorne und von der Seite.", "Pausiere die Animation und betrachte Beine oder Körperumriss.", "Die Modellanimationen messen keine echten Tierbewegungen."]},
       "small-creatures": {"title": "Kleine Lebewesen", "description": "Käfer, Schmetterlinge, Spinnen und andere kleine Tiere aus der Nähe.", "prompts": ["Vergleiche Anzahl und Anordnung der Beine.", "Achte auf Fühler, Flügel und Körperabschnitte.", "Eine Spinne ist ein Spinnentier, kein Insekt. Vergleiche ihren Körperbau."]},
       "pond-life": {"title": "Leben am Wasser", "description": "Frösche, Schildkröten, Flusskrebse, Krabben und blühende Wasserpflanzen.", "prompts": ["Vergleiche Panzer, Außenskelett und weichen Körper.", "Betrachte Form und Gelenke der Gliedmaßen.", "Vergleiche Blüten und Blätter von Lotus und Seerose."]},
       "flowers": {"title": "Blüten aus der Nähe", "description": "Kirschblüten, Lilien, Lotus und andere Blütenpflanzen.", "prompts": ["Vergleiche Form und Symmetrie der Blütenblätter.", "Betrachte die Position der Blüte am Stängel.", "Vergleiche sichtbare Staubblätter und die Blütenmitte."]}
@@ -83,7 +83,7 @@
     "appCta": "小さな自然を入手", "websitePrivacyTitle": "このウェブサイトの利用",
     "websitePrivacy": "学習カードの選択はこのブラウザ内だけに保存されます。3D読み込みの成功、アニメーション、印刷、App Storeへのクリックなど限定的な自社利用イベントを、タブごとのランダムなセッション識別子、言語、端末の種類、固定のモデル・テーマ識別子とともに収集します。検索語、選んだカードの内容、カメラ画像、完全なページURLは収集しません。セッション識別子は保存前にハッシュ化し、イベントは最長90日保持します。Global Privacy ControlとDo Not Trackに対応します。Sketchfabのビューを開くと外部サービスに直接接続し、その通信には同社のプライバシーポリシーが適用されます。",
     "themes": {
-      "motion": {"title": "動くモデル", "description": "2つのアニメーションで、形の変化を観察。", "prompts": ["同じ姿勢を正面と側面から比べてみましょう。", "一時停止して、脚や体の輪郭を観察しましょう。", "モデルのアニメーションは実際の動物の動きを測定したものではありません。"]},
+      "motion": {"title": "動くモデル", "description": "アニメーションで、モデルの形の変化を観察。", "prompts": ["同じ姿勢を正面と側面から比べてみましょう。", "一時停止して、脚や体の輪郭を観察しましょう。", "モデルのアニメーションは実際の動物の動きを測定したものではありません。"]},
       "small-creatures": {"title": "小さな生き物", "description": "甲虫、チョウ、クモなどを近くで観察。", "prompts": ["脚の数と並び方を比べてみましょう。", "触角、翅、体の区分に注目しましょう。", "クモは昆虫ではなくクモ類です。体のつくりを比べてみましょう。"]},
       "pond-life": {"title": "水辺の生き物", "description": "カエル、カメ、ザリガニ、カニ、水辺の花。", "prompts": ["甲羅、外骨格、柔らかい体を比べてみましょう。", "手足の形と関節を観察しましょう。", "ハスとスイレンの花や葉を比べてみましょう。"]},
       "flowers": {"title": "花を近くで", "description": "サクラ、ユリ、ハスなどの花を観察。", "prompts": ["花びらの形と対称性を比べてみましょう。", "茎に対する花の位置を観察しましょう。", "見えるおしべや花の中心を比べてみましょう。"]}
@@ -113,7 +113,7 @@
     "appCta": "Little Nature 받기", "websitePrivacyTitle": "웹사이트 이용",
     "websitePrivacy": "학습 카드 선택은 이 브라우저에만 저장됩니다. 성공한 3D 불러오기, 애니메이션, 인쇄, App Store 링크 클릭 등 제한적인 자체 이용 이벤트를 임의의 탭 세션 식별자, 언어, 기기 유형, 고정 모델·주제 식별자와 함께 수집합니다. 검색어, 선택한 카드 내용, 카메라 이미지, 전체 페이지 URL은 수집하지 않습니다. 세션 식별자는 저장 전에 해시 처리하며 이벤트는 최대 90일 보관합니다. Global Privacy Control과 Do Not Track을 존중합니다. Sketchfab 뷰어를 열면 해당 외부 서비스에 직접 연결되며 그 요청에는 해당 서비스의 개인정보 정책이 적용됩니다.",
     "themes": {
-      "motion": {"title": "움직이는 모델", "description": "두 애니메이션 모델의 형태 변화를 관찰해 보세요.", "prompts": ["같은 자세를 앞과 옆에서 비교해 보세요.", "애니메이션을 멈추고 다리나 몸의 윤곽을 관찰해 보세요.", "모델 애니메이션은 실제 동물의 움직임을 측정한 것이 아닙니다."]},
+      "motion": {"title": "움직이는 모델", "description": "애니메이션 모델의 형태 변화를 관찰해 보세요.", "prompts": ["같은 자세를 앞과 옆에서 비교해 보세요.", "애니메이션을 멈추고 다리나 몸의 윤곽을 관찰해 보세요.", "모델 애니메이션은 실제 동물의 움직임을 측정한 것이 아닙니다."]},
       "small-creatures": {"title": "작은 생물", "description": "딱정벌레, 나비, 거미와 작은 동물들을 가까이에서.", "prompts": ["다리의 수와 배열을 비교해 보세요.", "더듬이, 날개, 몸의 구획을 찾아보세요.", "거미는 곤충이 아닌 거미류입니다. 몸의 구조를 비교해 보세요."]},
       "pond-life": {"title": "물가의 생물", "description": "개구리, 거북, 가재, 게와 꽃 피는 수생 식물.", "prompts": ["등딱지, 외골격, 부드러운 몸을 비교해 보세요.", "팔다리의 모양과 관절을 관찰해 보세요.", "연꽃과 수련의 꽃과 잎을 비교해 보세요."]},
       "flowers": {"title": "꽃을 가까이", "description": "벚꽃, 백합, 연꽃과 여러 꽃들을 관찰해 보세요.", "prompts": ["꽃잎의 모양과 대칭을 비교해 보세요.", "줄기에 대한 꽃의 위치를 살펴보세요.", "보이는 수술과 꽃의 중심을 비교해 보세요."]}
@@ -143,7 +143,7 @@
     "appCta": "获取小小自然", "websitePrivacyTitle": "使用本网站",
     "websitePrivacy": "学习卡选择仅保存在当前浏览器中。我们收集有限的第一方使用事件，例如 3D 加载成功、动画播放、打印和 App Store 链接点击，以及随机生成的标签页会话标识、语言、设备类别和固定的模型或主题标识。不收集搜索文字、所选卡片内容、摄像头画面或完整页面网址。会话标识在存储前经过哈希处理，事件最多保留 90 天。统计尊重 Global Privacy Control 和 Do Not Track。打开 Sketchfab 预览会直接连接该第三方服务，相关请求适用其隐私政策。",
     "themes": {
-      "motion": {"title": "会动的模型", "description": "观察两个动画模型在运动过程中的形态变化。", "prompts": ["从正面和侧面比较同一个姿态。", "暂停动画，观察足部或身体轮廓。", "这些是模型动画，并非对动物真实运动的测量。"]},
+      "motion": {"title": "会动的模型", "description": "观察动画模型在运动过程中的形态变化。", "prompts": ["从正面和侧面比较同一个姿态。", "暂停动画，观察足部或身体轮廓。", "这些是模型动画，并非对动物真实运动的测量。"]},
       "small-creatures": {"title": "小小生物", "description": "近距离观察甲虫、蝴蝶、蜘蛛和其他小动物。", "prompts": ["比较足的数量与排列方式。", "寻找触角、翅和不同的身体分区。", "蜘蛛属于蛛形类，不是昆虫。比较它们的身体结构。"]},
       "pond-life": {"title": "水边的生命", "description": "青蛙、龟、螯虾、蟹和开花的水生植物。", "prompts": ["比较龟甲、外骨骼和柔软的身体。", "观察肢体的形状与关节。", "比较莲与睡莲的花和叶形。"]},
       "flowers": {"title": "近看花朵", "description": "观察樱花、百合、莲和其他开花植物。", "prompts": ["比较花瓣形状与花朵的对称性。", "观察花与茎的位置关系。", "比较可见的雄蕊与花朵中心。"]}
@@ -173,7 +173,7 @@
     "appCta": "取得小小自然", "websitePrivacyTitle": "使用本網站",
     "websitePrivacy": "學習卡選擇僅儲存在目前瀏覽器中。我們收集有限的第一方使用事件，例如 3D 載入成功、動畫播放、列印與 App Store 連結點擊，以及隨機產生的分頁工作階段識別碼、語言、裝置類別與固定的模型或主題識別碼。不收集搜尋文字、所選卡片內容、攝影機畫面或完整頁面網址。工作階段識別碼在儲存前經過雜湊處理，事件最多保留 90 天。統計尊重 Global Privacy Control 和 Do Not Track。開啟 Sketchfab 預覽會直接連線至該第三方服務，相關請求適用其隱私政策。",
     "themes": {
-      "motion": {"title": "會動的模型", "description": "觀察兩個動畫模型在運動過程中的形態變化。", "prompts": ["從正面與側面比較同一個姿態。", "暫停動畫，觀察足部或身體輪廓。", "這些是模型動畫，並非對動物真實運動的測量。"]},
+      "motion": {"title": "會動的模型", "description": "觀察動畫模型在運動過程中的形態變化。", "prompts": ["從正面與側面比較同一個姿態。", "暫停動畫，觀察足部或身體輪廓。", "這些是模型動畫，並非對動物真實運動的測量。"]},
       "small-creatures": {"title": "小小生物", "description": "近距離觀察甲蟲、蝴蝶、蜘蛛與其他小動物。", "prompts": ["比較足的數量與排列方式。", "尋找觸角、翅與不同的身體分區。", "蜘蛛屬於蛛形類，不是昆蟲。比較牠們的身體結構。"]},
       "pond-life": {"title": "水邊的生命", "description": "青蛙、龜、螯蝦、蟹與開花的水生植物。", "prompts": ["比較龜甲、外骨骼與柔軟的身體。", "觀察肢體的形狀與關節。", "比較蓮與睡蓮的花與葉形。"]},
       "flowers": {"title": "近看花朵", "description": "觀察櫻花、百合、蓮與其他開花植物。", "prompts": ["比較花瓣形狀與花朵的對稱性。", "觀察花與莖的位置關係。", "比較可見的雄蕊與花朵中心。"]}

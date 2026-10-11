@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Configure the existing public model bucket and Pages output safely."""
+"""Configure the existing public model bucket without changing Pages builds."""
 import json
 import os
 import urllib.error
@@ -60,23 +60,9 @@ def main():
         })
         api(prefix + "/cors", "PUT", {"rules": rules})
     print("Read-only CORS enabled for already-public model resources.")
-    try:
-        project = api("accounts/" + ACCOUNT + "/pages/projects/ar-asia")
-    except urllib.error.HTTPError as error:
-        if error.code != 403:
-            raise
-        print("PENDING: Pages access is not authorized. Set build command npm run build and output directory public in Pages.")
-        return
-    config = project["build_config"]
-    config.update({"build_command": "npm run build", "destination_dir": "public"})
-    try:
-        api("accounts/" + ACCOUNT + "/pages/projects/ar-asia", "PATCH", {"build_config": config})
-    except urllib.error.HTTPError as error:
-        if error.code != 403:
-            raise
-        print("PENDING: Pages configuration changes are not authorized. Set build command npm run build and output directory public in Pages.")
-        return
-    print("Pages build configuration: npm run build -> public. No deployment triggered.")
+    # GitHub publishes committed pages using wrangler.toml; do not break the
+    # existing empty-build-command workflow while configuring model delivery.
+    print("Pages build settings unchanged. GitHub publishing uses wrangler.toml.")
 
 
 if __name__ == "__main__":
