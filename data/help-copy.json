@@ -1,0 +1,224 @@
+{
+  "en-US": {
+    "title": "3D models, animation & printable flashcards",
+    "description": "Learn how to explore animal and plant models in your browser, play available animations, print nature flashcards, and use Little Nature offline or in AR.",
+    "contact": "Need help? Contact",
+    "questions": [
+      [
+        "How do I find an animal or plant model?",
+        "Browse the catalog or search by a common name in any of the six supported languages, or by scientific name where available. Filter by category, theme, or animated models.",
+        "models/"
+      ],
+      [
+        "Can I view 3D models without installing the app?",
+        "Yes. Open a model page and choose View in 3D, then rotate or zoom to inspect it. Some models use our hosted viewer; others open an embedded Sketchfab viewer and contact that third-party service. An internet connection is required.",
+        "models/"
+      ],
+      [
+        "Which models have animation?",
+        "Look for the animation label or open the animated collection. On models with playback controls, play or pause the animation and compare poses. These animations are visual illustrations, not measurements of real animal movement.",
+        "collections/motion/"
+      ],
+      [
+        "How do I print animal and plant flashcards?",
+        "Add models to study cards, choose A4 or Letter paper, and select picture-and-name cards or matching picture and name cards. Scientific names are optional. Print from the browser or choose Save as PDF if your browser offers it. Selections stay in this browser.",
+        "study-cards/"
+      ],
+      [
+        "Does the app support offline viewing and AR?",
+        "Little Nature on iPhone, iPad, and Mac supports 3D previews and on-demand downloads. Downloaded models can be viewed offline; use Download Manager to remove them. AR requires a compatible iPhone or iPad and camera permission. Follow the placement guidance and use gestures to move, scale, or rotate the model. Mac supports 3D viewing, not camera-based AR.",
+        null
+      ],
+      [
+        "Can I reuse the model files and learning materials?",
+        "Catalog models are provided under CC0. Each model page links to its source and creator. Reuse the files under that license, and credit the source where practical. Taxonomy and common names may be updated; the pages are learning aids, not species-identification or scientific measurement tools.",
+        "models/"
+      ]
+    ]
+  },
+  "de-DE": {
+    "title": "3D-Modelle, Animationen & druckbare Lernkarten",
+    "description": "Tier- und Pflanzenmodelle im Browser betrachten, verfügbare Animationen abspielen, Natur-Lernkarten drucken und Little Nature offline oder in AR nutzen.",
+    "contact": "Fragen? Kontakt:",
+    "questions": [
+      [
+        "Wie finde ich ein Tier- oder Pflanzenmodell?",
+        "Durchsuche den Katalog nach einem Namen in einer der sechs unterstützten Sprachen oder einem vorhandenen wissenschaftlichen Namen. Filtere nach Kategorie, Thema oder animierten Modellen.",
+        "models/"
+      ],
+      [
+        "Kann ich 3D-Modelle ohne die App ansehen?",
+        "Ja. Öffne eine Modellseite und wähle In 3D ansehen. Drehe oder vergrößere das Modell. Einige Modelle verwenden unseren eigenen Viewer; andere laden einen eingebetteten Sketchfab-Viewer und verbinden sich mit diesem Drittanbieter. Eine Internetverbindung ist erforderlich.",
+        "models/"
+      ],
+      [
+        "Welche Modelle sind animiert?",
+        "Achte auf die Animationskennzeichnung oder öffne die Sammlung animierter Modelle. Mit den Wiedergabesteuerungen kannst du Animationen abspielen und pausieren, um Posen zu vergleichen. Die Animationen sind Veranschaulichungen, keine Messungen echter Tierbewegungen.",
+        "collections/motion/"
+      ],
+      [
+        "Wie drucke ich Lernkarten mit Tieren und Pflanzen?",
+        "Füge Modelle zu den Lernkarten hinzu und wähle A4 oder Letter sowie Bild-und-Namen-Karten oder getrennte Bilder und Namen zum Zuordnen. Wissenschaftliche Namen sind optional. Drucke im Browser oder wähle Als PDF speichern, falls verfügbar. Die Auswahl bleibt in diesem Browser.",
+        "study-cards/"
+      ],
+      [
+        "Unterstützt die App Offline-Nutzung und AR?",
+        "Little Nature bietet auf iPhone, iPad und Mac 3D-Vorschauen und Downloads nach Bedarf. Heruntergeladene Modelle sind offline verfügbar und lassen sich in der Download-Verwaltung entfernen. AR benötigt ein kompatibles iPhone oder iPad und Kamerazugriff. Folge den Platzierungshinweisen und nutze Gesten zum Verschieben, Skalieren und Drehen. Mac bietet 3D-Ansichten, kein kamerabasiertes AR.",
+        null
+      ],
+      [
+        "Darf ich Modelle und Lernmaterialien weiterverwenden?",
+        "Die Katalogmodelle stehen unter CC0. Jede Modellseite verlinkt Quelle und Urheber. Die Dateien dürfen gemäß dieser Lizenz genutzt werden; eine Quellenangabe ist sinnvoll. Taxonomie und Namen können aktualisiert werden. Die Seiten dienen dem Lernen, nicht der sicheren Artbestimmung oder wissenschaftlichen Messung.",
+        "models/"
+      ]
+    ]
+  },
+  "ja": {
+    "title": "3Dモデル・アニメーション・印刷用学習カード",
+    "description": "ブラウザで動植物の3Dモデルを観察し、対応するアニメーションを再生、学習カードを印刷。アプリのオフライン保存とARの使い方も紹介します。",
+    "contact": "お問い合わせ：",
+    "questions": [
+      [
+        "動物や植物のモデルを探すには？",
+        "モデル一覧で、対応する6言語の名前や登録されている学名を検索できます。カテゴリ、テーマ、アニメーションの有無でも絞り込めます。",
+        "models/"
+      ],
+      [
+        "アプリを入れずに3Dモデルを見られますか？",
+        "はい。モデルページで「3Dで見る」を選び、回転や拡大で観察できます。一部は当サイトのビュー、その他はSketchfabの埋め込みビューを使用し、外部サービスに接続します。インターネット接続が必要です。",
+        "models/"
+      ],
+      [
+        "どのモデルにアニメーションがありますか？",
+        "アニメーションの表示を確認するか、動くモデルのコレクションを開いてください。再生操作があるモデルでは再生・一時停止して姿勢を比べられます。これらは視覚的な表現で、実際の動物の動きを測定したものではありません。",
+        "collections/motion/"
+      ],
+      [
+        "動植物の学習カードを印刷するには？",
+        "モデルを学習カードに追加し、A4またはLetterと、写真と名前のカードまたは絵合わせ用の写真・名前カードを選びます。学名の表示は任意です。ブラウザから印刷し、対応していればPDF保存もできます。選択はこのブラウザ内に保存されます。",
+        "study-cards/"
+      ],
+      [
+        "アプリはオフライン観察やARに対応していますか？",
+        "iPhone、iPad、Macの小さな自然は3Dプレビューと必要なモデルのダウンロードに対応します。保存したモデルはオフラインで観察でき、ダウンロード管理から削除できます。ARは対応するiPhoneまたはiPadとカメラの許可が必要です。配置の案内に従い、ジェスチャで移動・拡大縮小・回転します。Macは3D観察に対応し、カメラを使うARには対応しません。",
+        null
+      ],
+      [
+        "モデルや学習素材を再利用できますか？",
+        "モデル一覧の素材はCC0で公開されています。各モデルページに出典と制作者へのリンクがあります。このライセンスに従って利用でき、可能なら出典を添えてください。分類や名称は更新される場合があります。学習用の内容で、確実な種の同定や科学的な測定を目的としたものではありません。",
+        "models/"
+      ]
+    ]
+  },
+  "ko": {
+    "title": "3D 모델·애니메이션·인쇄용 학습 카드",
+    "description": "브라우저에서 동식물 3D 모델을 관찰하고 지원되는 애니메이션을 재생하며 자연 학습 카드를 인쇄하세요. 앱의 오프라인 보기와 AR 사용법도 안내합니다.",
+    "contact": "문의:",
+    "questions": [
+      [
+        "동물이나 식물 모델은 어떻게 찾나요?",
+        "목록에서 지원하는 여섯 언어의 이름이나 등록된 학명으로 검색하세요. 분류, 주제, 애니메이션 여부로 필터링할 수도 있습니다.",
+        "models/"
+      ],
+      [
+        "앱을 설치하지 않고 3D 모델을 볼 수 있나요?",
+        "네. 모델 페이지에서 3D로 보기를 선택한 뒤 회전하거나 확대해 관찰하세요. 일부 모델은 자체 뷰어를, 다른 모델은 외부 서비스에 연결되는 Sketchfab 임베드 뷰어를 사용합니다. 인터넷 연결이 필요합니다.",
+        "models/"
+      ],
+      [
+        "어떤 모델에 애니메이션이 있나요?",
+        "애니메이션 표시를 확인하거나 애니메이션 모델 모음을 여세요. 재생 버튼이 있는 모델은 재생·일시 정지하며 자세를 비교할 수 있습니다. 이 애니메이션은 시각적 표현이며 실제 동물의 움직임을 측정한 자료가 아닙니다.",
+        "collections/motion/"
+      ],
+      [
+        "동식물 학습 카드는 어떻게 인쇄하나요?",
+        "모델을 학습 카드에 추가하고 A4 또는 Letter 용지와 그림·이름 카드 또는 짝 맞추기용 그림·이름 카드를 선택하세요. 학명은 선택 사항입니다. 브라우저에서 인쇄하거나 지원되는 경우 PDF로 저장하세요. 선택은 이 브라우저에만 저장됩니다.",
+        "study-cards/"
+      ],
+      [
+        "앱은 오프라인 보기와 AR을 지원하나요?",
+        "iPhone, iPad, Mac의 Little Nature는 3D 미리보기와 필요한 모델의 다운로드를 지원합니다. 저장한 모델은 오프라인으로 볼 수 있으며 다운로드 관리에서 삭제할 수 있습니다. AR에는 호환되는 iPhone 또는 iPad와 카메라 권한이 필요합니다. 배치 안내에 따라 제스처로 이동·크기 조절·회전하세요. Mac은 3D 보기를 지원하며 카메라 기반 AR은 지원하지 않습니다.",
+        null
+      ],
+      [
+        "모델과 학습 자료를 재사용할 수 있나요?",
+        "목록의 모델은 CC0으로 제공됩니다. 각 모델 페이지에 출처와 제작자 링크가 있습니다. 해당 라이선스에 따라 재사용할 수 있으며 가능한 경우 출처를 밝혀 주세요. 분류와 이름은 업데이트될 수 있습니다. 학습용 자료이며 정확한 종 식별이나 과학적 측정을 위한 도구가 아닙니다.",
+        "models/"
+      ]
+    ]
+  },
+  "zh-Hans": {
+    "title": "3D 模型、动画与可打印学习卡指南",
+    "description": "了解如何在线观察动植物 3D 模型、播放已有动画、打印自然学习卡，以及使用小小自然 App 的离线预览和 AR 功能。",
+    "contact": "需要帮助？联系",
+    "questions": [
+      [
+        "如何找到动物或植物模型？",
+        "在模型列表中浏览，或使用六种支持语言的名称及已有学名搜索。还可以按分类、主题或是否带动画筛选。",
+        "models/"
+      ],
+      [
+        "不安装 App，也能交互查看 3D 模型吗？",
+        "可以。打开模型详情并选择“3D 预览”，通过旋转和缩放观察。一部分模型使用本站预览器，其他模型会加载 Sketchfab 内嵌预览器并连接该第三方服务。网页预览需要联网。",
+        "models/"
+      ],
+      [
+        "哪些模型带有动画？",
+        "查看动画标记，或打开动画模型专题。带播放控制的模型可以播放、暂停并比较姿态。这些动画是视觉展示，不是动物真实运动的测量资料。",
+        "collections/motion/"
+      ],
+      [
+        "如何打印动植物学习卡或保存 PDF？",
+        "将模型加入学习卡，选择 A4 或 Letter 纸张，以及图片与名称卡或配对用的图片卡、名称卡。学名可选。使用浏览器打印，支持时也可选择“另存为 PDF”。所选模型仅保存在当前浏览器中。",
+        "study-cards/"
+      ],
+      [
+        "App 可以离线查看模型或使用 AR 吗？",
+        "iPhone、iPad 和 Mac 版小小自然支持 3D 预览与按需下载。下载后的模型可离线查看，并可在下载管理中删除。AR 需要兼容的 iPhone 或 iPad 及相机授权，请按提示放置模型，再用手势移动、缩放或旋转。Mac 支持 3D 观察，不支持基于相机的 AR。",
+        null
+      ],
+      [
+        "模型和学习素材可以再利用吗？",
+        "目录中的模型以 CC0 许可提供，各模型页均链接到来源与创作者。可按该许可再利用文件，也建议注明来源。分类和俗名可能更新；页面用于学习，不用于可靠的物种鉴定或科学测量。",
+        "models/"
+      ]
+    ]
+  },
+  "zh-Hant": {
+    "title": "3D 模型、動畫與可列印學習卡指南",
+    "description": "了解如何線上觀察動植物 3D 模型、播放已有動畫、列印自然學習卡，以及使用小小自然 App 的離線預覽與 AR 功能。",
+    "contact": "需要協助？聯絡",
+    "questions": [
+      [
+        "如何找到動物或植物模型？",
+        "在模型列表中瀏覽，或使用六種支援語言的名稱及已有學名搜尋。也可以按分類、主題或是否帶動畫篩選。",
+        "models/"
+      ],
+      [
+        "不安裝 App，也能互動查看 3D 模型嗎？",
+        "可以。開啟模型詳情並選擇「3D 預覽」，透過旋轉和縮放觀察。一部分模型使用本站預覽器，其他模型會載入 Sketchfab 內嵌預覽器並連線至該第三方服務。網頁預覽需要連網。",
+        "models/"
+      ],
+      [
+        "哪些模型帶有動畫？",
+        "查看動畫標記，或開啟動畫模型專題。帶播放控制的模型可以播放、暫停並比較姿態。這些動畫是視覺展示，不是動物真實運動的測量資料。",
+        "collections/motion/"
+      ],
+      [
+        "如何列印動植物學習卡或儲存 PDF？",
+        "將模型加入學習卡，選擇 A4 或 Letter 紙張，以及圖片與名稱卡或配對用的圖片卡、名稱卡。學名可選。使用瀏覽器列印，支援時也可選擇「另存為 PDF」。所選模型僅儲存在目前瀏覽器中。",
+        "study-cards/"
+      ],
+      [
+        "App 可以離線查看模型或使用 AR 嗎？",
+        "iPhone、iPad 和 Mac 版小小自然支援 3D 預覽與按需下載。下載後的模型可離線查看，並可在下載管理中刪除。AR 需要相容的 iPhone 或 iPad 及相機授權，請按提示放置模型，再用手勢移動、縮放或旋轉。Mac 支援 3D 觀察，不支援基於相機的 AR。",
+        null
+      ],
+      [
+        "模型和學習素材可以再利用嗎？",
+        "目錄中的模型以 CC0 授權提供，各模型頁皆連結至來源與創作者。可按該授權再利用檔案，也建議註明來源。分類和俗名可能更新；頁面用於學習，不用於可靠的物種鑑定或科學測量。",
+        "models/"
+      ]
+    ]
+  }
+}

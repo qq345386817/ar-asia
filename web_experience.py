@@ -40,6 +40,7 @@ class Experience:
         self.locales = locales
         self.language_names = language_names
         self.copy = json.loads((ROOT / "data/web-copy.json").read_text())
+        self.help_copy = json.loads((ROOT / "data/help-copy.json").read_text())
         self.config = json.loads((ROOT / "data/experience.json").read_text())
         self.assets = json.loads((ROOT / "data/web-assets.json").read_text())["models"]
         expected = set(self.copy["en-US"])
@@ -212,7 +213,7 @@ class Experience:
         if home:
             path = ""
             title = "Little Nature"
-            description = text["homeSubtitle"]
+            description = text["catalogDescription"]
             models = [model for key in self.config["featured"] for model in self.models if stem(model) == key]
         elif category:
             path += {"animal": "animals", "plant": "plants", "special": "special"}[category] + "/"
@@ -323,3 +324,33 @@ class Experience:
     </section>{self.app_band(locale, 'study')}{self.footer(locale)}
     </main><div id="print-output" class="print-only"></div><style id="print-page-size"></style>
     {self.runtime(self.models, locale, 'study')}</body></html>"""
+
+    def render_help(self, locale):
+        text = self.help_copy[locale]
+        url = SITE + "/" + locale + "/help"
+        questions = text["questions"]
+        schema = {"@context": "https://schema.org", "@graph": [
+            {"@type": "FAQPage", "@id": url + "#faq", "url": url,
+             "name": text["title"], "description": text["description"],
+             "inLanguage": self.locales[locale]["lang"],
+             "mainEntity": [{"@type": "Question", "name": question,
+                             "acceptedAnswer": {"@type": "Answer", "text": answer}}
+                            for question, answer, _ in questions]},
+            {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Little Nature", "item": SITE + "/" + locale + "/"},
+                {"@type": "ListItem", "position": 2, "name": text["title"], "item": url}]}
+        ]}
+        sections = []
+        for question, answer, path in questions:
+            target = "/" + locale + "/" + path if path else APP_STORE
+            label = self.copy[locale]["studyCards"] if path == "study-cards/" else (
+                self.copy[locale]["themes"]["motion"]["title"] if path == "collections/motion/" else (
+                    self.locales[locale]["models"] if path else self.copy[locale]["appCta"]))
+            sections.append(f'<section class="help-answer"><h2>{esc(question)}</h2><p>{esc(answer)}</p>'
+                            f'<a href="{esc(target)}">{esc(label)}</a></section>')
+        return self.head(locale, "help", text["title"] + " | Little Nature", text["description"], schema) + self.header(locale, "help") + f"""
+    <article class="help-content">
+      <section class="catalog-intro"><div><h1>{esc(text['title'])}</h1><p>{esc(text['description'])}</p></div></section>
+      {''.join(sections)}
+      <p>{esc(text['contact'])} cameoshell09@gmail.com</p>
+    </article>{self.footer(locale)}</main>{self.runtime([], locale, 'help')}</body></html>"""

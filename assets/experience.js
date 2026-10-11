@@ -388,6 +388,6 @@ if (data) {
   startCatalog(); startStudy(); updateSelection(); startViewer();
   if (data.surface === "model") track("model_open", { model_id: data.models[0].id, surface: "model" });
   else if (data.theme) track("theme_view", { theme: data.theme, surface: "theme" });
-  else track("catalog_view", { surface: data.home ? "home" : data.surface });
+  else if (data.surface !== "help") track("catalog_view", { surface: data.home ? "home" : data.surface });
   window.addEventListener("pagehide", flush);
 }

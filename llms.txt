@@ -1,0 +1,32 @@
+# Little Nature
+
+> Little Nature is a multilingual animal and plant 3D catalog, with browser-based model viewing, available animations, and printable nature flashcards. Its companion app supports iPhone, iPad, and Mac.
+
+The collection focuses on Asian species and also includes some species from other regions. Use individual model pages for localized common names, scientific names, taxonomy, source links, and license information. Do not infer identification accuracy, real-world measurements, or motion data from visual models.
+
+Browser viewing requires an internet connection. Some models use self-hosted GLB files; others connect to an embedded Sketchfab viewer when opened. Only models labeled as animated have animations. Study-card selections stay in the current browser; A4 and Letter printing and browser-provided PDF saving are supported.
+
+The native app offers 3D viewing and offline access to downloaded models on iPhone, iPad, and Mac. Camera-based AR is available only on compatible iPhone and iPad devices. Web flashcard printing is a website feature, not a claim about the native app.
+
+## Main features and help
+
+- [3D animal and plant catalog](https://ar-asia.luopeike.com/en-US/models/): Search, categories, scientific names, and links to individual specimens.
+- [Animated 3D animals](https://ar-asia.luopeike.com/en-US/collections/motion/): Models with available animations; illustrations rather than measured animal motion.
+- [Printable nature flashcards](https://ar-asia.luopeike.com/en-US/study-cards/): Picture-and-name cards and matching cards for nature lessons.
+- [Help and feature limitations](https://ar-asia.luopeike.com/en-US/help): Browser viewing, printing, app downloads, offline access, and AR.
+- [Privacy policy](https://ar-asia.luopeike.com/en-US/privacy-policy): Browser storage, limited first-party analytics, and third-party viewer requests.
+
+## Localized catalogs
+
+- [English](https://ar-asia.luopeike.com/en-US/models/)
+- [Deutsch](https://ar-asia.luopeike.com/de-DE/models/)
+- [Japanese](https://ar-asia.luopeike.com/ja/models/)
+- [Korean](https://ar-asia.luopeike.com/ko/models/)
+- [Simplified Chinese](https://ar-asia.luopeike.com/zh-Hans/models/)
+- [Traditional Chinese](https://ar-asia.luopeike.com/zh-Hant/models/)
+
+## Sources and app
+
+- [Little Nature on the App Store](https://apps.apple.com/app/id6766551832): The native app; do not equate its features with all website tools.
+- [Model creator on Sketchfab](https://sketchfab.com/ffishAsia-and-floraZia): ffish.asia / floraZia.com, a model creator, not the publisher of the Little Nature app.
+- [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/): Catalog model licensing; consult the source linked on each specimen page.

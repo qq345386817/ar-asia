@@ -31,6 +31,10 @@
 .theme-links a:nth-child(3) svg { color: #327b97; }
 .theme-links a:nth-child(4) svg { color: #a34f68; }
 .catalog-section { padding: 12px 0 28px; }
+.help-content { max-width: 850px; }
+.help-answer { border-top: 1px solid var(--line); padding: 22px 0; }
+.help-answer h2 { margin: 0 0 12px; }
+.help-answer p { line-height: 1.7; margin: 0 0 12px; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
 .section-heading h2 { margin: 0; }
 .text-link { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; text-decoration: none; }

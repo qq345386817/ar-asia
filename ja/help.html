@@ -1,251 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小さな自然 ヘルプ - AR 3Dモデルの検索、ダウンロード、表示</title>
-  <meta name="description" content="iPhone、iPad、Macで小さな自然を使う方法を確認できます。モデル検索、カテゴリー、オンデマンドダウンロード、AR表示、オフライン利用、ローカル管理に対応しています。">
-  <meta name="keywords" content="小さな自然 ヘルプ,ARモデルガイド,3D生物モデル ヘルプ,モデルダウンロード,AR表示,モデルカタログ,ダウンロード管理">
-  <meta name="author" content="Peike Luo">
-  <meta name="application-name" content="Little Nature">
-  <meta name="apple-mobile-web-app-title" content="Little Nature">
-  <meta name="apple-itunes-app" content="app-id=6766551832">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3Dモデル・アニメーション・印刷用学習カード | Little Nature</title>
+  <meta name="description" content="ブラウザで動植物の3Dモデルを観察し、対応するアニメーションを再生、学習カードを印刷。アプリのオフライン保存とARの使い方も紹介します。">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="../favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <link rel="stylesheet" href="../style/base.css">
+  <meta name="apple-itunes-app" content="app-id=6766551832">
   <link rel="canonical" href="https://ar-asia.luopeike.com/ja/help">
   <link rel="alternate" hreflang="en-US" href="https://ar-asia.luopeike.com/en-US/help">
-  <link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help">
-  <link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help">
-  <link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help">
-  <link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help">
-  <link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/help">
-  <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help">
-  <meta property="og:title" content="小さな自然 ヘルプ - AR 3Dモデルの検索、ダウンロード、表示">
-  <meta property="og:description" content="モデル検索、カテゴリー、ダウンロード、AR表示、オフライン利用を含む小さな自然のヘルプ。">
-  <meta property="og:type" content="article">
+<link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/help">
+<link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help">
+<link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help">
+<link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help">
+<link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help">
+<link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style/base.css?v=ef90e3ec6a57">
+  <link rel="stylesheet" href="/style/experience.css?v=73f45d1419f9">
+  <meta property="og:title" content="3Dモデル・アニメーション・印刷用学習カード | Little Nature">
+  <meta property="og:description" content="ブラウザで動植物の3Dモデルを観察し、対応するアニメーションを再生、学習カードを印刷。アプリのオフライン保存とARの使い方も紹介します。">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://ar-asia.luopeike.com/ja/help">
-  <meta property="og:site_name" content="Little Nature">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta property="og:locale:alternate" content="zh_TW">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="小さな自然 ヘルプ - AR 3Dモデルの検索、ダウンロード、表示">
-  <meta name="twitter:description" content="カタログの閲覧、モデルファイルのダウンロード、対応モデルのAR表示方法を確認できます。">
   <meta property="og:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-  <meta name="twitter:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://ar-asia.luopeike.com/#organization",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ar-asia.luopeike.com/apple-touch-icon.png",
-        "width": 180,
-        "height": 180
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766551832",
-        "https://sketchfab.com/ffishAsia-and-floraZia"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://ar-asia.luopeike.com/#website",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "inLanguage": "ja",
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://ar-asia.luopeike.com/ja/help#webpage",
-      "name": "小さな自然 ヘルプ - AR 3Dモデルの検索、ダウンロード、表示",
-      "url": "https://ar-asia.luopeike.com/ja/help",
-      "description": "iPhone、iPad、Macで小さな自然を使う方法を確認できます。モデル検索、カテゴリー、オンデマンドダウンロード、AR表示、オフライン利用、ローカル管理に対応しています。",
-      "inLanguage": "ja",
-      "isPartOf": {
-        "@id": "https://ar-asia.luopeike.com/#website"
-      },
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://ar-asia.luopeike.com/ja/help#faq",
-      "inLanguage": "ja",
-      "isPartOf": {
-        "@id": "https://ar-asia.luopeike.com/ja/help#webpage"
-      },
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "カテゴリーを使う",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "すべて、植物、動物、特別フィルターでモデルカタログを絞り込めます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "名前で検索",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "日本語名、英語名、中国語名、利用可能な学名で検索できます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "詳細を開く",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "モデルカードをタップまたはクリックすると、カテゴリー、ファイルサイズ、面数、頂点数、アニメーション、分類、ソースリンクを確認できます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "必要なものだけダウンロード",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "モデルファイルは最初からすべてインストールされません。確認したいモデルやARで使いたいモデルだけをダウンロードします。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "ダウンロード管理を使う",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ダウンロード管理で保存済みモデル、ストレージ使用量、ローカル内容の削除操作を確認できます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "オフライン利用",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "保存済みモデルは、アプリ内で削除するかアプリを削除するまでデバイス上に残ります。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "カメラ権限",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AR表示には、周囲にモデルを配置するためのカメラアクセスが必要です。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "対応デバイス",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AR表示は対応するiPhoneとiPadで利用できます。Macはカタログ閲覧とローカル管理向けです。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "配置とジェスチャー",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ARの準備ができたら、アプリ内の案内に従ってモデルを配置し、ジェスチャーで移動、拡大縮小、回転できます。"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://ar-asia.luopeike.com/ja/help#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Little Nature",
-          "item": "https://ar-asia.luopeike.com/ja/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "小さな自然の使い方",
-          "item": "https://ar-asia.luopeike.com/ja/help"
-        }
-      ]
-    }
-  ]
-}
-  </script>
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","@id":"https://ar-asia.luopeike.com/ja/help#faq","url":"https://ar-asia.luopeike.com/ja/help","name":"3Dモデル・アニメーション・印刷用学習カード","description":"ブラウザで動植物の3Dモデルを観察し、対応するアニメーションを再生、学習カードを印刷。アプリのオフライン保存とARの使い方も紹介します。","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"動物や植物のモデルを探すには？","acceptedAnswer":{"@type":"Answer","text":"モデル一覧で、対応する6言語の名前や登録されている学名を検索できます。カテゴリ、テーマ、アニメーションの有無でも絞り込めます。"}},{"@type":"Question","name":"アプリを入れずに3Dモデルを見られますか？","acceptedAnswer":{"@type":"Answer","text":"はい。モデルページで「3Dで見る」を選び、回転や拡大で観察できます。一部は当サイトのビュー、その他はSketchfabの埋め込みビューを使用し、外部サービスに接続します。インターネット接続が必要です。"}},{"@type":"Question","name":"どのモデルにアニメーションがありますか？","acceptedAnswer":{"@type":"Answer","text":"アニメーションの表示を確認するか、動くモデルのコレクションを開いてください。再生操作があるモデルでは再生・一時停止して姿勢を比べられます。これらは視覚的な表現で、実際の動物の動きを測定したものではありません。"}},{"@type":"Question","name":"動植物の学習カードを印刷するには？","acceptedAnswer":{"@type":"Answer","text":"モデルを学習カードに追加し、A4またはLetterと、写真と名前のカードまたは絵合わせ用の写真・名前カードを選びます。学名の表示は任意です。ブラウザから印刷し、対応していればPDF保存もできます。選択はこのブラウザ内に保存されます。"}},{"@type":"Question","name":"アプリはオフライン観察やARに対応していますか？","acceptedAnswer":{"@type":"Answer","text":"iPhone、iPad、Macの小さな自然は3Dプレビューと必要なモデルのダウンロードに対応します。保存したモデルはオフラインで観察でき、ダウンロード管理から削除できます。ARは対応するiPhoneまたはiPadとカメラの許可が必要です。配置の案内に従い、ジェスチャで移動・拡大縮小・回転します。Macは3D観察に対応し、カメラを使うARには対応しません。"}},{"@type":"Question","name":"モデルや学習素材を再利用できますか？","acceptedAnswer":{"@type":"Answer","text":"モデル一覧の素材はCC0で公開されています。各モデルページに出典と制作者へのリンクがあります。このライセンスに従って利用でき、可能なら出典を添えてください。分類や名称は更新される場合があります。学習用の内容で、確実な種の同定や科学的な測定を目的としたものではありません。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Little Nature","item":"https://ar-asia.luopeike.com/ja/"},{"@type":"ListItem","position":2,"name":"3Dモデル・アニメーション・印刷用学習カード","item":"https://ar-asia.luopeike.com/ja/help"}]}]}</script>
 </head>
-
-<body>
-  <main class="site-shell">
+<body class="experience-site"><main class="site-shell experience-shell">
     <header class="site-header">
-      <a class="brand" href="./" aria-label="小さな自然 ホーム">
-        <span class="brand-mark">LN</span>
-        <span>Little Nature</span>
-      </a>
+      <a class="brand" href="/ja/"><img src="/favicon-64.png" alt="" width="36" height="36"><span>Little Nature</span></a>
       <div class="header-actions">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="./">ホーム</a>
-          <a href="models/">モデル</a>
-          <a href="privacy-policy">プライバシー</a>
-          <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+        <nav class="nav-links" aria-label="モデル">
+          <a href="/ja/models/">モデル</a>
+          <a class="study-link" href="/ja/study-cards/"><i data-lucide="book-open"></i>学習カード<span class="selection-badge" data-selection-count hidden>0</span></a>
+          <a href="/ja/help">ヘルプ</a>
         </nav>
-        <select class="language-select" aria-label="言語" onchange="if (this.value) window.location.href = this.value;"><option value="../en-US/help">English</option><option value="../zh-Hans/help">简体中文</option><option value="../zh-Hant/help">繁體中文</option><option value="../ja/help" selected>日本語</option><option value="../ko/help">한국어</option><option value="../de-DE/help">Deutsch</option></select><noscript><span class="language-noscript"><a href="../en-US/help">English</a><a href="../zh-Hans/help">简体中文</a><a href="../zh-Hant/help">繁體中文</a><a href="../ja/help">日本語</a><a href="../ko/help">한국어</a><a href="../de-DE/help">Deutsch</a></span></noscript>
+        <select class="language-select" aria-label="言語" onchange="if(this.value)location.href=this.value"><option value="/en-US/help">English</option><option value="/de-DE/help">Deutsch</option><option value="/ja/help" selected>日本語</option><option value="/ko/help">한국어</option><option value="/zh-Hans/help">简体中文</option><option value="/zh-Hant/help">繁體中文</option></select>
       </div>
     </header>
-
-    <article class="content-card">
-      <p class="eyebrow">ヘルプとサポート</p>
-      <h1>小さな自然の使い方</h1>
-      <p class="lead">小さな自然は、生物モデル資料の閲覧、選択したモデルファイルのダウンロード、対応するiPhoneやiPadでのAR表示のために設計されています。</p>
-
-      <section class="section">
-        <h2>カタログを見る</h2>
-        <div class="step-list">
-          <article class="step"><h3>カテゴリーを使う</h3><p>すべて、植物、動物、特別フィルターでモデルカタログを絞り込めます。</p></article>
-          <article class="step"><h3>名前で検索</h3><p>日本語名、英語名、中国語名、利用可能な学名で検索できます。</p></article>
-          <article class="step"><h3>詳細を開く</h3><p>モデルカードをタップまたはクリックすると、カテゴリー、ファイルサイズ、面数、頂点数、アニメーション、分類、ソースリンクを確認できます。</p></article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>モデルをダウンロードして管理</h2>
-        <div class="step-list">
-          <article class="step"><h3>必要なものだけダウンロード</h3><p>モデルファイルは最初からすべてインストールされません。確認したいモデルやARで使いたいモデルだけをダウンロードします。</p></article>
-          <article class="step"><h3>ダウンロード管理を使う</h3><p>ダウンロード管理で保存済みモデル、ストレージ使用量、ローカル内容の削除操作を確認できます。</p></article>
-          <article class="step"><h3>オフライン利用</h3><p>保存済みモデルは、アプリ内で削除するかアプリを削除するまでデバイス上に残ります。</p></article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>ARでモデルを見る</h2>
-        <div class="step-list">
-          <article class="step"><h3>カメラ権限</h3><p>AR表示には、周囲にモデルを配置するためのカメラアクセスが必要です。</p></article>
-          <article class="step"><h3>対応デバイス</h3><p>AR表示は対応するiPhoneとiPadで利用できます。Macはカタログ閲覧とローカル管理向けです。</p></article>
-          <article class="step"><h3>配置とジェスチャー</h3><p>ARの準備ができたら、アプリ内の案内に従ってモデルを配置し、ジェスチャーで移動、拡大縮小、回転できます。</p></article>
-        </div>
-      </section>
-
-      <p class="footer">サポートが必要な場合は cameoshell09@gmail.com までご連絡ください。</p>
+    <article class="help-content">
+      <section class="catalog-intro"><div><h1>3Dモデル・アニメーション・印刷用学習カード</h1><p>ブラウザで動植物の3Dモデルを観察し、対応するアニメーションを再生、学習カードを印刷。アプリのオフライン保存とARの使い方も紹介します。</p></div></section>
+      <section class="help-answer"><h2>動物や植物のモデルを探すには？</h2><p>モデル一覧で、対応する6言語の名前や登録されている学名を検索できます。カテゴリ、テーマ、アニメーションの有無でも絞り込めます。</p><a href="/ja/models/">モデル</a></section><section class="help-answer"><h2>アプリを入れずに3Dモデルを見られますか？</h2><p>はい。モデルページで「3Dで見る」を選び、回転や拡大で観察できます。一部は当サイトのビュー、その他はSketchfabの埋め込みビューを使用し、外部サービスに接続します。インターネット接続が必要です。</p><a href="/ja/models/">モデル</a></section><section class="help-answer"><h2>どのモデルにアニメーションがありますか？</h2><p>アニメーションの表示を確認するか、動くモデルのコレクションを開いてください。再生操作があるモデルでは再生・一時停止して姿勢を比べられます。これらは視覚的な表現で、実際の動物の動きを測定したものではありません。</p><a href="/ja/collections/motion/">動く動物の3Dモデル</a></section><section class="help-answer"><h2>動植物の学習カードを印刷するには？</h2><p>モデルを学習カードに追加し、A4またはLetterと、写真と名前のカードまたは絵合わせ用の写真・名前カードを選びます。学名の表示は任意です。ブラウザから印刷し、対応していればPDF保存もできます。選択はこのブラウザ内に保存されます。</p><a href="/ja/study-cards/">学習カード</a></section><section class="help-answer"><h2>アプリはオフライン観察やARに対応していますか？</h2><p>iPhone、iPad、Macの小さな自然は3Dプレビューと必要なモデルのダウンロードに対応します。保存したモデルはオフラインで観察でき、ダウンロード管理から削除できます。ARは対応するiPhoneまたはiPadとカメラの許可が必要です。配置の案内に従い、ジェスチャで移動・拡大縮小・回転します。Macは3D観察に対応し、カメラを使うARには対応しません。</p><a href="https://apps.apple.com/app/id6766551832">小さな自然を入手</a></section><section class="help-answer"><h2>モデルや学習素材を再利用できますか？</h2><p>モデル一覧の素材はCC0で公開されています。各モデルページに出典と制作者へのリンクがあります。このライセンスに従って利用でき、可能なら出典を添えてください。分類や名称は更新される場合があります。学習用の内容で、確実な種の同定や科学的な測定を目的としたものではありません。</p><a href="/ja/models/">モデル</a></section>
+      <p>お問い合わせ： cameoshell09@gmail.com</p>
     </article>
-  </main>
-</body>
-
-</html>
+    <footer class="experience-footer">
+      <span>Little Nature · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span>
+      <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com · Sketchfab</a>
+      <a href="/ja/privacy-policy">プライバシー</a>
+    </footer></main><script id="experience-data" type="application/json">{"locale":"ja","surface":"help","copy":{"catalogTitle":"動植物の3Dモデル図鑑","homeSubtitle":"自然を、もっと近くで","catalogDescription":"動植物の3Dモデルとアニメーションを見たり、印刷できる自然学習カードを集めたりできます。","featured":"おすすめのモデル","all":"すべてのモデル","search":"検索","searchPlaceholder":"名前・学名","theme":"テーマ","allThemes":"すべてのテーマ","animatedOnly":"アニメーションあり","results":"{count} / {total}","studyCards":"学習カード","addCard":"学習カードに追加","removeCard":"学習カードから削除","selected":"{count}件選択中","clear":"選択を解除","view3d":"3Dで見る","loading":"モデルを読み込み中…","loadError":"3Dモデルを読み込めませんでした。","retry":"もう一度試す","sourceViewer":"Sketchfabで開く","providerNote":"3Dビューを開くとSketchfabに接続します。","play":"アニメーションを再生","pause":"アニメーションを一時停止","reset":"視点をリセット","fullscreen":"全画面","imageAlt":"{name}の3Dモデル","observe":"じっくり観察","back":"モデル一覧に戻る","source":"出典","license":"ライセンス","quickLook":"ARで見る","downloadGLB":"GLBをダウンロード","noResults":"一致するモデルはありません","resetFilters":"絞り込みを解除","searchAll":"すべてのモデルを検索","studyTitle":"印刷できる自然学習カード","studyDescription":"自然の授業や絵合わせ用の動植物カードを作成。学名は任意で表示でき、A4・Letterで印刷したり、ブラウザからPDF保存したりできます。","paper":"用紙","layout":"カードの種類","namedCards":"写真と名前","matchingCards":"写真カードと名前カード","scientificNames":"学名","print":"カードを印刷","selectFeatured":"おすすめを選択","emptySelection":"カードが選択されていません","chooseModels":"モデルを選ぶ","preview":"印刷プレビュー","appTitle":"どこでも自然に出会う","appBody":"iPhone、iPad、Macでモデルをオフライン保存。対応するiPhoneとiPadではARでも観察できます。","appCta":"小さな自然を入手","websitePrivacyTitle":"このウェブサイトの利用","websitePrivacy":"学習カードの選択はこのブラウザ内だけに保存されます。3D読み込みの成功、アニメーション、印刷、App Storeへのクリックなど限定的な自社利用イベントを、タブごとのランダムなセッション識別子、言語、端末の種類、固定のモデル・テーマ識別子とともに収集します。検索語、選んだカードの内容、カメラ画像、完全なページURLは収集しません。セッション識別子は保存前にハッシュ化し、イベントは最長90日保持します。Global Privacy ControlとDo Not Trackに対応します。Sketchfabのビューを開くと外部サービスに直接接続し、その通信には同社のプライバシーポリシーが適用されます。","themes":{"motion":{"title":"動く動物の3Dモデル","description":"ブラウザで動物モデルを観察。対応するアニメーションを再生・一時停止して、さまざまな角度から姿勢を比べられます。","prompts":["同じ姿勢を正面と側面から比べてみましょう。","一時停止して、脚や体の輪郭を観察しましょう。","モデルのアニメーションは実際の動物の動きを測定したものではありません。"]},"small-creatures":{"title":"小さな生き物","description":"甲虫、チョウ、クモなどを近くで観察。","prompts":["脚の数と並び方を比べてみましょう。","触角、翅、体の区分に注目しましょう。","クモは昆虫ではなくクモ類です。体のつくりを比べてみましょう。"]},"pond-life":{"title":"水辺の生き物","description":"カエル、カメ、ザリガニ、カニ、水辺の花。","prompts":["甲羅、外骨格、柔らかい体を比べてみましょう。","手足の形と関節を観察しましょう。","ハスとスイレンの花や葉を比べてみましょう。"]},"flowers":{"title":"花を近くで","description":"サクラ、ユリ、ハスなどの花を観察。","prompts":["花びらの形と対称性を比べてみましょう。","茎に対する花の位置を観察しましょう。","見えるおしべや花の中心を比べてみましょう。"]}}},"models":[]}</script>
+<script defer src="/assets/vendor/icons.js?v=13996f7f6a94"></script>
+<script type="module" src="/assets/experience.js?v=ac7bd50f14bc"></script></body></html>

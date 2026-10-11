@@ -1,251 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小小自然帮助 - 搜索、下载和查看 AR 3D 模型</title>
-  <meta name="description" content="了解如何在 iPhone、iPad 和 Mac 上使用小小自然，包括模型搜索、分类筛选、按需下载、AR 查看、离线访问和本地内容管理。">
-  <meta name="keywords" content="小小自然帮助,AR模型指南,3D生物模型帮助,下载模型,AR查看,模型目录,下载管理">
-  <meta name="author" content="Peike Luo">
-  <meta name="application-name" content="Little Nature">
-  <meta name="apple-mobile-web-app-title" content="Little Nature">
-  <meta name="apple-itunes-app" content="app-id=6766551832">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D 模型、动画与可打印学习卡指南 | Little Nature</title>
+  <meta name="description" content="了解如何在线观察动植物 3D 模型、播放已有动画、打印自然学习卡，以及使用小小自然 App 的离线预览和 AR 功能。">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10201c" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="../favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <link rel="stylesheet" href="../style/base.css">
+  <meta name="apple-itunes-app" content="app-id=6766551832">
   <link rel="canonical" href="https://ar-asia.luopeike.com/zh-Hans/help">
   <link rel="alternate" hreflang="en-US" href="https://ar-asia.luopeike.com/en-US/help">
-  <link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help">
-  <link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help">
-  <link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help">
-  <link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help">
-  <link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/help">
-  <link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help">
-  <meta property="og:title" content="小小自然帮助 - 搜索、下载和查看 AR 3D 模型">
-  <meta property="og:description" content="小小自然使用帮助，包括模型搜索、分类筛选、下载、AR 查看和离线访问。">
-  <meta property="og:type" content="article">
+<link rel="alternate" hreflang="de-DE" href="https://ar-asia.luopeike.com/de-DE/help">
+<link rel="alternate" hreflang="ja" href="https://ar-asia.luopeike.com/ja/help">
+<link rel="alternate" hreflang="ko" href="https://ar-asia.luopeike.com/ko/help">
+<link rel="alternate" hreflang="zh-Hans" href="https://ar-asia.luopeike.com/zh-Hans/help">
+<link rel="alternate" hreflang="zh-Hant" href="https://ar-asia.luopeike.com/zh-Hant/help">
+<link rel="alternate" hreflang="x-default" href="https://ar-asia.luopeike.com/en-US/help">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style/base.css?v=ef90e3ec6a57">
+  <link rel="stylesheet" href="/style/experience.css?v=73f45d1419f9">
+  <meta property="og:title" content="3D 模型、动画与可打印学习卡指南 | Little Nature">
+  <meta property="og:description" content="了解如何在线观察动植物 3D 模型、播放已有动画、打印自然学习卡，以及使用小小自然 App 的离线预览和 AR 功能。">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://ar-asia.luopeike.com/zh-Hans/help">
-  <meta property="og:site_name" content="Little Nature">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:locale:alternate" content="zh_TW">
-  <meta property="og:locale:alternate" content="ja_JP">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="小小自然帮助 - 搜索、下载和查看 AR 3D 模型">
-  <meta name="twitter:description" content="了解如何浏览目录、下载模型文件，并在 AR 中查看支持的模型。">
   <meta property="og:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-  <meta name="twitter:image" content="https://ar-asia.luopeike.com/app-icon.png">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://ar-asia.luopeike.com/#organization",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ar-asia.luopeike.com/apple-touch-icon.png",
-        "width": 180,
-        "height": 180
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766551832",
-        "https://sketchfab.com/ffishAsia-and-floraZia"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://ar-asia.luopeike.com/#website",
-      "name": "Little Nature",
-      "url": "https://ar-asia.luopeike.com/",
-      "inLanguage": "zh-Hans",
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://ar-asia.luopeike.com/zh-Hans/help#webpage",
-      "name": "小小自然帮助 - 搜索、下载和查看 AR 3D 模型",
-      "url": "https://ar-asia.luopeike.com/zh-Hans/help",
-      "description": "了解如何在 iPhone、iPad 和 Mac 上使用小小自然，包括模型搜索、分类筛选、按需下载、AR 查看、离线访问和本地内容管理。",
-      "inLanguage": "zh-Hans",
-      "isPartOf": {
-        "@id": "https://ar-asia.luopeike.com/#website"
-      },
-      "publisher": {
-        "@id": "https://ar-asia.luopeike.com/#organization"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://ar-asia.luopeike.com/zh-Hans/help#faq",
-      "inLanguage": "zh-Hans",
-      "isPartOf": {
-        "@id": "https://ar-asia.luopeike.com/zh-Hans/help#webpage"
-      },
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "使用分类",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "使用全部、植物、动物和特别筛选项来缩小模型目录范围。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "按名称搜索",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "搜索支持日文名、英文名、中文名，以及可用的学名。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "打开详情",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "点击模型卡片可查看分类、文件大小、面数、顶点数、动画状态、分类信息和来源链接。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "按需下载",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "模型文件不会全部预装。只下载你想查看或用于 AR 的模型。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "使用下载管理",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "打开下载管理可查看已保存模型、存储占用，以及删除本地内容的控制项。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "离线访问",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "已保存的模型会保留在设备上，直到你在 App 中删除或移除 App。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "相机权限",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AR 查看需要相机访问权限，以便 App 在你的环境中放置模型。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "设备支持",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AR 查看可在兼容的 iPhone 和 iPad 设备上使用。Mac 主要用于目录浏览和本地内容管理。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "放置和手势",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AR 准备就绪后，按照 App 内指引放置模型，然后使用手势移动、缩放或旋转。"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://ar-asia.luopeike.com/zh-Hans/help#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Little Nature",
-          "item": "https://ar-asia.luopeike.com/zh-Hans/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "如何使用小小自然",
-          "item": "https://ar-asia.luopeike.com/zh-Hans/help"
-        }
-      ]
-    }
-  ]
-}
-  </script>
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","@id":"https://ar-asia.luopeike.com/zh-Hans/help#faq","url":"https://ar-asia.luopeike.com/zh-Hans/help","name":"3D 模型、动画与可打印学习卡指南","description":"了解如何在线观察动植物 3D 模型、播放已有动画、打印自然学习卡，以及使用小小自然 App 的离线预览和 AR 功能。","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"如何找到动物或植物模型？","acceptedAnswer":{"@type":"Answer","text":"在模型列表中浏览，或使用六种支持语言的名称及已有学名搜索。还可以按分类、主题或是否带动画筛选。"}},{"@type":"Question","name":"不安装 App，也能交互查看 3D 模型吗？","acceptedAnswer":{"@type":"Answer","text":"可以。打开模型详情并选择“3D 预览”，通过旋转和缩放观察。一部分模型使用本站预览器，其他模型会加载 Sketchfab 内嵌预览器并连接该第三方服务。网页预览需要联网。"}},{"@type":"Question","name":"哪些模型带有动画？","acceptedAnswer":{"@type":"Answer","text":"查看动画标记，或打开动画模型专题。带播放控制的模型可以播放、暂停并比较姿态。这些动画是视觉展示，不是动物真实运动的测量资料。"}},{"@type":"Question","name":"如何打印动植物学习卡或保存 PDF？","acceptedAnswer":{"@type":"Answer","text":"将模型加入学习卡，选择 A4 或 Letter 纸张，以及图片与名称卡或配对用的图片卡、名称卡。学名可选。使用浏览器打印，支持时也可选择“另存为 PDF”。所选模型仅保存在当前浏览器中。"}},{"@type":"Question","name":"App 可以离线查看模型或使用 AR 吗？","acceptedAnswer":{"@type":"Answer","text":"iPhone、iPad 和 Mac 版小小自然支持 3D 预览与按需下载。下载后的模型可离线查看，并可在下载管理中删除。AR 需要兼容的 iPhone 或 iPad 及相机授权，请按提示放置模型，再用手势移动、缩放或旋转。Mac 支持 3D 观察，不支持基于相机的 AR。"}},{"@type":"Question","name":"模型和学习素材可以再利用吗？","acceptedAnswer":{"@type":"Answer","text":"目录中的模型以 CC0 许可提供，各模型页均链接到来源与创作者。可按该许可再利用文件，也建议注明来源。分类和俗名可能更新；页面用于学习，不用于可靠的物种鉴定或科学测量。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Little Nature","item":"https://ar-asia.luopeike.com/zh-Hans/"},{"@type":"ListItem","position":2,"name":"3D 模型、动画与可打印学习卡指南","item":"https://ar-asia.luopeike.com/zh-Hans/help"}]}]}</script>
 </head>
-
-<body>
-  <main class="site-shell">
+<body class="experience-site"><main class="site-shell experience-shell">
     <header class="site-header">
-      <a class="brand" href="./" aria-label="小小自然首页">
-        <span class="brand-mark">LN</span>
-        <span>Little Nature</span>
-      </a>
+      <a class="brand" href="/zh-Hans/"><img src="/favicon-64.png" alt="" width="36" height="36"><span>Little Nature</span></a>
       <div class="header-actions">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="./">首页</a>
-          <a href="models/">模型</a>
-          <a href="privacy-policy">隐私</a>
-          <a href="https://apps.apple.com/app/id6766551832">App Store</a>
+        <nav class="nav-links" aria-label="模型">
+          <a href="/zh-Hans/models/">模型</a>
+          <a class="study-link" href="/zh-Hans/study-cards/"><i data-lucide="book-open"></i>学习卡<span class="selection-badge" data-selection-count hidden>0</span></a>
+          <a href="/zh-Hans/help">帮助</a>
         </nav>
-        <select class="language-select" aria-label="语言" onchange="if (this.value) window.location.href = this.value;"><option value="../en-US/help">English</option><option value="../zh-Hans/help" selected>简体中文</option><option value="../zh-Hant/help">繁體中文</option><option value="../ja/help">日本語</option><option value="../ko/help">한국어</option><option value="../de-DE/help">Deutsch</option></select><noscript><span class="language-noscript"><a href="../en-US/help">English</a><a href="../zh-Hans/help">简体中文</a><a href="../zh-Hant/help">繁體中文</a><a href="../ja/help">日本語</a><a href="../ko/help">한국어</a><a href="../de-DE/help">Deutsch</a></span></noscript>
+        <select class="language-select" aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/en-US/help">English</option><option value="/de-DE/help">Deutsch</option><option value="/ja/help">日本語</option><option value="/ko/help">한국어</option><option value="/zh-Hans/help" selected>简体中文</option><option value="/zh-Hant/help">繁體中文</option></select>
       </div>
     </header>
-
-    <article class="content-card">
-      <p class="eyebrow">帮助与支持</p>
-      <h1>如何使用小小自然</h1>
-      <p class="lead">小小自然用于浏览生物模型资料、下载选定的模型文件，并在兼容的 iPhone 和 iPad 设备上用 AR 查看支持的模型。</p>
-
-      <section class="section">
-        <h2>浏览目录</h2>
-        <div class="step-list">
-          <article class="step"><h3>使用分类</h3><p>使用全部、植物、动物和特别筛选项来缩小模型目录范围。</p></article>
-          <article class="step"><h3>按名称搜索</h3><p>搜索支持日文名、英文名、中文名，以及可用的学名。</p></article>
-          <article class="step"><h3>打开详情</h3><p>点击模型卡片可查看分类、文件大小、面数、顶点数、动画状态、分类信息和来源链接。</p></article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>下载和管理模型</h2>
-        <div class="step-list">
-          <article class="step"><h3>按需下载</h3><p>模型文件不会全部预装。只下载你想查看或用于 AR 的模型。</p></article>
-          <article class="step"><h3>使用下载管理</h3><p>打开下载管理可查看已保存模型、存储占用，以及删除本地内容的控制项。</p></article>
-          <article class="step"><h3>离线访问</h3><p>已保存的模型会保留在设备上，直到你在 App 中删除或移除 App。</p></article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>在 AR 中查看模型</h2>
-        <div class="step-list">
-          <article class="step"><h3>相机权限</h3><p>AR 查看需要相机访问权限，以便 App 在你的环境中放置模型。</p></article>
-          <article class="step"><h3>设备支持</h3><p>AR 查看可在兼容的 iPhone 和 iPad 设备上使用。Mac 主要用于目录浏览和本地内容管理。</p></article>
-          <article class="step"><h3>放置和手势</h3><p>AR 准备就绪后，按照 App 内指引放置模型，然后使用手势移动、缩放或旋转。</p></article>
-        </div>
-      </section>
-
-      <p class="footer">需要帮助？请联系 cameoshell09@gmail.com。</p>
+    <article class="help-content">
+      <section class="catalog-intro"><div><h1>3D 模型、动画与可打印学习卡指南</h1><p>了解如何在线观察动植物 3D 模型、播放已有动画、打印自然学习卡，以及使用小小自然 App 的离线预览和 AR 功能。</p></div></section>
+      <section class="help-answer"><h2>如何找到动物或植物模型？</h2><p>在模型列表中浏览，或使用六种支持语言的名称及已有学名搜索。还可以按分类、主题或是否带动画筛选。</p><a href="/zh-Hans/models/">模型</a></section><section class="help-answer"><h2>不安装 App，也能交互查看 3D 模型吗？</h2><p>可以。打开模型详情并选择“3D 预览”，通过旋转和缩放观察。一部分模型使用本站预览器，其他模型会加载 Sketchfab 内嵌预览器并连接该第三方服务。网页预览需要联网。</p><a href="/zh-Hans/models/">模型</a></section><section class="help-answer"><h2>哪些模型带有动画？</h2><p>查看动画标记，或打开动画模型专题。带播放控制的模型可以播放、暂停并比较姿态。这些动画是视觉展示，不是动物真实运动的测量资料。</p><a href="/zh-Hans/collections/motion/">动物 3D 动画模型</a></section><section class="help-answer"><h2>如何打印动植物学习卡或保存 PDF？</h2><p>将模型加入学习卡，选择 A4 或 Letter 纸张，以及图片与名称卡或配对用的图片卡、名称卡。学名可选。使用浏览器打印，支持时也可选择“另存为 PDF”。所选模型仅保存在当前浏览器中。</p><a href="/zh-Hans/study-cards/">学习卡</a></section><section class="help-answer"><h2>App 可以离线查看模型或使用 AR 吗？</h2><p>iPhone、iPad 和 Mac 版小小自然支持 3D 预览与按需下载。下载后的模型可离线查看，并可在下载管理中删除。AR 需要兼容的 iPhone 或 iPad 及相机授权，请按提示放置模型，再用手势移动、缩放或旋转。Mac 支持 3D 观察，不支持基于相机的 AR。</p><a href="https://apps.apple.com/app/id6766551832">获取小小自然</a></section><section class="help-answer"><h2>模型和学习素材可以再利用吗？</h2><p>目录中的模型以 CC0 许可提供，各模型页均链接到来源与创作者。可按该许可再利用文件，也建议注明来源。分类和俗名可能更新；页面用于学习，不用于可靠的物种鉴定或科学测量。</p><a href="/zh-Hans/models/">模型</a></section>
+      <p>需要帮助？联系 cameoshell09@gmail.com</p>
     </article>
-  </main>
-</body>
-
-</html>
+    <footer class="experience-footer">
+      <span>Little Nature · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span>
+      <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com · Sketchfab</a>
+      <a href="/zh-Hans/privacy-policy">隐私</a>
+    </footer></main><script id="experience-data" type="application/json">{"locale":"zh-Hans","surface":"help","copy":{"catalogTitle":"动植物 3D 图鉴","homeSubtitle":"近距离观察自然","catalogDescription":"在线观察动植物 3D 模型、观看已有动画，并制作可打印的自然学习卡。","featured":"精选模型","all":"全部模型","search":"搜索","searchPlaceholder":"名称或学名","theme":"主题","allThemes":"全部主题","animatedOnly":"动画模型","results":"{count} / {total}","studyCards":"学习卡","addCard":"加入学习卡","removeCard":"移出学习卡","selected":"已选 {count} 个","clear":"清空选择","view3d":"3D 预览","loading":"正在加载模型…","loadError":"未能加载 3D 模型。","retry":"重试","sourceViewer":"在 Sketchfab 打开","providerNote":"打开交互预览时会连接 Sketchfab。","play":"播放动画","pause":"暂停动画","reset":"重置视角","fullscreen":"全屏","imageAlt":"{name}的 3D 模型","observe":"观察要点","back":"返回模型列表","source":"来源","license":"许可","quickLook":"在 AR 中查看","downloadGLB":"下载 GLB","noResults":"没有匹配的模型","resetFilters":"重置筛选","searchAll":"搜索全部模型","studyTitle":"可打印的自然学习卡","studyDescription":"制作适合自然课堂与配对活动的动植物图片卡，可选显示学名，支持 A4、Letter 打印及通过浏览器保存 PDF。","paper":"纸张","layout":"卡片形式","namedCards":"图片与名称","matchingCards":"图片卡 + 名称卡","scientificNames":"显示学名","print":"打印学习卡","selectFeatured":"选择精选模型","emptySelection":"尚未选择学习卡","chooseModels":"选择模型","preview":"打印预览","appTitle":"随时随地，观察自然","appBody":"在 iPhone、iPad 和 Mac 的小小自然中离线保存模型，并在支持的设备上用 AR 观察。","appCta":"获取小小自然","websitePrivacyTitle":"使用本网站","websitePrivacy":"学习卡选择仅保存在当前浏览器中。我们收集有限的第一方使用事件，例如 3D 加载成功、动画播放、打印和 App Store 链接点击，以及随机生成的标签页会话标识、语言、设备类别和固定的模型或主题标识。不收集搜索文字、所选卡片内容、摄像头画面或完整页面网址。会话标识在存储前经过哈希处理，事件最多保留 90 天。统计尊重 Global Privacy Control 和 Do Not Track。打开 Sketchfab 预览会直接连接该第三方服务，相关请求适用其隐私政策。","themes":{"motion":{"title":"动物 3D 动画模型","description":"在浏览器中观察动物模型，播放或暂停已有动画，从不同角度比较姿态。","prompts":["从正面和侧面比较同一个姿态。","暂停动画，观察足部或身体轮廓。","这些是模型动画，并非对动物真实运动的测量。"]},"small-creatures":{"title":"小小生物","description":"近距离观察甲虫、蝴蝶、蜘蛛和其他小动物。","prompts":["比较足的数量与排列方式。","寻找触角、翅和不同的身体分区。","蜘蛛属于蛛形类，不是昆虫。比较它们的身体结构。"]},"pond-life":{"title":"水边的生命","description":"青蛙、龟、螯虾、蟹和开花的水生植物。","prompts":["比较龟甲、外骨骼和柔软的身体。","观察肢体的形状与关节。","比较莲与睡莲的花和叶形。"]},"flowers":{"title":"近看花朵","description":"观察樱花、百合、莲和其他开花植物。","prompts":["比较花瓣形状与花朵的对称性。","观察花与茎的位置关系。","比较可见的雄蕊与花朵中心。"]}}},"models":[]}</script>
+<script defer src="/assets/vendor/icons.js?v=13996f7f6a94"></script>
+<script type="module" src="/assets/experience.js?v=ac7bd50f14bc"></script></body></html>

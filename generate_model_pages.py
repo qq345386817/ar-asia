@@ -1115,6 +1115,50 @@ def write_page(path, content, url):
     CHANGED_URLS.add(url)
 
 
+def correct_publisher_identity(document):
+    from html.parser import HTMLParser
+
+    lines = document.splitlines(keepends=True)
+
+    class SchemaParser(HTMLParser):
+        start = None
+        replacements = None
+
+        def __init__(self):
+            super().__init__()
+            self.replacements = []
+
+        def character_offset(self):
+            line, column = self.getpos()
+            return sum(map(len, lines[:line - 1])) + column
+
+        def handle_starttag(self, tag, attributes):
+            if tag == "script" and dict(attributes).get("type") == "application/ld+json":
+                self.start = self.character_offset() + len(self.get_starttag_text())
+
+        def handle_endtag(self, tag):
+            if tag != "script" or self.start is None:
+                return
+            end = self.character_offset()
+            schema = json.loads(document[self.start:end])
+            changed = False
+            for entity in schema.get("@graph", [schema]):
+                if entity.get("@type") == "Organization" and entity.get("@id") == SITE + "/#organization":
+                    same_as = entity.get("sameAs", [])
+                    if SKETCHFAB_SOURCE_URL in same_as:
+                        entity["sameAs"] = [url for url in same_as if url != SKETCHFAB_SOURCE_URL]
+                        changed = True
+            if changed:
+                self.replacements.append((self.start, end, "\n" + json.dumps(schema, ensure_ascii=False, indent=2) + "\n  "))
+            self.start = None
+
+    parser = SchemaParser()
+    parser.feed(document)
+    for start, end, replacement in reversed(parser.replacements):
+        document = document[:start] + replacement + document[end:]
+    return document
+
+
 def update_website_privacy(experience, locale):
     from html.parser import HTMLParser
 
@@ -1163,7 +1207,7 @@ def update_website_privacy(experience, locale):
         updated = document[:parser.insertion] + section + "\n\n      " + document[parser.insertion:]
     else:
         raise ValueError("Cannot locate privacy-policy content: " + locale)
-    write_page(path, updated, f"{SITE}/{locale}/privacy-policy")
+    write_page(path, correct_publisher_identity(updated), f"{SITE}/{locale}/privacy-policy")
 
 
 def main():
@@ -1187,6 +1231,7 @@ def main():
         for theme in experience.config["themes"]:
             write_page(ROOT / locale / "collections" / theme / "index.html", experience.render_listing(locale, theme=theme), f"{SITE}/{locale}/collections/{theme}/")
         update_website_privacy(experience, locale)
+        write_page(ROOT / locale / "help.html", experience.render_help(locale), f"{SITE}/{locale}/help")
     copy_images(models)
     generate_sitemap(models)
     print(f"Generated {len(models) * len(LOCALES)} model pages.")

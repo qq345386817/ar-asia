@@ -4,6 +4,23 @@ Static, six-language website for online model browsing and printable nature
 study cards. The app manifest remains the source of model names, taxonomy,
 thumbnails, and source URLs.
 
+## SEO and AI-readable Content
+
+All six languages have canonical URLs, reciprocal language alternates,
+and sitemap entries. Catalog, animation collection, and printable flashcard
+titles describe the actual tools rather than adding keyword lists.
+`data/help-copy.json` generates visible localized questions and matching
+FAQ structured data. The model creator is credited separately from the app
+publisher. Structured data does not guarantee a rich result or indexing.
+
+`/llms.txt` is an optional curated guide to the existing public pages, their
+features, limitations, languages, and sources. It is included in the static
+build; it does not replace robots.txt, sitemap.xml, or readable HTML.
+Google does not require or specially use llms.txt for its AI search features.
+Avoid duplicate Markdown copies of every model page or unsupported claims
+about improved ranking or AI citations. See [Google AI guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+and the [llms.txt proposal](https://llmstxt.org/).
+
 ## Development
 
 ~~~sh
