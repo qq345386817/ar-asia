@@ -77,6 +77,7 @@ class Experience:
             "featured": stem(model) in self.config["featured"],
             "themes": [key for key, theme in self.config["themes"].items() if stem(model) in theme["models"]],
             "image": "/model-images/" + stem(model) + "_preview.jpeg",
+            "thumbnail": asset_url("/model-images/" + stem(model) + "_thumb.jpeg"),
             "url": "/" + locale + "/models/" + slug(model) + "/",
             "glb": asset.get("glb_url", ""),
             "usdz": model["download_url"],
@@ -172,7 +173,7 @@ class Experience:
             output.append(f"""
       <article class="specimen-tile" data-model-id="{item['id']}">
         <a class="specimen-link" href="{item['url']}">
-          <div class="specimen-photo"><img src="{item['image']}" alt="{esc(alt)}" width="1024" height="576" loading="lazy" decoding="async">{animation}</div>
+          <div class="specimen-photo"><img src="{item['thumbnail']}" alt="{esc(alt)}" width="256" height="144" loading="eager" decoding="async">{animation}</div>
           <div class="specimen-caption"><h3>{esc(item['name'])}</h3>{scientific}<span class="specimen-kind">{esc(item['categoryLabel'])}</span></div>
         </a>
         <button class="icon-button card-toggle" data-card-id="{item['id']}" type="button" aria-pressed="false" title="{esc(text['addCard'])}" aria-label="{esc(text['addCard'] + ': ' + item['name'])}"><i data-lucide="plus"></i></button>

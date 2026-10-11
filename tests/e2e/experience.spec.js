@@ -6,6 +6,48 @@ const allCopy = JSON.parse(await readFile(new URL("../../data/web-copy.json", im
 const catalog = JSON.parse(await readFile(new URL("../../../FFishAsia/Resources/manifest.json", import.meta.url), "utf8"));
 const experience = JSON.parse(await readFile(new URL("../../data/experience.json", import.meta.url), "utf8"));
 
+test("catalog thumbnails finish loading before scrolling to the last models", async ({ page }) => {
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/zh-Hans/models/");
+    await expect.poll(() => page.locator(".specimen-photo img").evaluateAll(images =>
+      images.filter(image => image.complete && image.naturalWidth > 0).length
+    )).toBe(catalog.models.length);
+    await page.locator(".specimen-tile").last().scrollIntoViewIfNeeded();
+    await expect(page.locator(".specimen-tile").last()).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await page.screenshot({ path: "/tmp/little-nature-catalog-bottom-" + width + ".png" });
+    await page.locator("#model-search").fill("Scylla olivacea");
+    await expect(page.locator(".specimen-tile:visible")).toHaveCount(1);
+    expect(await page.locator(".specimen-tile:visible img").evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+  }
+});
+
+test("a failed catalog thumbnail automatically retries without reloading the page", async ({ page }) => {
+  let attempts = 0;
+  await page.route("**/mangrove_crab_thumb.jpeg*", route => {
+    attempts++;
+    return attempts === 1 ? route.abort() : route.continue();
+  });
+  await page.goto("/zh-Hans/models/");
+  const image = page.locator('.specimen-photo img[src*="mangrove_crab_thumb.jpeg"]');
+  await expect.poll(() => image.evaluate(node => node.complete && node.naturalWidth > 0)).toBe(true);
+  expect(attempts).toBe(2);
+  await expect(image).toHaveAttribute("src", /retry=1/);
+});
+
+test("catalog thumbnail retries stop after two failures", async ({ page }) => {
+  let attempts = 0;
+  await page.route("**/mangrove_crab_thumb.jpeg*", route => {
+    attempts++;
+    return route.abort();
+  });
+  await page.goto("/zh-Hans/models/");
+  await expect.poll(() => attempts).toBe(3);
+  await page.waitForTimeout(1500);
+  expect(attempts).toBe(3);
+});
+
 test("all languages render and search without overflow at desktop and mobile widths", async ({ page }) => {
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));

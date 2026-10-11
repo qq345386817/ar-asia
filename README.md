@@ -34,6 +34,14 @@ Open http://127.0.0.1:8765/en-US/. The home page features curated specimens;
 the models directory searches the entire catalog. All languages also have
 four collections and a study-cards directory.
 
+Catalog cards eagerly load the app's small, versioned 256px thumbnails, so
+scrolling or filtering to later models does not wait for native lazy loading.
+Detail pages and printed cards retain the 1024px preview images. Generation
+fails if a model's thumbnail or preview is missing instead of publishing
+broken references.
+Transient thumbnail failures retry at most twice, preserving the asset version
+parameter and avoiding an unbounded request loop.
+
 Study cards support A4 and Letter, picture/name cards, and separate
 picture/name matching sets. Selection stays in this browser and follows
 language changes. Browser print can save the cards as PDF.

@@ -43,6 +43,25 @@ function saveSelection() {
   updateSelection();
 }
 
+function startCatalogImages() {
+  for (const image of document.querySelectorAll(".specimen-photo img")) {
+    let attempts = 0, pending = false;
+    const retry = () => {
+      if (pending || attempts >= 2) return;
+      pending = true;
+      setTimeout(() => {
+        pending = false;
+        if (image.naturalWidth > 0) return;
+        const source = new URL(image.src, location.href);
+        source.searchParams.set("retry", String(++attempts));
+        image.src = source.href;
+      }, 1000);
+    };
+    image.addEventListener("error", retry);
+    if (image.complete && image.naturalWidth === 0) retry();
+  }
+}
+
 function startCatalog() {
   const input = $("#model-search");
   if (!input) return;
@@ -385,7 +404,7 @@ if (data) {
   if (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
     for (const link of document.querySelectorAll(".quick-look-link")) link.hidden = false;
   }
-  startCatalog(); startStudy(); updateSelection(); startViewer();
+  startCatalogImages(); startCatalog(); startStudy(); updateSelection(); startViewer();
   if (data.surface === "model") track("model_open", { model_id: data.models[0].id, surface: "model" });
   else if (data.theme) track("theme_view", { theme: data.theme, surface: "theme" });
   else if (data.surface !== "help") track("catalog_view", { surface: data.home ? "home" : data.surface });

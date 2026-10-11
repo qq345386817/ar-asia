@@ -1034,12 +1034,14 @@ def render_category_page(all_models, locale, category):
 
 
 def copy_images(models):
+    sources = [THUMBNAIL_ROOT / f"{Path(model['filename']).stem}_{kind}.jpeg"
+               for model in models for kind in ("thumb", "preview")]
+    missing = [source.name for source in sources if not source.is_file()]
+    if missing:
+        raise ValueError("Missing model images: " + ", ".join(missing))
     IMAGE_ROOT.mkdir(exist_ok=True)
-    for model in models:
-        stem = Path(model["filename"]).stem
-        source = THUMBNAIL_ROOT / f"{stem}_preview.jpeg"
-        if source.exists():
-            shutil.copy2(source, IMAGE_ROOT / source.name)
+    for source in sources:
+        shutil.copy2(source, IMAGE_ROOT / source.name)
 
 
 def generate_sitemap(models):
@@ -1212,6 +1214,7 @@ def update_website_privacy(experience, locale):
 
 def main():
     models = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))["models"]
+    copy_images(models)
     experience = Experience(models, LOCALES, LANGUAGE_NAMES)
     for locale in LOCALES:
         models_root = ROOT / locale / "models"
@@ -1232,7 +1235,6 @@ def main():
             write_page(ROOT / locale / "collections" / theme / "index.html", experience.render_listing(locale, theme=theme), f"{SITE}/{locale}/collections/{theme}/")
         update_website_privacy(experience, locale)
         write_page(ROOT / locale / "help.html", experience.render_help(locale), f"{SITE}/{locale}/help")
-    copy_images(models)
     generate_sitemap(models)
     print(f"Generated {len(models) * len(LOCALES)} model pages.")
 
