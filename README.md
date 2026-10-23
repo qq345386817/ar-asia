@@ -27,12 +27,18 @@ and the [llms.txt proposal](https://llmstxt.org/).
 npm ci
 python3 generate_model_pages.py
 npm run build
-python3 -m http.server 8765 --bind 127.0.0.1
+npm run serve
 ~~~
 
 Open http://127.0.0.1:8765/en-US/. The home page features curated specimens;
 the models directory searches the entire catalog. All languages also have
 four collections and a study-cards directory.
+
+The local server supports the same extensionless help and privacy URLs as
+Cloudflare Pages. Use `npm run serve -- --port 8786` and
+`PLAYWRIGHT_BASE_URL=http://127.0.0.1:8786 npm run test:e2e` when the default
+port is occupied. The home specimen stage, catalog, viewer, study tools and
+policy pages share light/dark visual foundations in `style/experience.css`.
 
 Catalog cards eagerly load the app's small, versioned 256px thumbnails, so
 scrolling or filtering to later models does not wait for native lazy loading.
