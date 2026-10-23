@@ -1173,6 +1173,21 @@ def update_website_privacy(experience, locale):
         end = None
         insertion = None
         section_depth = 0
+        header_start = None
+        header_end = None
+        head_end = None
+        main_end = None
+        has_experience_style = False
+        has_footer = False
+
+        def __init__(self):
+            super().__init__()
+            self.presentation = []
+
+        def replace_tag(self, tag, attrs):
+            start = self.character_offset()
+            attributes = "".join(f' {key}="{esc(value)}"' if value is not None else f" {key}" for key, value in attrs.items())
+            self.presentation.append((start, start + len(self.get_starttag_text()), f"<{tag}{attributes}>"))
 
         def character_offset(self):
             line, column = self.getpos()
@@ -1180,6 +1195,29 @@ def update_website_privacy(experience, locale):
 
         def handle_starttag(self, tag, attributes):
             attrs = dict(attributes)
+            if tag in ("body", "main"):
+                classes = attrs.get("class", "").split()
+                additions = ("experience-site", "policy-site") if tag == "body" else ("site-shell", "experience-shell")
+                attrs["class"] = " ".join(dict.fromkeys([*classes, *additions]))
+                self.replace_tag(tag, attrs)
+            if tag == "link" and attrs.get("rel") == "stylesheet":
+                stylesheet = attrs.get("href", "").split("?", 1)[0]
+                if stylesheet.endswith("/style/base.css"):
+                    attrs["href"] = asset_url("/style/base.css")
+                    self.replace_tag(tag, attrs)
+                elif stylesheet.endswith("/style/experience.css"):
+                    self.has_experience_style = True
+                    attrs["href"] = asset_url("/style/experience.css")
+                    self.replace_tag(tag, attrs)
+            if tag == "script" and attrs.get("src", "").split("?", 1)[0].endswith("/assets/vendor/icons.js"):
+                attrs["src"] = asset_url("/assets/vendor/icons.js")
+                self.replace_tag(tag, attrs)
+            if tag == "header" and "site-header" in attrs.get("class", "").split():
+                self.header_start = self.character_offset()
+                while self.header_start > 0 and document[self.header_start - 1].isspace():
+                    self.header_start -= 1
+            if tag == "footer" and "experience-footer" in attrs.get("class", "").split():
+                self.has_footer = True
             if tag == "section":
                 if attrs.get("id") == "website-privacy":
                     self.start = self.character_offset()
@@ -1190,6 +1228,12 @@ def update_website_privacy(experience, locale):
                 self.insertion = self.character_offset()
 
         def handle_endtag(self, tag):
+            if tag == "header" and self.header_start is not None:
+                self.header_end = self.character_offset() + len("</header>")
+            if tag == "head":
+                self.head_end = self.character_offset()
+            if tag == "main":
+                self.main_end = self.character_offset()
             if tag == "section" and self.section_depth:
                 self.section_depth -= 1
                 if not self.section_depth:
@@ -1203,12 +1247,23 @@ def update_website_privacy(experience, locale):
         f'<p>{esc(copy["websitePrivacy"])}</p>'
         '<p><a href="https://sketchfab.com/privacy">Sketchfab</a></p></section>'
     )
+    replacements = parser.presentation
     if parser.start is not None and parser.end is not None:
-        updated = document[:parser.start] + section + document[parser.end:]
+        replacements.append((parser.start, parser.end, section))
     elif parser.insertion is not None:
-        updated = document[:parser.insertion] + section + "\n\n      " + document[parser.insertion:]
+        replacements.append((parser.insertion, parser.insertion, section + "\n\n      "))
     else:
         raise ValueError("Cannot locate privacy-policy content: " + locale)
+    if parser.header_start is not None and parser.header_end is not None:
+        replacements.append((parser.header_start, parser.header_end, experience.header(locale, "privacy-policy")))
+    if not parser.has_experience_style and parser.head_end is not None:
+        replacements.append((parser.head_end, parser.head_end, f'<link rel="stylesheet" href="{asset_url("/style/experience.css")}">\n'))
+    if not parser.has_footer and parser.main_end is not None:
+        footer = experience.footer(locale) + f'<script defer src="{asset_url("/assets/vendor/icons.js")}"></script>\n'
+        replacements.append((parser.main_end, parser.main_end, footer))
+    updated = document
+    for start, end, replacement in sorted(replacements, reverse=True):
+        updated = updated[:start] + replacement + updated[end:]
     write_page(path, correct_publisher_identity(updated), f"{SITE}/{locale}/privacy-policy")
 
 

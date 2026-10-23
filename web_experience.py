@@ -102,8 +102,19 @@ class Experience:
 
     def header(self, locale, path=""):
         text, spec = self.copy[locale], self.locales[locale]
+        model_current = ' aria-current="page"' if path == "models/" else (
+            ' aria-current="location"' if path.startswith("models/") else "")
+        study_current = ' aria-current="page"' if path == "study-cards/" else ""
+        help_current = ' aria-current="page"' if path == "help" else ""
+        surface = "home" if not path else ("study" if path == "study-cards/" else (
+            "theme" if path.startswith("collections/") else ("model" if path.startswith("models/") and path.count("/") > 1 else "catalog")))
+        tracking_class = "" if path in ("help", "privacy-policy") else " app-store-link"
         options = "".join(
             '<option value="/' + candidate + "/" + path + '"' + (" selected" if candidate == locale else "") + ">" + esc(label) + "</option>"
+            for candidate, label in self.language_names.items()
+        )
+        language_links = "".join(
+            f'<a href="/{candidate}/{path}" lang="{self.locales[candidate]["lang"]}" hreflang="{candidate}">{esc(label)}</a>'
             for candidate, label in self.language_names.items()
         )
         return f"""
@@ -111,12 +122,14 @@ class Experience:
       <a class="brand" href="/{locale}/"><img src="/favicon-64.png" alt="" width="36" height="36"><span>Little Nature</span></a>
       <div class="header-actions">
         <nav class="nav-links" aria-label="{esc(spec['models'])}">
-          <a href="/{locale}/models/">{esc(spec['models'])}</a>
-          <a class="study-link" href="/{locale}/study-cards/"><i data-lucide="book-open"></i>{esc(text['studyCards'])}<span class="selection-badge" data-selection-count hidden>0</span></a>
-          <a href="/{locale}/help">{esc(spec['help'])}</a>
+          <a href="/{locale}/models/"{model_current}>{esc(spec['models'])}</a>
+          <a class="study-link" href="/{locale}/study-cards/"{study_current}><i data-lucide="book-open"></i>{esc(text['studyCards'])}<span class="selection-badge" data-selection-count hidden>0</span></a>
+          <a href="/{locale}/help"{help_current}>{esc(spec['help'])}</a>
         </nav>
         <select class="language-select" aria-label="{esc(spec['language_label'])}" onchange="if(this.value)location.href=this.value">{options}</select>
+        <a class="button secondary store-nav{tracking_class}" data-surface="{surface}" href="{esc(self.app_url(locale, surface))}">{esc(spec['app_store'])}<i data-lucide="arrow-up-right"></i></a>
       </div>
+      <noscript><nav class="language-noscript" aria-label="{esc(spec['language_label'])}">{language_links}</nav></noscript>
     </header>"""
 
     def footer(self, locale):
@@ -210,6 +223,25 @@ class Experience:
             for key, theme in self.config["themes"].items()
         ) + "</nav>"
 
+    def home_hero(self, locale):
+        text = self.copy[locale]
+        model = next(model for model in self.models if stem(model) == "sakura_cherry_blossom")
+        item = self.model_data(model, locale)
+        return f"""
+    <section class="home-hero" aria-labelledby="home-title">
+      <img class="hero-specimen" src="{asset_url(item['image'])}" alt="{esc(text['imageAlt'].replace('{name}', item['name']))}" width="1024" height="576" fetchpriority="high">
+      <div class="hero-copy">
+        <p class="hero-kicker">{esc(text['homeSubtitle'])}</p>
+        <h1 id="home-title">Little Nature</h1>
+        <p class="hero-description">{esc(text['catalogDescription'])}</p>
+        <div class="hero-actions">
+          <a class="button" href="/{locale}/models/">{esc(text['all'])}<i data-lucide="arrow-up-right"></i></a>
+          <a class="hero-motion-link" href="/{locale}/collections/motion/"><i data-lucide="play"></i>{esc(text['themes']['motion']['title'])}</a>
+        </div>
+      </div>
+      <a class="hero-specimen-caption" href="{item['url']}">{esc(item['name'])}<i data-lucide="arrow-up-right"></i></a>
+    </section>"""
+
     def render_listing(self, locale, category=None, theme=None, home=False):
         text, spec = self.copy[locale], self.locales[locale]
         models = self.models
@@ -253,8 +285,9 @@ class Experience:
         section_title = text["featured"] if home else title
         result_text = text["results"].replace("{count}", str(len(models))).replace("{total}", str(len(models)))
         empty = f"""<div class="empty-state" id="catalog-empty" hidden><h2>{esc(text['noResults'])}</h2><button class="button secondary" id="reset-filters" type="button"><i data-lucide="rotate-ccw"></i>{esc(text['resetFilters'])}</button><a id="search-all-link" href="/{locale}/models/" hidden>{esc(text['searchAll'])}</a></div>"""
+        intro = self.home_hero(locale) if home else f'<section class="catalog-intro"><div><h1>{esc(title)}</h1><p>{esc(description)}</p></div></section>'
         return self.head(locale, path, title + (" | Little Nature" if not home else " | " + text["catalogTitle"]), text["catalogDescription"] if home else description, schema) + self.header(locale, path) + f"""
-    <section class="catalog-intro"><div><h1>{esc(title)}</h1><p>{esc(description)}</p></div></section>
+    {intro}
     {self.theme_links(locale)}
     {observation}
     <section class="catalog-section" aria-label="{esc(section_title)}">
