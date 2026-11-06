@@ -33,6 +33,11 @@
         "Can I reuse the model files and learning materials?",
         "Catalog models are provided under CC0. Each model page links to its source and creator. Reuse the files under that license, and credit the source where practical. Taxonomy and common names may be updated; the pages are learning aids, not species-identification or scientific measurement tools.",
         "models/"
+      ],
+      [
+        "Can I view models in spatial 3D on Apple Vision Pro?",
+        "A native visionOS 2.0+ version has been developed for Apple Vision Pro, with each specimen in its own spatial volume, rotation, zoom, reset and play/pause controls for available animations. Included and downloaded models work offline. It does not use camera-based AR or require environment scanning. Store availability is subject to App Review; check the App Store listing for available platforms. The website viewer remains a browser experience, not a visionOS volume.",
+        null
       ]
     ]
   },
@@ -70,6 +75,11 @@
         "Darf ich Modelle und Lernmaterialien weiterverwenden?",
         "Die Katalogmodelle stehen unter CC0. Jede Modellseite verlinkt Quelle und Urheber. Die Dateien dürfen gemäß dieser Lizenz genutzt werden; eine Quellenangabe ist sinnvoll. Taxonomie und Namen können aktualisiert werden. Die Seiten dienen dem Lernen, nicht der sicheren Artbestimmung oder wissenschaftlichen Messung.",
         "models/"
+      ],
+      [
+        "Kann ich Modelle auf Apple Vision Pro räumlich betrachten?",
+        "Eine native Version für visionOS 2.0+ wurde entwickelt: Exemplare in eigenen räumlichen Volumen, Drehen, Zoom, Zurücksetzen und Wiedergabesteuerung für vorhandene Animationen. Enthaltene und geladene Modelle sind offline verfügbar. Kamera-AR und Umgebungsscans werden nicht verwendet. Die Verfügbarkeit hängt von App Review ab; prüfe die Plattformen im App Store. Der Webviewer bleibt eine Browseransicht, kein visionOS-Volumen.",
+        null
       ]
     ]
   },
@@ -107,6 +117,11 @@
         "モデルや学習素材を再利用できますか？",
         "モデル一覧の素材はCC0で公開されています。各モデルページに出典と制作者へのリンクがあります。このライセンスに従って利用でき、可能なら出典を添えてください。分類や名称は更新される場合があります。学習用の内容で、確実な種の同定や科学的な測定を目的としたものではありません。",
         "models/"
+      ],
+      [
+        "Apple Vision Proでモデルを立体的に観察できますか？",
+        "visionOS 2.0+向けのネイティブ版を開発しました。独立したボリュームで標本を表示し、回転、拡大・縮小、リセット、対応アニメーションの再生・一時停止ができます。収録済み・ダウンロード済みモデルはオフラインでも閲覧できます。カメラARや環境スキャンは使用しません。配信にはApp Review承認が必要です。対応プラットフォームはApp Storeをご確認ください。Webビューアはブラウザ表示であり、visionOSのボリュームではありません。",
+        null
       ]
     ]
   },
@@ -144,6 +159,11 @@
         "모델과 학습 자료를 재사용할 수 있나요?",
         "목록의 모델은 CC0으로 제공됩니다. 각 모델 페이지에 출처와 제작자 링크가 있습니다. 해당 라이선스에 따라 재사용할 수 있으며 가능한 경우 출처를 밝혀 주세요. 분류와 이름은 업데이트될 수 있습니다. 학습용 자료이며 정확한 종 식별이나 과학적 측정을 위한 도구가 아닙니다.",
         "models/"
+      ],
+      [
+        "Apple Vision Pro에서 모델을 공간 3D로 볼 수 있나요?",
+        "네이티브 visionOS 2.0+ 버전을 개발했습니다. 각 표본을 독립된 볼륨에서 표시하며 회전, 확대·축소, 재설정 및 지원 애니메이션 재생·일시 정지를 제공합니다. 기본 제공 모델과 다운로드한 모델은 오프라인에서도 볼 수 있습니다. 카메라 AR이나 환경 스캔은 사용하지 않습니다. 배포에는 App Review 승인이 필요하며 지원 플랫폼은 App Store에서 확인하세요. 웹 뷰어는 브라우저 기능이며 visionOS 볼륨이 아닙니다.",
+        null
       ]
     ]
   },
@@ -181,6 +201,11 @@
         "模型和学习素材可以再利用吗？",
         "目录中的模型以 CC0 许可提供，各模型页均链接到来源与创作者。可按该许可再利用文件，也建议注明来源。分类和俗名可能更新；页面用于学习，不用于可靠的物种鉴定或科学测量。",
         "models/"
+      ],
+      [
+        "可以在 Apple Vision Pro 中立体查看模型吗？",
+        "已开发原生 visionOS 2.0+ 版本，可在独立立体窗口中显示标本，支持旋转、缩放、复位，以及已有动画的播放和暂停。内置及已下载模型可离线查看，不使用相机 AR 或环境扫描。商店版本须通过审核后提供，当前可下载平台请以 App Store 为准。网站的浏览器 3D 查看与 visionOS 立体窗口是不同体验。",
+        null
       ]
     ]
   },
@@ -218,6 +243,11 @@
         "模型和學習素材可以再利用嗎？",
         "目錄中的模型以 CC0 授權提供，各模型頁皆連結至來源與創作者。可按該授權再利用檔案，也建議註明來源。分類和俗名可能更新；頁面用於學習，不用於可靠的物種鑑定或科學測量。",
         "models/"
+      ],
+      [
+        "可以在 Apple Vision Pro 中立體檢視模型嗎？",
+        "已開發原生 visionOS 2.0+ 版本，可在獨立立體視窗中顯示標本，支援旋轉、縮放、重設，以及已有動畫的播放和暫停。內建及已下載模型可離線檢視，不使用相機 AR 或環境掃描。商店版本須通過審核後提供，目前可下載平台請以 App Store 為準。網站的瀏覽器 3D 檢視與 visionOS 立體視窗是不同體驗。",
+        null
       ]
     ]
   }

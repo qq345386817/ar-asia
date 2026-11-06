@@ -2,7 +2,7 @@
   "en-US": {
     "catalogTitle": "3D animal & plant models",
     "homeSubtitle": "A closer look at the natural world",
-    "catalogDescription": "Explore animal and plant models in 3D, watch available animations, and collect printable nature study cards.",
+    "catalogDescription": "Explore Asian animal and plant models in 3D, watch available animations, and create printable nature study cards.",
     "featured": "Featured specimens", "all": "All models", "search": "Search",
     "searchPlaceholder": "Name or scientific name", "theme": "Theme", "allThemes": "All themes",
     "animatedOnly": "Animated models", "results": "{count} / {total}",
@@ -20,6 +20,7 @@
     "scientificNames": "Scientific names", "print": "Print cards", "selectFeatured": "Select featured",
     "emptySelection": "No cards selected", "chooseModels": "Choose models", "preview": "Print preview",
     "appTitle": "Nature, wherever you are", "appBody": "Keep models offline on iPhone, iPad, and Mac, with AR on supported iPhone and iPad devices.",
+    "visionStatus": "Native visionOS 2.0+ support is prepared for Apple Vision Pro: spatial model viewing, rotation, zoom and animation controls. Store availability is subject to App Review; check the App Store for currently available platforms.",
     "appCta": "Get Little Nature", "websitePrivacyTitle": "Using this website",
     "websitePrivacy": "Study-card selections are saved only in this browser. We collect limited first-party usage events such as successful 3D loads, animations, printing, and App Store link clicks, with a random tab-session identifier, language, device class, and fixed model or theme identifiers. We do not collect search text, selected card contents, camera images, or full page URLs. Session identifiers are hashed before storage and events are retained for up to 90 days. Analytics respects Global Privacy Control and Do Not Track. Opening the Sketchfab viewer connects directly to that third-party service; its privacy policy applies to those requests.",
     "themes": {
@@ -32,7 +33,7 @@
   "de-DE": {
     "catalogTitle": "3D-Modelle von Tieren & Pflanzen",
     "homeSubtitle": "Die Natur aus der Nähe",
-    "catalogDescription": "Entdecke Tier- und Pflanzenmodelle in 3D, sieh dir vorhandene Animationen an und stelle druckbare Natur-Lernkarten zusammen.",
+    "catalogDescription": "Asiatische Tier- und Pflanzenmodelle in 3D entdecken, vorhandene Animationen ansehen und druckbare Natur-Lernkarten erstellen.",
     "featured": "Ausgewählte Modelle", "all": "Alle Modelle", "search": "Suche",
     "searchPlaceholder": "Name oder wissenschaftlicher Name", "theme": "Thema", "allThemes": "Alle Themen",
     "animatedOnly": "Animierte Modelle", "results": "{count} / {total}",
@@ -50,6 +51,7 @@
     "scientificNames": "Wissenschaftliche Namen", "print": "Karten drucken", "selectFeatured": "Ausgewählte Modelle wählen",
     "emptySelection": "Keine Karten ausgewählt", "chooseModels": "Modelle auswählen", "preview": "Druckvorschau",
     "appTitle": "Natur für unterwegs", "appBody": "Speichere Modelle auf iPhone, iPad und Mac offline. Auf unterstützten iPhones und iPads kannst du sie auch in AR entdecken.",
+    "visionStatus": "Die native Unterstützung für visionOS 2.0+ auf Apple Vision Pro ist vorbereitet: räumliche Modellansicht, Drehen, Zoom und Animationssteuerung. Die Verfügbarkeit hängt von App Review ab; verfügbare Plattformen stehen im App Store.",
     "appCta": "Little Nature laden", "websitePrivacyTitle": "Nutzung dieser Website",
     "websitePrivacy": "Die Lernkartenauswahl wird nur in diesem Browser gespeichert. Wir erfassen begrenzte eigene Nutzungsereignisse wie erfolgreiche 3D-Ladevorgänge, Animationen, Drucken und Klicks zum App Store, mit einer zufälligen Kennung der Tab-Sitzung, Sprache, Geräteklasse und festen Modell- oder Themenkennungen. Suchtexte, ausgewählte Karteninhalte, Kamerabilder und vollständige Seiten-URLs werden nicht erfasst. Sitzungskennungen werden vor der Speicherung gehasht; Ereignisse werden bis zu 90 Tage aufbewahrt. Die Statistik respektiert Global Privacy Control und Do Not Track. Beim Öffnen der Sketchfab-Ansicht wird direkt dieser Drittanbieter kontaktiert; für diese Anfragen gilt dessen Datenschutzerklärung.",
     "themes": {
@@ -62,7 +64,7 @@
   "ja": {
     "catalogTitle": "動植物の3Dモデル図鑑",
     "homeSubtitle": "自然を、もっと近くで",
-    "catalogDescription": "動植物の3Dモデルとアニメーションを見たり、印刷できる自然学習カードを集めたりできます。",
+    "catalogDescription": "アジアの動植物を3Dで観察し、対応モデルのアニメーションを見たり、印刷できる自然学習カードを作ったりできます。",
     "featured": "おすすめのモデル", "all": "すべてのモデル", "search": "検索",
     "searchPlaceholder": "名前・学名", "theme": "テーマ", "allThemes": "すべてのテーマ",
     "animatedOnly": "アニメーションあり", "results": "{count} / {total}",
@@ -80,6 +82,7 @@
     "scientificNames": "学名", "print": "カードを印刷", "selectFeatured": "おすすめを選択",
     "emptySelection": "カードが選択されていません", "chooseModels": "モデルを選ぶ", "preview": "印刷プレビュー",
     "appTitle": "どこでも自然に出会う", "appBody": "iPhone、iPad、Macでモデルをオフライン保存。対応するiPhoneとiPadではARでも観察できます。",
+    "visionStatus": "Apple Vision Pro向けのネイティブvisionOS 2.0+対応を準備しました。空間表示、回転、拡大・縮小、アニメーション操作に対応します。配信はApp Review承認後となります。現在の対応プラットフォームはApp Storeをご確認ください。",
     "appCta": "小さな自然を入手", "websitePrivacyTitle": "このウェブサイトの利用",
     "websitePrivacy": "学習カードの選択はこのブラウザ内だけに保存されます。3D読み込みの成功、アニメーション、印刷、App Storeへのクリックなど限定的な自社利用イベントを、タブごとのランダムなセッション識別子、言語、端末の種類、固定のモデル・テーマ識別子とともに収集します。検索語、選んだカードの内容、カメラ画像、完全なページURLは収集しません。セッション識別子は保存前にハッシュ化し、イベントは最長90日保持します。Global Privacy ControlとDo Not Trackに対応します。Sketchfabのビューを開くと外部サービスに直接接続し、その通信には同社のプライバシーポリシーが適用されます。",
     "themes": {
@@ -92,7 +95,7 @@
   "ko": {
     "catalogTitle": "동식물 3D 모델 도감",
     "homeSubtitle": "자연을 더 가까이",
-    "catalogDescription": "동식물 3D 모델과 애니메이션을 살펴보고 인쇄할 자연 학습 카드를 모아 보세요.",
+    "catalogDescription": "아시아 동식물 3D 모델과 지원 애니메이션을 살펴보고 인쇄할 자연 학습 카드를 만들어 보세요.",
     "featured": "추천 모델", "all": "전체 모델", "search": "검색",
     "searchPlaceholder": "이름 또는 학명", "theme": "주제", "allThemes": "모든 주제",
     "animatedOnly": "애니메이션 모델", "results": "{count} / {total}",
@@ -110,6 +113,7 @@
     "scientificNames": "학명", "print": "카드 인쇄", "selectFeatured": "추천 모델 선택",
     "emptySelection": "선택한 카드 없음", "chooseModels": "모델 선택", "preview": "인쇄 미리보기",
     "appTitle": "어디서든 만나는 자연", "appBody": "iPhone, iPad, Mac에서 모델을 오프라인으로 저장하세요. 지원되는 iPhone과 iPad에서는 AR로도 살펴볼 수 있습니다.",
+    "visionStatus": "Apple Vision Pro용 네이티브 visionOS 2.0+ 지원을 준비했습니다. 공간 모델 보기, 회전, 확대·축소 및 애니메이션 제어를 제공합니다. 배포는 App Review 승인 후 가능합니다. 현재 지원 플랫폼은 App Store에서 확인하세요.",
     "appCta": "Little Nature 받기", "websitePrivacyTitle": "웹사이트 이용",
     "websitePrivacy": "학습 카드 선택은 이 브라우저에만 저장됩니다. 성공한 3D 불러오기, 애니메이션, 인쇄, App Store 링크 클릭 등 제한적인 자체 이용 이벤트를 임의의 탭 세션 식별자, 언어, 기기 유형, 고정 모델·주제 식별자와 함께 수집합니다. 검색어, 선택한 카드 내용, 카메라 이미지, 전체 페이지 URL은 수집하지 않습니다. 세션 식별자는 저장 전에 해시 처리하며 이벤트는 최대 90일 보관합니다. Global Privacy Control과 Do Not Track을 존중합니다. Sketchfab 뷰어를 열면 해당 외부 서비스에 직접 연결되며 그 요청에는 해당 서비스의 개인정보 정책이 적용됩니다.",
     "themes": {
@@ -122,7 +126,7 @@
   "zh-Hans": {
     "catalogTitle": "动植物 3D 图鉴",
     "homeSubtitle": "近距离观察自然",
-    "catalogDescription": "在线观察动植物 3D 模型、观看已有动画，并制作可打印的自然学习卡。",
+    "catalogDescription": "在线观察亚洲动植物 3D 模型、观看已有动画，并制作可打印的自然学习卡。",
     "featured": "精选模型", "all": "全部模型", "search": "搜索",
     "searchPlaceholder": "名称或学名", "theme": "主题", "allThemes": "全部主题",
     "animatedOnly": "动画模型", "results": "{count} / {total}",
@@ -140,6 +144,7 @@
     "scientificNames": "显示学名", "print": "打印学习卡", "selectFeatured": "选择精选模型",
     "emptySelection": "尚未选择学习卡", "chooseModels": "选择模型", "preview": "打印预览",
     "appTitle": "随时随地，观察自然", "appBody": "在 iPhone、iPad 和 Mac 的小小自然中离线保存模型，并在支持的设备上用 AR 观察。",
+    "visionStatus": "已开发 Apple Vision Pro 原生 visionOS 2.0+ 版本，支持空间模型查看、旋转、缩放和动画控制。商店版本须通过审核后提供，当前可下载平台请以 App Store 为准。",
     "appCta": "获取小小自然", "websitePrivacyTitle": "使用本网站",
     "websitePrivacy": "学习卡选择仅保存在当前浏览器中。我们收集有限的第一方使用事件，例如 3D 加载成功、动画播放、打印和 App Store 链接点击，以及随机生成的标签页会话标识、语言、设备类别和固定的模型或主题标识。不收集搜索文字、所选卡片内容、摄像头画面或完整页面网址。会话标识在存储前经过哈希处理，事件最多保留 90 天。统计尊重 Global Privacy Control 和 Do Not Track。打开 Sketchfab 预览会直接连接该第三方服务，相关请求适用其隐私政策。",
     "themes": {
@@ -152,7 +157,7 @@
   "zh-Hant": {
     "catalogTitle": "動植物 3D 圖鑑",
     "homeSubtitle": "近距離觀察自然",
-    "catalogDescription": "線上觀察動植物 3D 模型、觀看已有動畫，並製作可列印的自然學習卡。",
+    "catalogDescription": "線上觀察亞洲動植物 3D 模型、觀看已有動畫，並製作可列印的自然學習卡。",
     "featured": "精選模型", "all": "全部模型", "search": "搜尋",
     "searchPlaceholder": "名稱或學名", "theme": "主題", "allThemes": "全部主題",
     "animatedOnly": "動畫模型", "results": "{count} / {total}",
@@ -170,6 +175,7 @@
     "scientificNames": "顯示學名", "print": "列印學習卡", "selectFeatured": "選擇精選模型",
     "emptySelection": "尚未選擇學習卡", "chooseModels": "選擇模型", "preview": "列印預覽",
     "appTitle": "隨時隨地，觀察自然", "appBody": "在 iPhone、iPad 和 Mac 的小小自然中離線儲存模型，並在支援的裝置上用 AR 觀察。",
+    "visionStatus": "已開發 Apple Vision Pro 原生 visionOS 2.0+ 版本，支援空間模型檢視、旋轉、縮放和動畫控制。商店版本須通過審核後提供，目前可下載平台請以 App Store 為準。",
     "appCta": "取得小小自然", "websitePrivacyTitle": "使用本網站",
     "websitePrivacy": "學習卡選擇僅儲存在目前瀏覽器中。我們收集有限的第一方使用事件，例如 3D 載入成功、動畫播放、列印與 App Store 連結點擊，以及隨機產生的分頁工作階段識別碼、語言、裝置類別與固定的模型或主題識別碼。不收集搜尋文字、所選卡片內容、攝影機畫面或完整頁面網址。工作階段識別碼在儲存前經過雜湊處理，事件最多保留 90 天。統計尊重 Global Privacy Control 和 Do Not Track。開啟 Sketchfab 預覽會直接連線至該第三方服務，相關請求適用其隱私政策。",
     "themes": {

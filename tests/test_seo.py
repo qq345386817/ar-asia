@@ -95,10 +95,21 @@ class SEOTests(unittest.TestCase):
                 parser.feed((ROOT / locale / "help.html").read_text())
                 faq = next(node for node in parser.schemas[0]["@graph"] if node["@type"] == "FAQPage")
                 visible = " ".join(parser.text)
-                self.assertEqual(len(faq["mainEntity"]), 6)
+                source = json.loads((ROOT / "data/help-copy.json").read_text())
+                self.assertEqual(len(faq["mainEntity"]), len(source[locale]["questions"]))
                 for entry in faq["mainEntity"]:
                     self.assertIn(entry["name"], visible)
                     self.assertIn(entry["acceptedAnswer"]["text"], visible)
+
+    def test_visionos_status_is_visible_and_does_not_claim_store_availability(self):
+        copy = json.loads((ROOT / "data/web-copy.json").read_text())
+        for locale in LOCALES:
+            parser = PageParser()
+            parser.feed((ROOT / locale / "index.html").read_text())
+            self.assertIn(copy[locale]["visionStatus"], " ".join(parser.text))
+            self.assertIn("Apple Vision Pro", copy[locale]["visionStatus"])
+            self.assertIn("visionOS 2.0+", copy[locale]["visionStatus"])
+        self.assertIn("subject to App Review", (ROOT / "llms.txt").read_text())
 
     def test_creator_is_not_the_app_publisher(self):
         schema = {"@graph": [{"@type": "Organization", "@id": SITE + "/#organization",

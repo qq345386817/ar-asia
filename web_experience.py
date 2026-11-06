@@ -146,7 +146,7 @@ class Experience:
         return f"""
     <aside class="app-band">
       <img src="/app-icon.png" alt="" width="52" height="52" loading="lazy">
-      <div><h2>{esc(text['appTitle'])}</h2><p>{esc(text['appBody'])}</p></div>
+      <div><h2>{esc(text['appTitle'])}</h2><p>{esc(text['appBody'])}</p><p class="spatial-status">{esc(text['visionStatus'])}</p></div>
       <a class="button app-store-link" data-surface="{esc(surface)}" href="{esc(self.app_url(locale, surface))}">{esc(text['appCta'])}<i data-lucide="arrow-up-right"></i></a>
     </aside>"""
 

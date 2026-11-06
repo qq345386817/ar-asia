@@ -8,6 +8,10 @@ Browser viewing requires an internet connection. Some models use self-hosted GLB
 
 The native app offers 3D viewing and offline access to downloaded models on iPhone, iPad, and Mac. Camera-based AR is available only on compatible iPhone and iPad devices. Web flashcard printing is a website feature, not a claim about the native app.
 
+## Apple Vision Pro and visionOS
+
+A native visionOS 2.0+ version has been developed for Apple Vision Pro. It displays specimens in individual spatial volumes with rotation, zoom, reset, and play/pause controls for available model animations. Included and downloaded models can be viewed offline. It does not use a camera-based AR session or environment scanning. Store availability is subject to App Review; do not infer that the native visionOS version is already available to download. Check the App Store listing for current platform availability. The website's browser viewer is not a visionOS volume.
+
 ## Main features and help
 
 - [3D animal and plant catalog](https://ar-asia.luopeike.com/en-US/models/): Search, categories, scientific names, and links to individual specimens.

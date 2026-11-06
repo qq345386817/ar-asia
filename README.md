@@ -4,6 +4,13 @@ Static, six-language website for online model browsing and printable nature
 study cards. The app manifest remains the source of model names, taxonomy,
 thumbnails, and source URLs.
 
+The native visionOS 2.0+ app is prepared for Apple Vision Pro. Its spatial
+volumes, rotation, zoom and animation controls are described in the six-language
+help pages, matching FAQ structured data and `llms.txt`. Store availability
+depends on App Review; the site does not claim the native visionOS app is
+already downloadable. Update this status after approval. The web viewer and
+printable study cards remain separate from native app features.
+
 ## SEO and AI-readable Content
 
 All six languages have canonical URLs, reciprocal language alternates,
