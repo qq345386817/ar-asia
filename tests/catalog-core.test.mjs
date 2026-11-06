@@ -35,10 +35,10 @@ test("matching cards retain every picture and name across the page boundary", ()
   }
 });
 
-test("all six languages have the same UI and theme content keys", () => {
+test("all eight languages have the same UI and theme content keys", () => {
   const translations = JSON.parse(readFileSync(new URL("../data/web-copy.json", import.meta.url)));
   const expected = Object.keys(translations["en-US"]).sort();
-  assert.equal(Object.keys(translations).length, 6);
+  assert.deepEqual(Object.keys(translations).sort(), ["de-DE", "en-US", "es-ES", "fr-FR", "ja", "ko", "zh-Hans", "zh-Hant"]);
   for (const value of Object.values(translations)) {
     assert.deepEqual(Object.keys(value).sort(), expected);
     for (const theme of ["motion", "small-creatures", "pond-life", "flowers"]) {

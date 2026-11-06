@@ -1,19 +1,18 @@
 # Little Nature Website
 
-Static, six-language website for online model browsing and printable nature
+Static, eight-language website for online model browsing and printable nature
 study cards. The app manifest remains the source of model names, taxonomy,
 thumbnails, and source URLs.
 
-The native visionOS 2.0+ app is prepared for Apple Vision Pro. Its spatial
-volumes, rotation, zoom and animation controls are described in the six-language
-help pages, matching FAQ structured data and `llms.txt`. Store availability
-depends on App Review; the site does not claim the native visionOS app is
-already downloadable. Update this status after approval. The web viewer and
-printable study cards remain separate from native app features.
+The native visionOS 2.0+ app displays models in spatial volumes on Apple Vision Pro,
+with rotation, zoom and animation controls. The help pages, matching FAQ
+structured data and `llms.txt` describe these features without temporary review
+status. The web viewer and printable study cards remain separate from native
+app features.
 
 ## SEO and AI-readable Content
 
-All six languages have canonical URLs, reciprocal language alternates,
+All eight languages have canonical URLs, reciprocal language alternates,
 and sitemap entries. Catalog, animation collection, and printable flashcard
 titles describe the actual tools rather than adding keyword lists.
 `data/help-copy.json` generates visible localized questions and matching
@@ -148,7 +147,7 @@ data/experience.json defines featured specimens and themes, not a second
 model catalog. data/model-candidates.json records the sourcing shortlist
 and its import status; runtime pages still use only the canonical app manifest.
 
-The new specimens have names and taxonomy in all six languages. The
+The specimens have names and taxonomy in all eight languages. The
 Carassius specimen keeps a broad carp label because the source does not
 identify its exact variety. The East Japan Tree Frog follows the source
 Dryophytes leopardus identification and the American Museum of Natural
@@ -199,6 +198,8 @@ campaign link. Website App Store clicks remain distinct from downloads.
 | --- | --- | --- | --- | --- |
 | English | https://ar-asia.luopeike.com/en-US/ | https://ar-asia.luopeike.com/en-US/models/ | https://ar-asia.luopeike.com/en-US/help | https://ar-asia.luopeike.com/en-US/privacy-policy |
 | Deutsch | https://ar-asia.luopeike.com/de-DE/ | https://ar-asia.luopeike.com/de-DE/models/ | https://ar-asia.luopeike.com/de-DE/help | https://ar-asia.luopeike.com/de-DE/privacy-policy |
+| Français | https://ar-asia.luopeike.com/fr-FR/ | https://ar-asia.luopeike.com/fr-FR/models/ | https://ar-asia.luopeike.com/fr-FR/help | https://ar-asia.luopeike.com/fr-FR/privacy-policy |
+| Español | https://ar-asia.luopeike.com/es-ES/ | https://ar-asia.luopeike.com/es-ES/models/ | https://ar-asia.luopeike.com/es-ES/help | https://ar-asia.luopeike.com/es-ES/privacy-policy |
 | 日本語 | https://ar-asia.luopeike.com/ja/ | https://ar-asia.luopeike.com/ja/models/ | https://ar-asia.luopeike.com/ja/help | https://ar-asia.luopeike.com/ja/privacy-policy |
 | 한국어 | https://ar-asia.luopeike.com/ko/ | https://ar-asia.luopeike.com/ko/models/ | https://ar-asia.luopeike.com/ko/help | https://ar-asia.luopeike.com/ko/privacy-policy |
 | 简体中文 | https://ar-asia.luopeike.com/zh-Hans/ | https://ar-asia.luopeike.com/zh-Hans/models/ | https://ar-asia.luopeike.com/zh-Hans/help | https://ar-asia.luopeike.com/zh-Hans/privacy-policy |

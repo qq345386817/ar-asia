@@ -1,0 +1,58 @@
+{
+  "fr-FR": {
+    "title": "Politique de confidentialité",
+    "description": "Confidentialité de Little Nature : compte facultatif non requis, stockage local, accès caméra uniquement pour l’AR et statistiques internes limitées.",
+    "lead": "Little Nature permet de consulter et de télécharger des modèles biologiques en 3D. Aucun compte n’est requis. L’app n’envoie ni photos, ni flux de caméra, ni fichiers de modèles téléchargés.",
+    "sections": [
+      [
+        "Caméra et espace",
+        "L’accès à la caméra n’est demandé que pour l’AR sur les iPhone et iPad compatibles. Les images ne sont pas envoyées par Little Nature. Mac propose l’aperçu 3D. La version visionOS utilise des volumes dans l’espace partagé et ne demande aucun accès à la caméra, au scan de l’environnement ou au suivi des mains ou de la tête."
+      ],
+      [
+        "Stockage local et réseau",
+        "Les modèles téléchargés, la langue, l’état de l’accueil et des téléchargements sont conservés sur l’appareil. Le réseau permet de récupérer le catalogue et les modèles depuis nos services de diffusion. Les modèles restent sur l’appareil jusqu’à leur suppression dans le gestionnaire de téléchargements ou la désinstallation de l’app."
+      ],
+      [
+        "Statistiques du produit",
+        "Sur iOS et Mac, l’app envoie des événements internes comme les vues du catalogue et des détails, téléchargements, aperçus 3D et débuts de session AR. Ils peuvent inclure des identifiants aléatoires d’installation et de session, les versions de l’app et du système, la langue et des attributs fixes de modèle. Les identifiants sont hachés par HMAC avant stockage. Aucun terme recherché, contenu de caméra, fichier téléchargé, compte ou texte libre n’est envoyé. Ces données ne servent ni à la publicité ni au suivi. Cloudflare fournit l’infrastructure. La version visionOS n’envoie pas ces statistiques."
+      ],
+      [
+        "Publicité et assistance",
+        "L’app ne contient aucun SDK publicitaire tiers et ne vend pas d’informations personnelles. Si vous contactez l’assistance par e-mail, votre message sert uniquement à répondre à votre demande."
+      ],
+      [
+        "Modifications",
+        "Toute modification de cette politique sera publiée sur cette page avec une date d’effet révisée."
+      ]
+    ],
+    "contact": "Pour toute question relative à la confidentialité :"
+  },
+  "es-ES": {
+    "title": "Política de privacidad",
+    "description": "Privacidad de Little Nature: sin cuenta obligatoria, almacenamiento local, cámara solo para AR y estadísticas propias limitadas.",
+    "lead": "Little Nature permite explorar y descargar modelos biológicos en 3D. No se necesita cuenta. La app no envía fotos, imágenes de cámara ni archivos de modelos descargados.",
+    "sections": [
+      [
+        "Cámara y espacio",
+        "Solo se solicita acceso a la cámara para AR en iPhone y iPad compatibles. Little Nature no envía las imágenes de cámara. Mac ofrece vistas 3D. La versión visionOS utiliza volúmenes en el espacio compartido y no solicita acceso a la cámara, al escaneo del entorno o al seguimiento de manos o cabeza."
+      ],
+      [
+        "Almacenamiento local y red",
+        "Los modelos descargados, el idioma y el estado de bienvenida y descargas se guardan en el dispositivo. La red permite obtener el catálogo y los modelos desde nuestros servicios de distribución. Los modelos permanecen en el dispositivo hasta que se borran desde el gestor de descargas o se desinstala la app."
+      ],
+      [
+        "Estadísticas del producto",
+        "En iOS y Mac, la app envía eventos propios como vistas del catálogo y detalles, descargas, vistas 3D e inicios de AR. Pueden incluir identificadores aleatorios de instalación y sesión, versiones de la app y del sistema, idioma y atributos fijos de modelo. Los identificadores se procesan mediante HMAC antes de guardarse. No se envían búsquedas, contenido de cámara, archivos descargados, datos de cuenta ni texto libre. Estos datos no se usan para publicidad ni seguimiento. Cloudflare proporciona la infraestructura. La versión visionOS no envía estas estadísticas."
+      ],
+      [
+        "Publicidad y soporte",
+        "La app no incluye SDK de publicidad de terceros ni vende información personal. Si contactas con soporte por correo electrónico, tu mensaje solo se usa para responder a tu consulta."
+      ],
+      [
+        "Cambios",
+        "Los cambios en esta política se publicarán en esta página con una fecha de entrada en vigor actualizada."
+      ]
+    ],
+    "contact": "Para consultas sobre privacidad:"
+  }
+}

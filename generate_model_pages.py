@@ -185,7 +185,11 @@ LOCALES = {
     },
 }
 
+LOCALES.update(json.loads((ROOT / "data/additional-locales.json").read_text()))
+
 LANGUAGE_NAMES = {
+    "fr-FR": "Français",
+    "es-ES": "Español",
     "en-US": "English",
     "de-DE": "Deutsch",
     "ja": "日本語",
@@ -380,6 +384,8 @@ def format_number(value):
 def description_for(model, locale):
     name = name_for(model, locale)
     leads = {
+        "fr-FR": f"Observez {name} en 3D et ajoutez ce modèle aux fiches nature à imprimer.",
+        "es-ES": f"Observa {name} en 3D y añádelo a las fichas de naturaleza para imprimir.",
         "en-US": f"Explore {name} in 3D and add it to printable nature study cards.",
         "de-DE": f"Entdecke {name} in 3D und füge das Modell zu druckbaren Natur-Lernkarten hinzu.",
         "ja": f"{name}を3Dで観察し、印刷できる自然学習カードに追加できます。",
@@ -472,6 +478,10 @@ def model_notes(locale, name, category, scientific, taxonomy, model):
         classification = LOCALES[locale]["none"]
     faces = format_number(model.get("face_count"))
     vertices = format_number(model.get("vertex_count"))
+    if locale == "fr-FR":
+        return [f"{name} : modèle de la catégorie {category.lower()} dans Little Nature. Cette fiche relie le nom localisé, le nom scientifique disponible et la classification à une source 3D sous CC0.", f"Classification : {classification}.", f"Le modèle USDZ contient {faces} faces et {vertices} sommets. Il peut être téléchargé à la demande dans l’app."]
+    if locale == "es-ES":
+        return [f"{name}: modelo de la categoría {category.lower()} en Little Nature. Esta ficha reúne el nombre localizado, el nombre científico disponible y la clasificación con una fuente 3D bajo CC0.", f"Clasificación: {classification}.", f"El modelo USDZ contiene {faces} caras y {vertices} vértices. Se puede descargar bajo demanda en la app."]
     curated = CURATED_SPECIES.get(slug_for(model), {}).get(locale)
     if locale == "de-DE":
         if curated:
@@ -519,6 +529,15 @@ def model_notes(locale, name, category, scientific, taxonomy, model):
 
 
 def section_label(locale, key):
+    if locale in {"fr-FR", "es-ES"}:
+        labels = {
+            "species_notes": ("Notes sur l’espèce et le modèle", "Notas sobre la especie y el modelo"),
+            "categories": ("Catégories", "Categorías"),
+            "all_models": ("Tous les modèles", "Todos los modelos"),
+            "related_models": ("Modèles similaires", "Modelos relacionados"),
+            "species_reference": ("Référence de l’espèce", "Referencia de la especie"),
+        }
+        return labels[key][0 if locale == "fr-FR" else 1]
     labels = {
         "species_notes": {
             "en-US": "Species and Model Notes",
@@ -631,6 +650,7 @@ def render_page(model, locale, all_models, experience):
     taxonomy = tax_for(model, locale)
     taxonomy_html = "<br>".join(esc(line) for line in taxonomy.splitlines() if line.strip()) or esc(spec["none"])
     scientific = model.get("scientific_name") or {
+        "fr-FR": "Non renseigné", "es-ES": "Sin datos",
         "en-US": "Not recorded", "de-DE": "Nicht angegeben", "ja": "未記録",
         "ko": "미등록", "zh-Hans": "未记录", "zh-Hant": "未記錄",
     }[locale]
@@ -1195,6 +1215,12 @@ def update_website_privacy(experience, locale):
 
         def handle_starttag(self, tag, attributes):
             attrs = dict(attributes)
+            if tag == "link" and attrs.get("rel") in ("canonical", "alternate"):
+                start = self.character_offset()
+                end = start + len(self.get_starttag_text())
+                while start > 0 and document[start - 1].isspace():
+                    start -= 1
+                self.presentation.append((start, end, ""))
             if tag in ("body", "main"):
                 classes = attrs.get("class", "").split()
                 additions = ("experience-site", "policy-site") if tag == "body" else ("site-shell", "experience-shell")
@@ -1248,6 +1274,12 @@ def update_website_privacy(experience, locale):
         '<p><a href="https://sketchfab.com/privacy">Sketchfab</a></p></section>'
     )
     replacements = parser.presentation
+    if parser.head_end is not None:
+        links = alternate_links(locale, lambda candidate: f"{SITE}/{candidate}/privacy-policy")
+        start = parser.head_end
+        while start > 0 and document[start - 1].isspace():
+            start -= 1
+        replacements.append((start, parser.head_end, "\n" + links + "\n"))
     if parser.start is not None and parser.end is not None:
         replacements.append((parser.start, parser.end, section))
     elif parser.insertion is not None:
@@ -1288,6 +1320,9 @@ def main():
         write_page(ROOT / locale / "study-cards" / "index.html", experience.render_study(locale), f"{SITE}/{locale}/study-cards/")
         for theme in experience.config["themes"]:
             write_page(ROOT / locale / "collections" / theme / "index.html", experience.render_listing(locale, theme=theme), f"{SITE}/{locale}/collections/{theme}/")
+        policy = ROOT / locale / "privacy-policy.html"
+        if locale in {"fr-FR", "es-ES"}:
+            write_page(policy, experience.render_privacy(locale), f"{SITE}/{locale}/privacy-policy")
         update_website_privacy(experience, locale)
         write_page(ROOT / locale / "help.html", experience.render_help(locale), f"{SITE}/{locale}/help")
     generate_sitemap(models)

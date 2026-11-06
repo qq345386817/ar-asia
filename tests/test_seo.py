@@ -101,7 +101,7 @@ class SEOTests(unittest.TestCase):
                     self.assertIn(entry["name"], visible)
                     self.assertIn(entry["acceptedAnswer"]["text"], visible)
 
-    def test_visionos_status_is_visible_and_does_not_claim_store_availability(self):
+    def test_visionos_features_are_visible_without_temporary_review_status(self):
         copy = json.loads((ROOT / "data/web-copy.json").read_text())
         for locale in LOCALES:
             parser = PageParser()
@@ -109,7 +109,10 @@ class SEOTests(unittest.TestCase):
             self.assertIn(copy[locale]["visionStatus"], " ".join(parser.text))
             self.assertIn("Apple Vision Pro", copy[locale]["visionStatus"])
             self.assertIn("visionOS 2.0+", copy[locale]["visionStatus"])
-        self.assertIn("subject to App Review", (ROOT / "llms.txt").read_text())
+        guide = (ROOT / "llms.txt").read_text()
+        self.assertIn("spatial volumes", guide)
+        self.assertNotIn("App Review", guide)
+        self.assertNotIn("pending", guide.lower())
 
     def test_creator_is_not_the_app_publisher(self):
         schema = {"@graph": [{"@type": "Organization", "@id": SITE + "/#organization",

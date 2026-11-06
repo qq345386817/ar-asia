@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 
-const locales = ["en-US", "de-DE", "ja", "ko", "zh-Hans", "zh-Hant"];
+const locales = ["en-US", "de-DE", "ja", "ko", "zh-Hans", "zh-Hant", "fr-FR", "es-ES"];
 const catalog = JSON.parse(await readFile(new URL("../../../FFishAsia/Resources/manifest.json", import.meta.url), "utf8"));
 
 test("localized homepages keep specimen and navigation visible in both themes", async ({ page }) => {
@@ -70,7 +70,7 @@ test("language navigation remains usable without JavaScript", async ({ browser }
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const page = await context.newPage();
   await page.goto(`${process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:8765"}/en-US/privacy-policy`);
-  await expect(page.locator(".language-noscript a")).toHaveCount(6);
+  await expect(page.locator(".language-noscript a")).toHaveCount(locales.length);
   await page.locator('.language-noscript a[href="/de-DE/privacy-policy"]').click();
   await expect(page).toHaveURL(/\/de-DE\/privacy-policy$/);
   await expect(page.locator("h1")).toBeVisible();

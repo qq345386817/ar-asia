@@ -6,7 +6,7 @@
     "questions": [
       [
         "How do I find an animal or plant model?",
-        "Browse the catalog or search by a common name in any of the six supported languages, or by scientific name where available. Filter by category, theme, or animated models.",
+        "Browse the catalog or search by a common name in any supported language, or by scientific name where available. Filter by category, theme, or animated models.",
         "models/"
       ],
       [
@@ -36,7 +36,7 @@
       ],
       [
         "Can I view models in spatial 3D on Apple Vision Pro?",
-        "A native visionOS 2.0+ version has been developed for Apple Vision Pro, with each specimen in its own spatial volume, rotation, zoom, reset and play/pause controls for available animations. Included and downloaded models work offline. It does not use camera-based AR or require environment scanning. Store availability is subject to App Review; check the App Store listing for available platforms. The website viewer remains a browser experience, not a visionOS volume.",
+        "The native visionOS 2.0+ version for Apple Vision Pro displays each specimen in its own spatial volume, with rotation, zoom, reset and play/pause controls for available animations. Included and downloaded models work offline. It does not use camera-based AR or require environment scanning. The website viewer remains a browser experience, not a visionOS volume.",
         null
       ]
     ]
@@ -48,7 +48,7 @@
     "questions": [
       [
         "Wie finde ich ein Tier- oder Pflanzenmodell?",
-        "Durchsuche den Katalog nach einem Namen in einer der sechs unterstützten Sprachen oder einem vorhandenen wissenschaftlichen Namen. Filtere nach Kategorie, Thema oder animierten Modellen.",
+        "Durchsuche den Katalog nach einem Namen in einer unterstützten Sprache oder einem vorhandenen wissenschaftlichen Namen. Filtere nach Kategorie, Thema oder animierten Modellen.",
         "models/"
       ],
       [
@@ -78,7 +78,7 @@
       ],
       [
         "Kann ich Modelle auf Apple Vision Pro räumlich betrachten?",
-        "Eine native Version für visionOS 2.0+ wurde entwickelt: Exemplare in eigenen räumlichen Volumen, Drehen, Zoom, Zurücksetzen und Wiedergabesteuerung für vorhandene Animationen. Enthaltene und geladene Modelle sind offline verfügbar. Kamera-AR und Umgebungsscans werden nicht verwendet. Die Verfügbarkeit hängt von App Review ab; prüfe die Plattformen im App Store. Der Webviewer bleibt eine Browseransicht, kein visionOS-Volumen.",
+        "Die native Version für visionOS 2.0+ auf Apple Vision Pro zeigt Exemplare in eigenen räumlichen Volumen mit Drehen, Zoom, Zurücksetzen und Steuerung vorhandener Animationen. Enthaltene und geladene Modelle sind offline verfügbar. Kamera-AR und Umgebungsscans werden nicht verwendet. Der Webviewer bleibt eine Browseransicht, kein visionOS-Volumen.",
         null
       ]
     ]
@@ -90,7 +90,7 @@
     "questions": [
       [
         "動物や植物のモデルを探すには？",
-        "モデル一覧で、対応する6言語の名前や登録されている学名を検索できます。カテゴリ、テーマ、アニメーションの有無でも絞り込めます。",
+        "モデル一覧で、対応言語の名前や登録されている学名を検索できます。カテゴリ、テーマ、アニメーションの有無でも絞り込めます。",
         "models/"
       ],
       [
@@ -120,7 +120,7 @@
       ],
       [
         "Apple Vision Proでモデルを立体的に観察できますか？",
-        "visionOS 2.0+向けのネイティブ版を開発しました。独立したボリュームで標本を表示し、回転、拡大・縮小、リセット、対応アニメーションの再生・一時停止ができます。収録済み・ダウンロード済みモデルはオフラインでも閲覧できます。カメラARや環境スキャンは使用しません。配信にはApp Review承認が必要です。対応プラットフォームはApp Storeをご確認ください。Webビューアはブラウザ表示であり、visionOSのボリュームではありません。",
+        "Apple Vision ProのvisionOS 2.0+では、独立したボリュームにモデルを立体表示し、回転や拡大・縮小、対応アニメーションの再生・一時停止ができます。 収録済み・ダウンロード済みモデルはオフラインでも閲覧できます。カメラARや環境スキャンは使用しません。Webビューアはブラウザ表示であり、visionOSのボリュームとは異なります。",
         null
       ]
     ]
@@ -132,7 +132,7 @@
     "questions": [
       [
         "동물이나 식물 모델은 어떻게 찾나요?",
-        "목록에서 지원하는 여섯 언어의 이름이나 등록된 학명으로 검색하세요. 분류, 주제, 애니메이션 여부로 필터링할 수도 있습니다.",
+        "목록에서 지원하는 언어의 이름이나 등록된 학명으로 검색하세요. 분류, 주제, 애니메이션 여부로 필터링할 수도 있습니다.",
         "models/"
       ],
       [
@@ -162,7 +162,7 @@
       ],
       [
         "Apple Vision Pro에서 모델을 공간 3D로 볼 수 있나요?",
-        "네이티브 visionOS 2.0+ 버전을 개발했습니다. 각 표본을 독립된 볼륨에서 표시하며 회전, 확대·축소, 재설정 및 지원 애니메이션 재생·일시 정지를 제공합니다. 기본 제공 모델과 다운로드한 모델은 오프라인에서도 볼 수 있습니다. 카메라 AR이나 환경 스캔은 사용하지 않습니다. 배포에는 App Review 승인이 필요하며 지원 플랫폼은 App Store에서 확인하세요. 웹 뷰어는 브라우저 기능이며 visionOS 볼륨이 아닙니다.",
+        "Apple Vision Pro의 visionOS 2.0+에서 모델을 독립된 볼륨으로 표시하고 회전, 확대·축소 및 지원 애니메이션 재생·일시 정지를 사용할 수 있습니다. 기본 제공 모델과 다운로드한 모델은 오프라인에서도 볼 수 있습니다. 카메라 AR이나 환경 스캔은 사용하지 않습니다. 웹 뷰어는 브라우저 기능이며 visionOS 볼륨과 다릅니다.",
         null
       ]
     ]
@@ -174,7 +174,7 @@
     "questions": [
       [
         "如何找到动物或植物模型？",
-        "在模型列表中浏览，或使用六种支持语言的名称及已有学名搜索。还可以按分类、主题或是否带动画筛选。",
+        "在模型列表中浏览，或使用支持语言的名称及已有学名搜索。还可以按分类、主题或是否带动画筛选。",
         "models/"
       ],
       [
@@ -204,7 +204,7 @@
       ],
       [
         "可以在 Apple Vision Pro 中立体查看模型吗？",
-        "已开发原生 visionOS 2.0+ 版本，可在独立立体窗口中显示标本，支持旋转、缩放、复位，以及已有动画的播放和暂停。内置及已下载模型可离线查看，不使用相机 AR 或环境扫描。商店版本须通过审核后提供，当前可下载平台请以 App Store 为准。网站的浏览器 3D 查看与 visionOS 立体窗口是不同体验。",
+        "在 Apple Vision Pro 的 visionOS 2.0+ 中，以独立立体窗口查看模型，旋转、缩放观察细节，并播放或暂停已有动画。 内置及已下载模型可离线查看，不使用相机 AR 或环境扫描。网站的浏览器 3D 查看与 visionOS 立体窗口是不同体验。",
         null
       ]
     ]
@@ -216,7 +216,7 @@
     "questions": [
       [
         "如何找到動物或植物模型？",
-        "在模型列表中瀏覽，或使用六種支援語言的名稱及已有學名搜尋。也可以按分類、主題或是否帶動畫篩選。",
+        "在模型列表中瀏覽，或使用支援語言的名稱及已有學名搜尋。也可以按分類、主題或是否帶動畫篩選。",
         "models/"
       ],
       [
@@ -246,7 +246,91 @@
       ],
       [
         "可以在 Apple Vision Pro 中立體檢視模型嗎？",
-        "已開發原生 visionOS 2.0+ 版本，可在獨立立體視窗中顯示標本，支援旋轉、縮放、重設，以及已有動畫的播放和暫停。內建及已下載模型可離線檢視，不使用相機 AR 或環境掃描。商店版本須通過審核後提供，目前可下載平台請以 App Store 為準。網站的瀏覽器 3D 檢視與 visionOS 立體視窗是不同體驗。",
+        "在 Apple Vision Pro 的 visionOS 2.0+ 中，以獨立立體視窗檢視模型，旋轉、縮放觀察細節，並播放或暫停已有動畫。 內建及已下載模型可離線檢視，不使用相機 AR 或環境掃描。網站的瀏覽器 3D 檢視與 visionOS 立體視窗是不同體驗。",
+        null
+      ]
+    ]
+  },
+  "fr-FR": {
+    "title": "Modèles 3D, animations et fiches à imprimer",
+    "description": "Explorez des modèles d’animaux et de plantes, regardez les animations, imprimez des fiches et découvrez les fonctions natives de Little Nature.",
+    "contact": "Besoin d’aide ? Contact :",
+    "questions": [
+      [
+        "Comment trouver un modèle d’animal ou de plante ?",
+        "Parcourez le catalogue ou recherchez un nom dans l’une des langues proposées, ou un nom scientifique disponible. Filtrez par catégorie, thème ou modèle animé.",
+        "models/"
+      ],
+      [
+        "Puis-je voir les modèles 3D sans installer l’app ?",
+        "Oui. Ouvrez la page d’un modèle et choisissez Voir en 3D, puis faites-le tourner ou zoomez. Certains modèles utilisent notre lecteur ; d’autres chargent un lecteur Sketchfab et contactent ce tiers. Une connexion Internet est nécessaire.",
+        "models/"
+      ],
+      [
+        "Quels modèles sont animés ?",
+        "Repérez la mention Animation ou ouvrez la collection animée. Les commandes permettent de lire ou suspendre les animations disponibles pour comparer les poses. Ce sont des illustrations, pas des mesures des mouvements réels.",
+        "collections/motion/"
+      ],
+      [
+        "Comment imprimer des fiches nature ?",
+        "Ajoutez des modèles aux fiches, choisissez le papier A4 ou Letter, puis des fiches image et nom ou des images et noms à associer. Les noms scientifiques sont facultatifs. Imprimez depuis le navigateur, ou enregistrez en PDF si votre navigateur le propose. La sélection reste dans ce navigateur.",
+        "study-cards/"
+      ],
+      [
+        "L’app fonctionne-t-elle hors ligne et en AR ?",
+        "Sur iPhone, iPad et Mac, Little Nature propose l’aperçu 3D et des téléchargements à la demande. Les modèles inclus et téléchargés sont accessibles hors ligne et peuvent être supprimés du gestionnaire de téléchargements. L’AR nécessite un iPhone ou iPad compatible et l’accès à la caméra. Mac propose l’affichage 3D, pas l’AR avec caméra.",
+        null
+      ],
+      [
+        "Puis-je réutiliser les modèles et les fiches ?",
+        "Les modèles du catalogue sont proposés sous CC0. Chaque page renvoie à la source et au créateur. Respectez cette licence et citez la source si possible. La classification et les noms peuvent évoluer. Ces pages sont des aides à l’apprentissage, pas des outils fiables d’identification ou de mesure scientifique.",
+        "models/"
+      ],
+      [
+        "Puis-je observer les modèles en 3D dans l’espace sur Apple Vision Pro ?",
+        "Sur Apple Vision Pro avec visionOS 2.0+, observez les modèles dans des volumes distincts, faites-les tourner, zoomez et contrôlez les animations disponibles. Les modèles inclus et téléchargés restent accessibles hors ligne. L’app n’utilise ni AR avec caméra ni scan de l’environnement. Le lecteur du site web est une expérience de navigateur distincte des volumes visionOS.",
+        null
+      ]
+    ]
+  },
+  "es-ES": {
+    "title": "Modelos 3D, animaciones y fichas para imprimir",
+    "description": "Explora modelos de animales y plantas, reproduce animaciones, imprime fichas y descubre las funciones nativas de Little Nature.",
+    "contact": "¿Necesitas ayuda? Contacto:",
+    "questions": [
+      [
+        "¿Cómo encuentro un modelo de animal o planta?",
+        "Explora el catálogo o busca un nombre en cualquiera de los idiomas disponibles, o un nombre científico cuando lo haya. Filtra por categoría, tema o modelos animados.",
+        "models/"
+      ],
+      [
+        "¿Puedo ver modelos 3D sin instalar la app?",
+        "Sí. Abre la página de un modelo y elige Ver en 3D; después gíralo o amplíalo. Algunos modelos usan nuestro visor; otros cargan un visor de Sketchfab y contactan con ese tercero. Se necesita conexión a Internet.",
+        "models/"
+      ],
+      [
+        "¿Qué modelos tienen animación?",
+        "Busca la etiqueta de animación o abre la colección animada. Usa los controles para reproducir o pausar las animaciones disponibles y comparar posturas. Son ilustraciones, no mediciones del movimiento real de los animales.",
+        "collections/motion/"
+      ],
+      [
+        "¿Cómo imprimo fichas de naturaleza?",
+        "Añade modelos a las fichas, elige papel A4 o Letter y selecciona imagen y nombre o imágenes y nombres para asociar. Los nombres científicos son opcionales. Imprime desde el navegador o guarda un PDF si el navegador lo permite. La selección queda en este navegador.",
+        "study-cards/"
+      ],
+      [
+        "¿La app funciona sin conexión y con AR?",
+        "En iPhone, iPad y Mac, Little Nature ofrece vistas 3D y descargas bajo demanda. Los modelos incluidos y descargados funcionan sin conexión y se pueden eliminar desde el gestor de descargas. AR requiere un iPhone o iPad compatible y permiso de cámara. Mac ofrece visualización 3D, no AR con cámara.",
+        null
+      ],
+      [
+        "¿Puedo reutilizar los modelos y las fichas?",
+        "Los modelos del catálogo se ofrecen bajo CC0. Cada página enlaza la fuente y el creador. Respeta esa licencia y cita la fuente cuando sea posible. La clasificación y los nombres pueden actualizarse. Estas páginas son ayudas educativas, no herramientas fiables de identificación o medición científica.",
+        "models/"
+      ],
+      [
+        "¿Puedo observar modelos en 3D espacial en Apple Vision Pro?",
+        "En Apple Vision Pro con visionOS 2.0+, observa los modelos en volúmenes independientes, gíralos, amplíalos y controla las animaciones disponibles. Los modelos incluidos y descargados funcionan sin conexión. La app no utiliza AR con cámara ni escaneo del entorno. El visor web es una experiencia de navegador distinta de los volúmenes visionOS.",
         null
       ]
     ]

@@ -2,7 +2,7 @@ import { cp, mkdir, readdir, rm, stat } from "node:fs/promises";
 import { join } from "node:path";
 
 const output = "public";
-const folders = ["en-US", "de-DE", "ja", "ko", "zh-Hans", "zh-Hant", "model-images", "style", "assets"];
+const folders = ["en-US", "de-DE", "ja", "ko", "zh-Hans", "zh-Hant", "fr-FR", "es-ES", "model-images", "style", "assets"];
 const rootFiles = /^(?:index|help|privacy-policy|404|google[a-z0-9]+)\.html$|^(?:sitemap\.xml|robots\.txt|llms\.txt|_redirects|_headers|app-icon\.png|apple-touch-icon\.png|favicon-\d+\.png)$/;
 await rm(output, { recursive: true, force: true });
 await mkdir(output);

@@ -365,6 +365,15 @@ class Experience:
     </main><div id="print-output" class="print-only"></div><style id="print-page-size"></style>
     {self.runtime(self.models, locale, 'study')}</body></html>"""
 
+    def render_privacy(self, locale):
+        copy = json.loads((ROOT / "data/privacy-copy.json").read_text())[locale]
+        schema = {"@context": "https://schema.org", "@type": "WebPage", "name": copy["title"],
+                  "url": f"{SITE}/{locale}/privacy-policy", "inLanguage": self.locales[locale]["lang"],
+                  "description": copy["description"]}
+        sections = "".join(f'<section class="section"><h2>{esc(title)}</h2><p>{esc(body)}</p></section>' for title, body in copy["sections"])
+        sections += '<section id="website-privacy"></section>'
+        return self.head(locale, "privacy-policy", copy["title"] + " | Little Nature", copy["description"], schema) + self.header(locale, "privacy-policy") + f'<article class="content-card"><h1>{esc(copy["title"])}</h1><p class="lead">{esc(copy["lead"])}</p>{sections}<p>{esc(copy["contact"])} cameoshell09@gmail.com</p></article>{self.footer(locale)}</main></body></html>'
+
     def render_help(self, locale):
         text = self.help_copy[locale]
         url = SITE + "/" + locale + "/help"
