@@ -77,10 +77,10 @@ the system temporary directory.
 
 ## Web Assets
 
-For manual downloads without an API token, see [MODEL_DOWNLOADS.md](MODEL_DOWNLOADS.md).
-It lists two existing animated models and eight new candidates, with formats
-and a suggested download directory. Downloading in the Sketchfab browser UI
-does not require configuring an API token for this project.
+For source links and download formats, see [MODEL_DOWNLOADS.md](MODEL_DOWNLOADS.md).
+It records two existing animated models and eight integrated specimens, not a
+pending download queue. Downloading again in the Sketchfab browser UI does not
+require configuring an API token for this project.
 
 Sketchfab offers GLB/glTF downloads through its official authenticated
 endpoint. Configure a local .env.assets.local using .env.assets.example.
